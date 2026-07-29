@@ -26,12 +26,11 @@
 
 #toc-page()
 
-= Report
-
-== Introduction
-
-#lorem(400)
-
-== Details
-
-#lorem(400)
+#include "sections/01-introduction.typ"
+#include "sections/02-teamwork.typ"
+#include "sections/03-ideation.typ"
+#include "sections/04-business-development-process.typ"
+#include "sections/05-business-model-summary.typ"
+#include "sections/06-learning-reflection.typ"
+#include "sections/07-conclusion-outlook.typ"
+#include "sections/08-appendix.typ"
