@@ -150,6 +150,7 @@
   date: none,
   context-line: none,
   examiner: none,
+  pattern: none,
 ) = {
   let author-list = if authors == none {
     ()
@@ -165,12 +166,25 @@
     margin: 0pt,
     background: page-background(show-number: false),
   )[
+    // Optional full-bleed textured backdrop, sitting behind every other
+    // element on the page. The colored bands above it switch to
+    // semi-transparent tints (instead of flat fills) so the pattern reads
+    // through, giving the cover more depth without losing the brand palette.
+    #if pattern != none [
+      #place(top + left, image(pattern, width: 100%, height: 100%, fit: "cover"))
+    ]
+
     // Top band: full-bleed accent panel with the wordmark, with a subtle
-    // gradient for depth (rather than a flat fill).
+    // gradient for depth (rather than a flat fill). When a pattern is set,
+    // the band turns semi-transparent so the texture reads through it.
     #place(top + left, block(
       width: 100%,
       height: 7cm,
-      fill: gradient.linear(vintage-grape, vintage-grape.darken(18%), angle: 25deg),
+      fill: if pattern != none {
+        gradient.linear(vintage-grape.transparentize(25%), vintage-grape.darken(18%).transparentize(25%), angle: 25deg)
+      } else {
+        gradient.linear(vintage-grape, vintage-grape.darken(18%), angle: 25deg)
+      },
       inset: (x: 3cm, y: 1.6cm),
     )[
       #set text(font: font)
@@ -196,7 +210,11 @@
     #place(bottom + left, block(
       width: 100%,
       height: 4.6cm,
-      fill: gradient.linear(vintage-grape.darken(10%), vintage-grape, angle: 25deg),
+      fill: if pattern != none {
+        gradient.linear(vintage-grape.darken(10%).transparentize(25%), vintage-grape.transparentize(25%), angle: 25deg)
+      } else {
+        gradient.linear(vintage-grape.darken(10%), vintage-grape, angle: 25deg)
+      },
       inset: (x: 3cm, y: 0.9cm),
     )[
       #set text(font: font)
@@ -230,10 +248,13 @@
 
     // Center: white panel with a single soft radial gradient wash (in the
     // primary accent color only, to keep the page calm), holding the logo,
-    // context line and title/subtitle.
+    // context line and title/subtitle. With a pattern set, the panel is
+    // lightened rather than solid white, so it stays legible while a hint
+    // of the texture still shows through.
     #place(top + left, dy: 7.35cm, block(
       width: 100%,
       height: 100% - 7.35cm - 4.6cm,
+      fill: if pattern != none { white.transparentize(12%) } else { none },
     )[
       #place(top + right, circle(
         radius: 6cm,

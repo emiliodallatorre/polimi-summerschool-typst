@@ -11,4 +11,6 @@
 - [ ] Review Introduction section for AI-generated phrasing (not yet checked).
 - [ ] Once all sections have real content, enable heading numbering if cross-references (`@label`) are desired instead of plain links.
 - [ ] Interview numbers!
-- [x] Link "Full question sets are provided in the annex." (Business development process → Validation methods) to the actual question sets, now added to the Appendix as the "Interview question sets" module
+- [x] Link "Full question sets are provided in the annex." (Business development process → Validation methods) to the actual question sets, now added to the Appendix as the "Interview question sets" module- [x] Added Business Model Canvas graphical module to Appendix (empty, then populated with user's real content).
+- [x] Added Value Proposition Canvas graphical module to Appendix (empty template, still awaiting real content).
+- [ ] FLAG: BMC "Customer segments" box lists "FinTech startups with an internal legal team" as a target segment, which contradicts the Business Development Process narrative (12/14 interviewees said their startup "relies entirely on external legal consultants... due to a lack of internal expertise") — reported to user, NOT edited per instruction.

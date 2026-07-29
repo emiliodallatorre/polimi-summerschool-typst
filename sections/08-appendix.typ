@@ -1,6 +1,6 @@
 = Appendix
 
-#import "../theme.typ": appendix-module
+#import "../theme.typ": appendix-module, honey-bronze, accent, sky-reflection
 
 This appendix collects the supporting evidence referenced throughout the report: interview transcripts, question sets, market data, plots, and other material too detailed for the main body. Each item below is a self-contained module with its own label, so it can be linked to directly from the relevant paragraph in the report rather than making the reader search for it.
 
@@ -196,3 +196,152 @@ Interview transcripts were obtained by recording each conversation and transcrib
 
   *Peter:* Cool, thank you. I need to head out for a bit, but I'll see you at lunch. Thanks again for your time — feel free to reach out by email or LinkedIn.
 ] <appx-interview-peter-grouev>
+
+#let bmc-bullets(items) = {
+  set text(size: 7.5pt)
+  for item in items [
+    - #item
+  ]
+}
+
+#let bmc-cell(title, fill: honey-bronze.lighten(88%)) = block(
+  width: 100%,
+  height: 100%,
+  fill: fill,
+  stroke: 0.6pt + accent.lighten(40%),
+  inset: 6pt,
+)[
+  #text(size: 8.5pt, weight: "bold", fill: accent)[#title]
+]
+
+#let bmc-cell-content(title, items) = [
+  #text(size: 8pt, weight: "bold", fill: accent)[#title]
+  #v(3pt)
+  #bmc-bullets(items)
+]
+
+// Some Business Model Canvas boxes (Key activities/Key resources, Customer
+// relationships/Channels) are conventionally split top/bottom within the same
+// column. Stacking them inside one cell keeps the whole canvas a single-row
+// table, whose cells always stretch to a shared row height automatically.
+#let bmc-dual-cell(title-a, items-a, title-b, items-b) = [
+  #text(size: 8pt, weight: "bold", fill: accent)[#title-a]
+  #v(3pt)
+  #bmc-bullets(items-a)
+  #v(6pt)
+  #line(length: 100%, stroke: 0.5pt + accent.lighten(55%))
+  #v(6pt)
+  #text(size: 8pt, weight: "bold", fill: accent)[#title-b]
+  #v(3pt)
+  #bmc-bullets(items-b)
+]
+
+#appendix-module[Business model canvas][
+  #block(breakable: false)[
+    #table(
+      columns: (1fr, 1fr, 1fr, 1fr, 1fr),
+      align: left + top,
+      stroke: 0.6pt + accent.lighten(40%),
+      inset: 6pt,
+      fill: honey-bronze.lighten(88%),
+      bmc-cell-content(
+        "Key partners",
+        (
+          "Partnerships with law firms and consulting firms",
+          "Partnerships with startup accelerators and incubators",
+        ),
+      ),
+      bmc-dual-cell(
+        "Key activities",
+        (
+          "Continuous regulatory ingestion",
+          "Partnership development",
+          "Software development",
+        ),
+        "Key resources",
+        (
+          "RAG-based legal search system",
+          "EU regulatory database",
+          "Automated document processing pipeline",
+          "AI compliance engine",
+          "Legal / RegTech advisory network",
+        ),
+      ),
+      bmc-cell-content(
+        "Value proposition",
+        (
+          "Help assess compliance of early-stage startups",
+          "Cut legal consulting costs",
+          "Generate documents ready for legal review and licensing",
+          "Accelerate internal legal and compliance workflows",
+        ),
+      ),
+      bmc-dual-cell(
+        "Customer relationships",
+        (
+          "Guided onboarding",
+          "Customer community",
+          "Technical support",
+          "Email updates",
+        ),
+        "Channels",
+        (
+          "Hub & accelerator",
+          "Digital acquisition & inbound PR",
+          "FinTech conferences & community",
+        ),
+      ),
+      bmc-cell-content(
+        "Customer segments",
+        (
+          "Early-stage FinTech startups applying for MiCA, PSD3, EMI, or PI licenses",
+          "FinTech companies with an internal legal team seeking to accelerate compliance work",
+        ),
+      ),
+      table.cell(colspan: 3)[#bmc-cell-content(
+        "Cost structure",
+        (
+          "Cloud infrastructure and data storage",
+          "RAG optimisation",
+          "Marketing campaigns",
+        ),
+      )],
+      table.cell(colspan: 2)[#bmc-cell-content(
+        "Revenue streams",
+        (
+          "Tier 1 diagnostic SaaS: €100/mo self-serve Q&A",
+          "Tier 2 continuous alerts: €2.5k–7.5k/mo",
+          "Tier 3 document generation: pay per use",
+        ),
+      )],
+    )
+  ]
+] <appx-business-model-canvas>
+
+#pagebreak()
+
+#appendix-module[Value proposition canvas (template)][
+  This canvas is left empty for now and will be filled in once the value proposition has been finalised
+
+  #block(breakable: false)[
+    #grid(
+      columns: (1fr, 1fr),
+      rows: (1cm,),
+      gutter: 3pt,
+      [#bmc-cell(fill: accent.lighten(85%))[Value map]],
+      [#bmc-cell(fill: sky-reflection.lighten(75%))[Customer profile]],
+    )
+    #v(3pt)
+    #grid(
+      columns: (1fr, 1fr),
+      rows: (2.4cm, 2.4cm, 2.4cm),
+      gutter: 3pt,
+      [#bmc-cell[Products & services]],
+      [#bmc-cell[Customer jobs]],
+      [#bmc-cell[Gain creators]],
+      [#bmc-cell[Gains]],
+      [#bmc-cell[Pain relievers]],
+      [#bmc-cell[Pains]],
+    )
+  ]
+] <appx-value-proposition-canvas>
