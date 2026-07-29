@@ -12,7 +12,7 @@ To evaluate both ideas, we applied a feasibility and market barrier assessment g
 
 Applied to the crypto monitoring idea, this process revealed critical flaws. Speaking with domain experts, including Niklas Ego at the Deutsche Bundesbank, made clear that institutional transaction monitoring is already dominated by established players with millions in funding and already made deals, making it very difficult for a new entrant to reach the operational bar these clients expect. More importantly, direct interviews surfaced a harder truth about buyer incentives: traditional banks do not prioritize tracking illicit funds proactively unless facing immediate risk of sanction. The internal need to use better detection technology was not reachable by the capabilities of an early stage startup.
 
-Applied to the ComplAI concept, the same filter produced a clearly different result. Interviews with founders, former bankers, and legal experts confirmed a clear pain point and a real willingness to pay. Furthermore, building a diagnostic tool required a much lower barrier to entry than developing a real-time institutional monitoring system.
+Applied to the ComplAI concept, the same filter produced a clearly different result. Interviews with founders, former bankers, and legal experts (see #link(<appx-interview-christine>)[Christine's] and #link(<appx-interview-peter-grouev>)[Peter Grouev's] transcripts in the Appendix) confirmed a clear pain point and a real willingness to pay. Furthermore, building a diagnostic tool required a much lower barrier to entry than developing a real-time institutional monitoring system.
 
 == Why this idea was chosen over the alternatives
 

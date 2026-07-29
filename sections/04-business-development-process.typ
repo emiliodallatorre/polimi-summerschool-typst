@@ -36,7 +36,7 @@ To validate problem-solution fit, willingness to pay, and core assumptions, we c
   caption: [Stakeholder groups interviewed during the validation process],
 )
 
-Across all groups, questions centered on four themes: current compliance practices, the time and cost involved, the main pain points in the licensing process, and the tools relied upon before engaging costly legal counsel. Keeping the same thematic anchors across groups allowed us to compare responses consistently despite differing professional backgrounds. Full question sets are provided in the annex.
+Across all groups, questions centered on four themes: current compliance practices, the time and cost involved, the main pain points in the licensing process, and the tools relied upon before engaging costly legal counsel. Keeping the same thematic anchors across groups allowed us to compare responses consistently despite differing professional backgrounds. Full question sets are provided in the #link(<appx-interview-questions>)[Appendix].
 
 == Key findings that changed our thinking
 
