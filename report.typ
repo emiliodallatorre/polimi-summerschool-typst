@@ -1,4 +1,4 @@
-#import "theme.typ": theme, titlepage, team-page, toc-page
+#import "theme.typ": theme, titlepage, team-page, toc-page, page-background, appendix-page-counter
 
 #show: theme
 
@@ -35,5 +35,7 @@
 #include "sections/07-conclusion-outlook.typ"
 
 #pagebreak()
+
+#set page(background: page-background(numbering: "I", page-counter: appendix-page-counter))
 
 #include "sections/08-appendix.typ"

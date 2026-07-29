@@ -30,27 +30,39 @@
 // instead of floating above it with a separate rule.
 #let footer-bar-height = 1.1cm
 
-#let page-background(show-number: true) = context [
-  #place(top + left, rect(width: 100%, height: 0.45cm, fill: gradient.linear(accent, white)))
-  #place(bottom + left, block(
-    width: 100%,
-    height: footer-bar-height,
-    fill: gradient.linear(accent, white),
-    inset: (left: 3cm, right: 2cm),
-  )[
-    #set text(size: 8pt, font: font)
-    #align(horizon)[
-      #grid(
-        columns: (1fr, 1fr),
-        align: (horizon + left, horizon + right),
-        [#text(fill: white)[*ComplAI*]],
-        [#if show-number [
-          #text(fill: accent.darken(20%))[#counter(page).display("1 / 1", both: true)]
-        ]],
-      )
-    ]
-  ])
-]
+// Two independent counters for footer page numbers, so the body's Arabic
+// numbering and the appendix's Roman numbering each have their own total,
+// instead of both racing to affect the same shared `page` counter's final
+// value.
+#let body-page-counter = counter("complai-body-page")
+#let appendix-page-counter = counter("complai-appendix-page")
+
+#let page-background(show-number: true, numbering: "1", page-counter: none) = {
+  if show-number and page-counter != none [
+    #context page-counter.step()
+  ]
+  context [
+    #place(top + left, rect(width: 100%, height: 0.45cm, fill: gradient.linear(accent, white)))
+    #place(bottom + left, block(
+      width: 100%,
+      height: footer-bar-height,
+      fill: gradient.linear(accent, white),
+      inset: (left: 3cm, right: 2cm),
+    )[
+      #set text(size: 8pt, font: font)
+      #align(horizon)[
+        #grid(
+          columns: (1fr, 1fr),
+          align: (horizon + left, horizon + right),
+          [#text(fill: white)[*ComplAI*]],
+          [#if show-number and page-counter != none [
+            #text(fill: accent.darken(20%))[#page-counter.display(numbering + " / " + numbering, both: true)]
+          ]],
+        )
+      ]
+    ])
+  ]
+}
 
 // ---------------------------------------------------------------------------
 // Main theme: page setup, typography, headings, footnotes, captions, tables.
@@ -59,7 +71,7 @@
     margin: (top: 2.5cm, bottom: 2.5cm, left: 3cm, right: 2cm),
     footer: none,
     numbering: none,
-    background: page-background(),
+    background: page-background(page-counter: body-page-counter),
   )
 
   // Body text: Helvetica, 11pt, 1.5 line spacing
@@ -324,7 +336,5 @@
     }
 
     #outline(title: none)
-
-    #counter(page).update(0)
   ]
 }
