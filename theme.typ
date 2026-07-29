@@ -8,13 +8,17 @@
 // `background` field. The text margins set below are the one thing that
 // must stay untouched.
 
-// Official ComplAI palette. `accent` (vintage-grape) stays the primary color
-// used across the theme; the others are available for charts, callouts,
-// highlights, etc. throughout the report.
-#let vintage-grape = rgb("#4F3B63")
-#let sky-reflection = rgb("#86BBD8")
-#let honey-bronze = rgb("#F6AE2D")
-#let classic-crimson = rgb("#D72638")
+// Official ComplAI palette. Derived from `assets/pattern.jpg` (the cover's
+// background texture) via color quantization, so the report's tables,
+// headings, and footer bars read as an extension of the cover rather than
+// a separate, coincidentally-similar color scheme. `accent` (vintage-grape,
+// now a deep navy rather than purple) stays the primary color used across
+// the theme; the others are available for charts, callouts, highlights,
+// etc. throughout the report.
+#let vintage-grape = rgb("#2C4C68")
+#let sky-reflection = rgb("#6A97D2")
+#let honey-bronze = rgb("#E25F5C")
+#let classic-crimson = rgb("#9C2425")
 
 #let accent = vintage-grape
 #let logo = image("assets/logo.png")
@@ -166,117 +170,127 @@
     margin: 0pt,
     background: page-background(show-number: false),
   )[
-    // Optional full-bleed textured backdrop, sitting behind every other
-    // element on the page. The colored bands above it switch to
-    // semi-transparent tints (instead of flat fills) so the pattern reads
-    // through, giving the cover more depth without losing the brand palette.
+    // Full-bleed backdrop: the pattern image when supplied, otherwise a
+    // plain diagonal brand gradient (the original look), so the rest of
+    // this layout works identically either way.
+    #place(top + left, if pattern != none {
+      image(pattern, width: 100%, height: 100%, fit: "cover")
+    } else {
+      rect(width: 100%, height: 100%, fill: gradient.linear(vintage-grape, vintage-grape.darken(18%), angle: 25deg))
+    })
+
+    // Brand duotone wash over the backdrop: ties whatever colors the
+    // pattern brings in back to the ComplAI palette, and gives every text
+    // element on the page a consistent minimum contrast to sit on.
     #if pattern != none [
-      #place(top + left, image(pattern, width: 100%, height: 100%, fit: "cover"))
+      #place(top + left, rect(
+        width: 100%,
+        height: 100%,
+        fill: gradient.linear(
+          vintage-grape.transparentize(35%),
+          vintage-grape.darken(25%).transparentize(45%),
+          angle: 25deg,
+        ),
+      ))
     ]
 
-    // Top band: full-bleed accent panel with the wordmark, with a subtle
-    // gradient for depth (rather than a flat fill). When a pattern is set,
-    // the band turns semi-transparent so the texture reads through it.
-    #place(top + left, block(
+    // Soft dark scrims at the top and bottom edges only (not the whole
+    // page), just enough to guarantee the wordmark and footer text stay
+    // legible while leaving the middle of the pattern uncovered.
+    #place(top + left, rect(
+      width: 100%,
+      height: 8cm,
+      fill: gradient.linear(black.transparentize(35%), black.transparentize(100%), angle: 90deg),
+    ))
+    #place(bottom + left, rect(
       width: 100%,
       height: 7cm,
-      fill: if pattern != none {
-        gradient.linear(vintage-grape.transparentize(25%), vintage-grape.darken(18%).transparentize(25%), angle: 25deg)
-      } else {
-        gradient.linear(vintage-grape, vintage-grape.darken(18%), angle: 25deg)
-      },
-      inset: (x: 3cm, y: 1.6cm),
-    )[
-      #set text(font: font)
-      #align(bottom + left)[
-        #text(size: 13pt, tracking: 2pt, fill: accent.lighten(65%))[Compliance, simplified]
-        #v(-0.3em)
-        #text(size: 34pt, weight: "bold", fill: white)[ComplAI]
-      ]
-    ])
+      fill: gradient.linear(black.transparentize(100%), black.transparentize(45%), angle: 90deg),
+    ))
 
-    // A single smooth gradient bar running full-bleed under the top band,
-    // blending the whole ComplAI palette into one another instead of
-    // showing them as separate blocks of color.
-    #place(top + left, dy: 7cm, rect(
+    // A thin accent-gradient hairline near the top, echoing the full
+    // ComplAI palette, as a small signature detail independent of the
+    // pattern's own colors.
+    #place(top + left, dy: 3.6cm, rect(
       width: 100%,
-      height: 0.35cm,
+      height: 0.12cm,
       fill: gradient.linear(sky-reflection, honey-bronze, classic-crimson, vintage-grape),
     ))
 
-    // Bottom band: full-bleed accent panel with the team names, examiner and
-    // date. Each block is stacked on its own line (rather than packed into a
-    // single row) so a long team list never crowds against the date.
-    #place(bottom + left, block(
+    // Top-left wordmark, sitting directly on the scrim.
+    #place(top + left, block(
       width: 100%,
-      height: 4.6cm,
-      fill: if pattern != none {
-        gradient.linear(vintage-grape.darken(10%).transparentize(25%), vintage-grape.transparentize(25%), angle: 25deg)
-      } else {
-        gradient.linear(vintage-grape.darken(10%), vintage-grape, angle: 25deg)
-      },
-      inset: (x: 3cm, y: 0.9cm),
+      inset: (x: 3cm, top: 1.6cm),
     )[
       #set text(font: font)
-      #align(horizon)[
-        #stack(
-          dir: ttb,
-          spacing: 0.35cm,
-          if author-list.len() > 0 [
-            #text(size: 9pt, tracking: 1pt, fill: accent.lighten(65%))[Team]
-            #v(-0.2em)
-            #text(size: 11pt, weight: "bold", fill: white)[#author-list.join(" · ")]
-          ],
-          grid(
-            columns: (1fr, auto),
-            align: (left + horizon, right + horizon),
-            [
-              #if examiner != none [
-                #text(size: 9pt, fill: accent.lighten(70%))[Examiner: ]
-                #text(size: 9pt, fill: white)[#examiner]
-              ]
-            ],
-            [
-              #if date != none [
-                #text(size: 9pt, fill: accent.lighten(70%))[#date]
-              ]
-            ],
-          ),
-        )
+      #text(size: 13pt, tracking: 2pt, fill: white.transparentize(10%))[Compliance, simplified]
+      #v(-0.3em)
+      #text(size: 34pt, weight: "bold", fill: white)[ComplAI]
+    ])
+
+    // Soft radial vignette behind the middle content: darkens just enough
+    // for the white logo/title/subtitle to read clearly, fading smoothly
+    // into the pattern on every side instead of a hard-edged box.
+    #place(center + horizon, circle(
+      radius: 10cm,
+      fill: gradient.radial(black.transparentize(35%), black.transparentize(100%)),
+    ))
+
+    // Center content: white logo, context line, title and subtitle, sitting
+    // directly on the pattern (via the vignette above) rather than inside a
+    // solid card, so the texture reads through everywhere on the page.
+    #place(center + horizon, block(
+      width: 13.8cm,
+      inset: (x: 1.6cm, y: 1.5cm),
+    )[
+      #set text(font: font)
+      #align(center)[
+        #box(width: 3cm, image("assets/logo-white.png"))
+        #v(0.8cm)
+        #if context-line != none [
+          #text(size: 10pt, tracking: 1pt, fill: white.transparentize(15%))[#context-line]
+          #v(0.4cm)
+        ]
+        #line(length: 30%, stroke: 1.5pt + white.transparentize(30%))
+        #v(0.7cm)
+        #text(size: 26pt, weight: "bold", fill: white)[#title]
+        #if subtitle != none [
+          #v(0.35cm)
+          #text(size: 12pt, fill: white.transparentize(15%))[#subtitle]
+        ]
       ]
     ])
 
-    // Center: white panel with a single soft radial gradient wash (in the
-    // primary accent color only, to keep the page calm), holding the logo,
-    // context line and title/subtitle. With a pattern set, the panel is
-    // lightened rather than solid white, so it stays legible while a hint
-    // of the texture still shows through.
-    #place(top + left, dy: 7.35cm, block(
+    // Bottom-left footer, sitting on the lower scrim: team, examiner, date.
+    #place(bottom + left, block(
       width: 100%,
-      height: 100% - 7.35cm - 4.6cm,
-      fill: if pattern != none { white.transparentize(12%) } else { none },
+      inset: (x: 3cm, bottom: 1.3cm),
     )[
-      #place(top + right, circle(
-        radius: 6cm,
-        fill: gradient.radial(vintage-grape.transparentize(88%), vintage-grape.transparentize(100%)),
-      ))
-
       #set text(font: font)
-      #align(center + horizon)[
-        #box(width: 3.4cm, logo)
-        #v(1cm)
-        #if context-line != none [
-          #text(size: 10pt, tracking: 1pt, fill: accent.lighten(25%))[#context-line]
-          #v(0.4cm)
-        ]
-        #line(length: 30%, stroke: 1.5pt + accent.lighten(30%))
-        #v(0.8cm)
-        #text(size: 24pt, weight: "bold", fill: accent)[#title]
-        #if subtitle != none [
-          #v(0.4cm)
-          #text(size: 13pt, fill: rgb("#555555"))[#subtitle]
-        ]
-      ]
+      #stack(
+        dir: ttb,
+        spacing: 0.35cm,
+        if author-list.len() > 0 [
+          #text(size: 9pt, tracking: 1pt, fill: white.transparentize(20%))[Team]
+          #v(-0.2em)
+          #text(size: 11pt, weight: "bold", fill: white)[#author-list.join(" · ")]
+        ],
+        grid(
+          columns: (1fr, auto),
+          align: (left + horizon, right + horizon),
+          [
+            #if examiner != none [
+              #text(size: 9pt, fill: white.transparentize(25%))[Examiner: ]
+              #text(size: 9pt, fill: white)[#examiner]
+            ]
+          ],
+          [
+            #if date != none [
+              #text(size: 9pt, fill: white.transparentize(25%))[#date]
+            ]
+          ],
+        ),
+      )
     ])
   ]
 }

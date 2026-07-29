@@ -20,6 +20,7 @@
   examiner: "Prof. Dr. Thomas Funke",
   authors: members.map(m => m.at(0)),
   date: datetime.today().display("[month repr:long] [year]"),
+  pattern: "assets/pattern.jpg",
 )
 
 #team-page(members: members, university: university)
