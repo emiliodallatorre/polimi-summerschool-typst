@@ -1,0 +1,14 @@
+{
+	"name": "Typst Report",
+	"image": "mcr.microsoft.com/devcontainers/base:bookworm",
+	"features": {
+		"ghcr.io/devcontainers-extra/features/typst:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"myriad-dreamin.tinymist"
+			]
+		}
+	}
+}

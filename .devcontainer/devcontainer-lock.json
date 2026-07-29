@@ -1,0 +1,9 @@
+{
+  "features": {
+    "ghcr.io/devcontainers-extra/features/typst:1": {
+      "version": "1.0.6",
+      "resolved": "ghcr.io/devcontainers-extra/features/typst@sha256:84f5a686d184b896946757ba2056d73cac2dea3d6454cca3178a6a113f5ea33b",
+      "integrity": "sha256:84f5a686d184b896946757ba2056d73cac2dea3d6454cca3178a6a113f5ea33b"
+    }
+  }
+}
