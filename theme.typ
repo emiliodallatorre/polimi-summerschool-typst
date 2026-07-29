@@ -31,20 +31,20 @@
 #let footer-bar-height = 1.1cm
 
 #let page-background = context [
-  #place(top + left, rect(width: 100%, height: 0.45cm, fill: accent))
+  #place(top + left, rect(width: 100%, height: 0.45cm, fill: gradient.linear(accent, white)))
   #place(bottom + left, block(
     width: 100%,
     height: footer-bar-height,
-    fill: accent,
+    fill: gradient.linear(accent, white),
     inset: (left: 3cm, right: 2cm),
   )[
-    #set text(size: 8pt, fill: white, font: font)
+    #set text(size: 8pt, font: font)
     #align(horizon)[
       #grid(
         columns: (1fr, 1fr),
         align: (horizon + left, horizon + right),
-        [*ComplAI*],
-        [#counter(page).display("1 / 1", both: true)],
+        [#text(fill: white)[*ComplAI*]],
+        [#text(fill: accent.darken(20%))[#counter(page).display("1 / 1", both: true)]],
       )
     ]
   ])
