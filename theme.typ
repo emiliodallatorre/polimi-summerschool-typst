@@ -8,7 +8,15 @@
 // `background` field. The text margins set below are the one thing that
 // must stay untouched.
 
-#let accent = rgb("#4F3B63")
+// Official ComplAI palette. `accent` (vintage-grape) stays the primary color
+// used across the theme; the others are available for charts, callouts,
+// highlights, etc. throughout the report.
+#let vintage-grape = rgb("#4F3B63")
+#let sky-reflection = rgb("#86BBD8")
+#let honey-bronze = rgb("#F6AE2D")
+#let classic-crimson = rgb("#D72638")
+
+#let accent = vintage-grape
 #let logo = image("assets/logo.png")
 // Helvetica, falling back to the metric-compatible "TeX Gyre Heros" (installed
 // in the devcontainer via the fonts-texgyre package) if true Helvetica isn't
@@ -119,20 +127,30 @@
     numbering: none,
     margin: 0pt,
   )[
-    // Top band: full-bleed accent panel with the wordmark.
+    // Top band: full-bleed accent panel with the wordmark, with a subtle
+    // gradient for depth (rather than a flat fill).
     #place(top + left, block(
       width: 100%,
       height: 7cm,
-      fill: accent,
+      fill: gradient.linear(vintage-grape, vintage-grape.darken(18%), angle: 25deg),
       inset: (x: 3cm, y: 1.6cm),
     )[
       #set text(font: font)
       #align(bottom + left)[
-        #text(size: 13pt, tracking: 2pt, fill: accent.lighten(65%))[COMPLIANCE, SIMPLIFIED]
+        #text(size: 13pt, tracking: 2pt, fill: accent.lighten(65%))[Compliance, simplified]
         #v(-0.3em)
         #text(size: 34pt, weight: "bold", fill: white)[ComplAI]
       ]
     ])
+
+    // A single smooth gradient bar running full-bleed under the top band,
+    // blending the whole ComplAI palette into one another instead of
+    // showing them as separate blocks of color.
+    #place(top + left, dy: 7cm, rect(
+      width: 100%,
+      height: 0.35cm,
+      fill: gradient.linear(sky-reflection, honey-bronze, classic-crimson, vintage-grape),
+    ))
 
     // Bottom band: full-bleed accent panel with the team names, examiner and
     // date. Each block is stacked on its own line (rather than packed into a
@@ -140,7 +158,7 @@
     #place(bottom + left, block(
       width: 100%,
       height: 4.6cm,
-      fill: accent,
+      fill: gradient.linear(vintage-grape.darken(10%), vintage-grape, angle: 25deg),
       inset: (x: 3cm, y: 0.9cm),
     )[
       #set text(font: font)
@@ -149,7 +167,7 @@
           dir: ttb,
           spacing: 0.35cm,
           if author-list.len() > 0 [
-            #text(size: 9pt, tracking: 1pt, fill: accent.lighten(65%))[TEAM]
+            #text(size: 9pt, tracking: 1pt, fill: accent.lighten(65%))[Team]
             #v(-0.2em)
             #text(size: 11pt, weight: "bold", fill: white)[#author-list.join(" · ")]
           ],
@@ -172,20 +190,27 @@
       ]
     ])
 
-    // Center: white panel with the logo, context line and title/subtitle.
-    #place(top + left, dy: 7cm, block(
+    // Center: white panel with a single soft radial gradient wash (in the
+    // primary accent color only, to keep the page calm), holding the logo,
+    // context line and title/subtitle.
+    #place(top + left, dy: 7.35cm, block(
       width: 100%,
-      height: 100% - 7cm - 4.6cm,
+      height: 100% - 7.35cm - 4.6cm,
     )[
+      #place(top + right, circle(
+        radius: 6cm,
+        fill: gradient.radial(vintage-grape.transparentize(88%), vintage-grape.transparentize(100%)),
+      ))
+
       #set text(font: font)
       #align(center + horizon)[
         #box(width: 3.4cm, logo)
         #v(1cm)
         #if context-line != none [
-          #text(size: 10pt, tracking: 1pt, fill: accent.lighten(25%))[#upper(context-line)]
+          #text(size: 10pt, tracking: 1pt, fill: accent.lighten(25%))[#context-line]
           #v(0.4cm)
         ]
-        #line(length: 30%, stroke: 1pt + accent.lighten(40%))
+        #line(length: 30%, stroke: 1.5pt + accent.lighten(30%))
         #v(0.8cm)
         #text(size: 24pt, weight: "bold", fill: accent)[#title]
         #if subtitle != none [
@@ -210,7 +235,7 @@
     #set text(font: font)
     #align(center)[
       #v(0.5cm)
-      #text(size: 18pt, weight: "bold", fill: accent)[Our Team]
+      #text(size: 18pt, weight: "bold", fill: accent)[Our team]
       #v(0.2cm)
       #line(length: 20%, stroke: 1pt + accent.lighten(40%))
     ]
@@ -242,5 +267,35 @@
         ]
       ]),
     )
+  ]
+}
+
+// ---------------------------------------------------------------------------
+// Table of contents page: styled to match the theme (accent title, colored
+// rule, accent page numbers), placed right after the team page.
+#let toc-page() = {
+  page(
+    footer: none,
+    numbering: none,
+  )[
+    #set text(font: font)
+    #align(center)[
+      #v(0.5cm)
+      #text(size: 18pt, weight: "bold", fill: accent)[Table of contents]
+      #v(0.2cm)
+      #line(length: 20%, stroke: 1pt + accent.lighten(40%))
+    ]
+    #v(1cm)
+
+    #show outline.entry: it => link(
+      it.element.location(),
+      text(fill: rgb("#1A1A1A"))[#it],
+    )
+    #show outline.entry.where(level: 1): it => {
+      v(0.6em, weak: true)
+      text(weight: "bold", fill: accent)[#it]
+    }
+
+    #outline(title: none)
   ]
 }

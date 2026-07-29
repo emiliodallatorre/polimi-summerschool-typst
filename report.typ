@@ -1,4 +1,4 @@
-#import "theme.typ": theme, titlepage, team-page
+#import "theme.typ": theme, titlepage, team-page, toc-page
 
 #show: theme
 
@@ -14,7 +14,7 @@
 )
 
 #titlepage(
-  title: "Project Report",
+  title: "Project report",
   subtitle: "Compliance made simple for AI-driven products",
   context-line: "EIT Summer School — Digital Finance & Entrepreneurship",
   examiner: "Prof. Dr. Thomas Funke",
@@ -23,6 +23,8 @@
 )
 
 #team-page(members: members, university: university)
+
+#toc-page()
 
 = Report
 
