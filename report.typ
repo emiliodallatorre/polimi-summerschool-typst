@@ -14,8 +14,10 @@
 )
 
 #titlepage(
-  title: "Written Report",
+  title: "Project Report",
   subtitle: "Compliance made simple for AI-driven products",
+  context-line: "EIT Summer School — Digital Finance & Entrepreneurship",
+  examiner: "Prof. Dr. Thomas Funke",
   authors: members.map(m => m.at(0)),
   date: datetime.today().display("[month repr:long] [year]"),
 )

@@ -98,7 +98,14 @@
 // than on a colored band, where it would disappear.
 // `authors` accepts either a single name (string) or an array of names (one
 // per team member); the bottom band wraps them across lines as needed.
-#let titlepage(title: "", subtitle: none, authors: none, date: none) = {
+#let titlepage(
+  title: "",
+  subtitle: none,
+  authors: none,
+  date: none,
+  context-line: none,
+  examiner: none,
+) = {
   let author-list = if authors == none {
     ()
   } else if type(authors) == array {
@@ -127,43 +134,57 @@
       ]
     ])
 
-    // Bottom band: full-bleed accent panel with the team names / date.
+    // Bottom band: full-bleed accent panel with the team names, examiner and
+    // date. Each block is stacked on its own line (rather than packed into a
+    // single row) so a long team list never crowds against the date.
     #place(bottom + left, block(
       width: 100%,
-      height: 4.2cm,
+      height: 4.6cm,
       fill: accent,
-      inset: (x: 3cm, y: 1.1cm),
+      inset: (x: 3cm, y: 0.9cm),
     )[
       #set text(font: font)
       #align(horizon)[
-        #grid(
-          columns: (1fr, auto),
-          align: (left + horizon, right + horizon),
-          [
-            #if author-list.len() > 0 [
-              #text(size: 9pt, tracking: 1pt, fill: accent.lighten(65%))[TEAM]
-              #v(-0.2em)
-              #text(size: 11pt, weight: "bold", fill: white)[#author-list.join(" · ")]
-            ]
+        #stack(
+          dir: ttb,
+          spacing: 0.35cm,
+          if author-list.len() > 0 [
+            #text(size: 9pt, tracking: 1pt, fill: accent.lighten(65%))[TEAM]
+            #v(-0.2em)
+            #text(size: 11pt, weight: "bold", fill: white)[#author-list.join(" · ")]
           ],
-          [
-            #if date != none [
-              #text(size: 10pt, fill: accent.lighten(70%))[#date]
-            ]
-          ],
+          grid(
+            columns: (1fr, auto),
+            align: (left + horizon, right + horizon),
+            [
+              #if examiner != none [
+                #text(size: 9pt, fill: accent.lighten(70%))[Examiner: ]
+                #text(size: 9pt, fill: white)[#examiner]
+              ]
+            ],
+            [
+              #if date != none [
+                #text(size: 9pt, fill: accent.lighten(70%))[#date]
+              ]
+            ],
+          ),
         )
       ]
     ])
 
-    // Center: white panel with the logo and title/subtitle.
+    // Center: white panel with the logo, context line and title/subtitle.
     #place(top + left, dy: 7cm, block(
       width: 100%,
-      height: 100% - 7cm - 4.2cm,
+      height: 100% - 7cm - 4.6cm,
     )[
       #set text(font: font)
       #align(center + horizon)[
         #box(width: 3.4cm, logo)
         #v(1cm)
+        #if context-line != none [
+          #text(size: 10pt, tracking: 1pt, fill: accent.lighten(25%))[#upper(context-line)]
+          #v(0.4cm)
+        ]
         #line(length: 30%, stroke: 1pt + accent.lighten(40%))
         #v(0.8cm)
         #text(size: 24pt, weight: "bold", fill: accent)[#title]
