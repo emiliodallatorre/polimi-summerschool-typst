@@ -30,7 +30,7 @@
 // instead of floating above it with a separate rule.
 #let footer-bar-height = 1.1cm
 
-#let page-background = context [
+#let page-background(show-number: true) = context [
   #place(top + left, rect(width: 100%, height: 0.45cm, fill: gradient.linear(accent, white)))
   #place(bottom + left, block(
     width: 100%,
@@ -44,7 +44,9 @@
         columns: (1fr, 1fr),
         align: (horizon + left, horizon + right),
         [#text(fill: white)[*ComplAI*]],
-        [#text(fill: accent.darken(20%))[#counter(page).display("1 / 1", both: true)]],
+        [#if show-number [
+          #text(fill: accent.darken(20%))[#counter(page).display("1 / 1", both: true)]
+        ]],
       )
     ]
   ])
@@ -57,7 +59,7 @@
     margin: (top: 2.5cm, bottom: 2.5cm, left: 3cm, right: 2cm),
     footer: none,
     numbering: none,
-    background: page-background,
+    background: page-background(),
   )
 
   // Body text: Helvetica, 11pt, 1.5 line spacing
@@ -126,6 +128,7 @@
     footer: none,
     numbering: none,
     margin: 0pt,
+    background: page-background(show-number: false),
   )[
     // Top band: full-bleed accent panel with the wordmark, with a subtle
     // gradient for depth (rather than a flat fill).
@@ -220,7 +223,6 @@
       ]
     ])
   ]
-  counter(page).update(1)
 }
 
 // ---------------------------------------------------------------------------
@@ -231,6 +233,7 @@
   page(
     footer: none,
     numbering: none,
+    background: page-background(show-number: false),
   )[
     #set text(font: font)
     #align(center)[
@@ -277,6 +280,7 @@
   page(
     footer: none,
     numbering: none,
+    background: page-background(show-number: false),
   )[
     #set text(font: font)
     #align(center)[
@@ -297,5 +301,7 @@
     }
 
     #outline(title: none)
+
+    #counter(page).update(0)
   ]
 }

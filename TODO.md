@@ -8,3 +8,4 @@
 - [ ] Write content for Appendix section (evidence/analysis backing the report's claims, including interview references).
 - [ ] Review Introduction section for AI-generated phrasing (not yet checked).
 - [ ] Once all sections have real content, enable heading numbering if cross-references (`@label`) are desired instead of plain links.
+- [ ] Interview numbers!
