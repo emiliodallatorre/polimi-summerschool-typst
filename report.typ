@@ -33,4 +33,7 @@
 #include "sections/05-business-model-summary.typ"
 #include "sections/06-learning-reflection.typ"
 #include "sections/07-conclusion-outlook.typ"
+
+#pagebreak()
+
 #include "sections/08-appendix.typ"

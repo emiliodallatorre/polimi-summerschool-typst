@@ -9,3 +9,4 @@
 - [ ] Review Introduction section for AI-generated phrasing (not yet checked).
 - [ ] Once all sections have real content, enable heading numbering if cross-references (`@label`) are desired instead of plain links.
 - [ ] Interview numbers!
+- [ ] Link "Full question sets are provided in the annex." (Business development process → Validation methods) to the actual question sets once they are added to the Appendix.

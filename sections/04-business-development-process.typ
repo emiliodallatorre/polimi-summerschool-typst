@@ -4,13 +4,37 @@
 
 == Need and niche identification
 
-Having pivoted away from institutional transaction monitoring, our research shifted toward the operational and financial challenges early-stage European FinTech ventures face when navigating frameworks such as MiCA, PSD3, DORA, and EMI or PI licensing. Regulatory compliance is a prerequisite for entering the market, yet achieving license readiness is fragmented and resource-intensive, requiring founders to interpret legislation scattered across EUR-Lex, the European Banking Authority, and the European Securities and Markets Authority, with no single reference point bringing these sources together.
+Having pivoted away from institutional transaction monitoring, our research shifted towards the operational and financial challenges that early-stage European FinTech ventures face when navigating frameworks such as MiCA, PSD3, DORA, and EMI or PI licensing. Regulatory compliance is a prerequisite for entering the market, yet achieving license readiness is fragmented and resource-intensive, requiring founders to interpret legislation scattered across EUR-Lex, the European Banking Authority, and the European Securities and Markets Authority, with no single reference point bringing these sources together.
 
-Through discovery with founders and experts, we identified a severe gap in how early-stage ventures handle regulatory discovery. These startups operate on tight budgets, making external legal fees of €100,000 to €250,000 completely unaffordable, while researching regulations on their own creates severe legal risks. This identified a clear, underserved market gap: an AI-powered diagnostic tool that helps FinTech founders evaluate compliance risks and prepare for legal sign-off.
+Through discovery with founders and experts, we identified a severe gap in how early-stage ventures handle regulatory discovery. These startups operate on tight budgets, making external legal fees of €100,000 to €250,000 completely unaffordable, while researching regulations on their own creates severe legal risks. This identified a clear market gap: an AI-powered diagnostic and projecting tool that helps FinTech founders evaluate compliance risks and prepare for legal sign-off.
 
 == Validation methods
 
-To validate problem-solution fit, willingness to pay, and core assumptions, we conducted 14 exploratory, semi-structured interviews across three stakeholder groups. The first group included ten early-stage FinTech and AI founders. They provided key insights into how small teams handle regulatory research, manage heavy legal costs, and view AI-driven diagnostic tools before hiring lawyers. The second group consisted of banking and finance professionals, providing perspective on institutional compliance workflows and regulatory expectations. The third group were two legal experts, testing how advisors evaluate client submissions and judge the feasibility of AI-generated compliance reports.
+To validate problem-solution fit, willingness to pay, and core assumptions, we conducted 14 exploratory, semi-structured interviews across three stakeholder groups, summarised below.
+
+#figure(
+  table(
+    columns: (auto, auto, 1fr),
+    align: (left, center, left),
+    stroke: 0.6pt + honey-bronze.lighten(30%),
+    fill: (x, y) => if y == 0 {
+      honey-bronze
+    } else if calc.even(y) {
+      honey-bronze.lighten(88%)
+    } else {
+      white
+    },
+    table.header(
+      text(fill: accent.darken(10%), weight: "bold")[Group],
+      text(fill: accent.darken(10%), weight: "bold")[Participants],
+      text(fill: accent.darken(10%), weight: "bold")[Role in validation],
+    ),
+    [FinTech and AI founders], text(fill: accent, weight: "bold")[10], [How small teams handle regulatory research, manage heavy legal costs, and view AI-driven diagnostic tools before hiring lawyers],
+    [Banking and finance professionals], text(fill: accent, weight: "bold")[2], [Perspective on institutional compliance workflows and regulatory expectations],
+    [Legal experts], text(fill: accent, weight: "bold")[2], [How advisors evaluate client submissions and judge the feasibility of AI-generated compliance reports],
+  ),
+  caption: [Stakeholder groups interviewed during the validation process],
+)
 
 Across all groups, questions centered on four themes: current compliance practices, the time and cost involved, the main pain points in the licensing process, and the tools relied upon before engaging costly legal counsel. Keeping the same thematic anchors across groups allowed us to compare responses consistently despite differing professional backgrounds. Full question sets are provided in the annex.
 
@@ -37,9 +61,9 @@ Across our 14 interviewees, the metrics strongly confirmed market demand. The ta
       text(fill: accent.darken(10%), weight: "bold")[Agreement],
     ),
     [Navigating EU financial regulation before licensing is one of the most time-consuming barriers to launching a FinTech venture], text(fill: accent, weight: "bold")[11 / 14],
-    [Relies entirely on external legal consultants during discovery, due to a lack of internal expertise], text(fill: accent, weight: "bold")[12 / 14],
-    [Would actively use an AI platform identifying obligations, flagging gaps, and generating reports for legal review], text(fill: accent, weight: "bold")[11 / 14],
-    [Identifies continuous post-licensing monitoring as a critical secondary capability], text(fill: accent, weight: "bold")[10 / 14],
+    [My startup relies entirely on external legal consultants during discovery, due to a lack of internal expertise], text(fill: accent, weight: "bold")[12 / 14],
+    [My startup would actively use an AI platform identifying obligations, flagging gaps, and generating reports for legal review], text(fill: accent, weight: "bold")[11 / 14],
+    [I identify continuous post-licensing monitoring as a critical secondary capability], text(fill: accent, weight: "bold")[10 / 14],
     [Expressed explicit willingness to pay if the platform demonstrably cut legal billable hours and accelerated licensing timelines], text(fill: accent, weight: "bold")[12 / 14],
   ),
   caption: [Interview agreement rates across the 14 exploratory interviews],

@@ -102,6 +102,29 @@
 }
 
 // ---------------------------------------------------------------------------
+// Appendix module: a self-contained, titled box meant to hold a single piece
+// of supporting evidence (a table, a plot, an image, a transcript excerpt,
+// etc.), so it can be dropped into the appendix and linked to from anywhere
+// in the report via a label placed after the call, e.g.
+// `#appendix-module[Title][Body] <my-label>`, referenced elsewhere with
+// `#link(<my-label>)[see Appendix, "Title"]`.
+#let appendix-module(title, body) = block(
+  width: 100%,
+  breakable: true,
+  stroke: 0.6pt + accent.lighten(40%),
+  radius: 4pt,
+  inset: 12pt,
+  above: 1.4em,
+  below: 1em,
+)[
+  #text(size: 12pt, weight: "bold", fill: accent)[#title]
+  #v(0.3em)
+  #line(length: 100%, stroke: 0.6pt + accent.lighten(50%))
+  #v(0.6em)
+  #body
+]
+
+// ---------------------------------------------------------------------------
 // Title page: full-bleed accent bands top and bottom (as on the reference
 // breezy-report template), with a plain white center panel. The logo is the
 // same purple as the accent color, so it lives on the white center rather
