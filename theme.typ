@@ -41,28 +41,47 @@
 #let body-page-counter = counter("complai-body-page")
 #let appendix-page-counter = counter("complai-appendix-page")
 
+// Both bars double as a tiny "window" onto the cover's own pattern image:
+// the top rule shows a sliver cropped from its top edge, the footer a
+// sliver from its bottom edge, each tinted with the same accent gradient
+// used before (now semi-transparent) so the pattern reads through subtly
+// instead of replacing the brand color outright.
+#let cover-pattern = "assets/pattern.jpg"
+#let bar-tint = 55%
+
 #let page-background(show-number: true, numbering: "1", page-counter: none) = {
   if show-number and page-counter != none [
     #context page-counter.step()
   ]
   context [
-    #place(top + left, rect(width: 100%, height: 0.45cm, fill: gradient.linear(accent, white)))
-    #place(bottom + left, block(
-      width: 100%,
-      height: footer-bar-height,
-      fill: gradient.linear(accent, white),
-      inset: (left: 3cm, right: 2cm),
-    )[
-      #set text(size: 8pt, font: font)
+    #place(top + left, box(width: 100%, height: 0.45cm, clip: true)[
+      #place(top + left, align(top, image(cover-pattern, width: 100%)))
+      #place(top + left, rect(
+        width: 100%,
+        height: 100%,
+        fill: gradient.linear(accent.transparentize(bar-tint), white.transparentize(bar-tint)),
+      ))
+    ])
+    #place(bottom + left, box(width: 100%, height: footer-bar-height, clip: true)[
+      #place(top + left, align(bottom, image(cover-pattern, width: 100%)))
+      #place(top + left, rect(
+        width: 100%,
+        height: 100%,
+        fill: gradient.linear(accent.transparentize(bar-tint), white.transparentize(bar-tint)),
+      ))
+      #place(top + left, rect(width: 100%, height: 100%, fill: black.transparentize(72%)))
       #align(horizon)[
-        #grid(
-          columns: (1fr, 1fr),
-          align: (horizon + left, horizon + right),
-          [#text(fill: white)[*ComplAI*]],
-          [#if show-number and page-counter != none [
-            #text(fill: accent.darken(20%))[#page-counter.display(numbering + " / " + numbering, both: true)]
-          ]],
-        )
+        #pad(left: 3cm, right: 2cm)[
+          #set text(size: 8pt, font: font)
+          #grid(
+            columns: (1fr, 1fr),
+            align: (horizon + left, horizon + right),
+            [#text(fill: white)[*ComplAI*]],
+            [#if show-number and page-counter != none [
+              #text(fill: white)[#page-counter.display(numbering + " / " + numbering, both: true)]
+            ]],
+          )
+        ]
       ]
     ])
   ]
