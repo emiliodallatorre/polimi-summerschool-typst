@@ -36,13 +36,13 @@ Across our 14 interviewees, the metrics strongly confirmed market demand. The ta
       text(fill: accent.darken(10%), weight: "bold")[Statement],
       text(fill: accent.darken(10%), weight: "bold")[Agreement],
     ),
-    [Navigating EU financial regulation before licensing is one of the most time-consuming barriers to launching a FinTech venture.], text(fill: accent, weight: "bold")[11 / 14],
-    [Relies entirely on external legal consultants during discovery, due to a lack of internal expertise.], text(fill: accent, weight: "bold")[12 / 14],
-    [Would actively use an AI platform identifying obligations, flagging gaps, and generating reports for legal review.], text(fill: accent, weight: "bold")[11 / 14],
-    [Identifies continuous post-licensing monitoring as a critical secondary capability.], text(fill: accent, weight: "bold")[10 / 14],
-    [Expressed explicit willingness to pay if the platform demonstrably cut legal billable hours and accelerated licensing timelines.], text(fill: accent, weight: "bold")[12 / 14],
+    [Navigating EU financial regulation before licensing is one of the most time-consuming barriers to launching a FinTech venture], text(fill: accent, weight: "bold")[11 / 14],
+    [Relies entirely on external legal consultants during discovery, due to a lack of internal expertise], text(fill: accent, weight: "bold")[12 / 14],
+    [Would actively use an AI platform identifying obligations, flagging gaps, and generating reports for legal review], text(fill: accent, weight: "bold")[11 / 14],
+    [Identifies continuous post-licensing monitoring as a critical secondary capability], text(fill: accent, weight: "bold")[10 / 14],
+    [Expressed explicit willingness to pay if the platform demonstrably cut legal billable hours and accelerated licensing timelines], text(fill: accent, weight: "bold")[12 / 14],
   ),
-  caption: [Interview agreement rates across the 14 exploratory interviews.],
+  caption: [Interview agreement rates across the 14 exploratory interviews],
 )
 
 Together, these figures confirmed the problem was a consistent pattern, not an isolated experience.
