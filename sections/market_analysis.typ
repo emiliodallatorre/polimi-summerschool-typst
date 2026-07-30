@@ -26,7 +26,7 @@
       #box(width: 28%, height: 1.7cm, fill: accent.lighten(58%), radius: 3pt)[
         #align(center + horizon)[
           #text(fill: accent.darken(30%), weight: "bold", size: 12pt)[SOM] #linebreak()
-          #text(fill: accent.darken(30%), size: 10pt)[€1.65M / year]
+          #text(fill: accent.darken(30%), size: 10pt)[€33M / year]
         ]
       ]
     ],

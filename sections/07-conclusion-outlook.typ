@@ -2,7 +2,7 @@
 
 ComplAI addresses a clear market need by helping European FinTech companies reduce the time, costs, and complexity of regulatory compliance across the many European frameworks. Its AI-powered "pre-lawyer" approach supports regulatory assessment, continuous monitoring, and document generation while keeping qualified legal professionals involved in final validation.
 
-The business opportunity is substantial: ComplAI targets a €42 billion TAM, a €110 million SAM, and an initial €1.65 million SOM in Germany and Italy. Revenue will come from an accessible SaaS copilot, higher-value regulatory monitoring subscriptions, and a pay-per-use document drafting service.
+The business opportunity is substantial: ComplAI targets a €42 billion TAM, a €110 million SAM, and an initial €33 million SOM in Germany and Italy. Revenue will come from an accessible SaaS copilot, higher-value regulatory monitoring subscriptions, and a pay-per-use document drafting service.
 
 The next stage will focus on converting the current concept into a validated minimum viable product. Priority actions include developing the regulatory assessment and retrieval system from official sources, testing its outputs with qualified legal professionals, and running pilot programmes with a small number of FinTech startups. Progress should be evaluated through outcome-based indicators such as the Issue Remediation Rate, the Legal Verification Acceptance Rate, and the First-Time Submission Pass Rate (see #link(<appx-kpi>)[Appendix] for the full KPI definitions and targets).
 
