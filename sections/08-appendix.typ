@@ -1,6 +1,6 @@
 = Appendix
 
-#import "../theme.typ": appendix-module, sky-reflection, accent
+#import "../theme.typ": appendix-module, sky-reflection, accent, honey-bronze, classic-crimson
 
 This appendix collects the supporting evidence referenced throughout the report: interview transcripts, question sets, market data, plots, and other material too detailed for the main body. Each item below is a self-contained module with its own label, so it can be linked to directly from the relevant paragraph in the report rather than making the reader search for it.
 
@@ -603,3 +603,145 @@ where $r$ is the obtainable share of that combined market.
 Our investable SOM target for the next one to three years is €1.65M ARR (base case), representing a highly achievable 5% capture of the strictly defined German and Italian fintech startup markets.
 
 ] <appx-market>
+#appendix-module[Regulations & Risks][
+// --- Helper Components ---
+#let risk-card(title, body) = block(
+  width: 100%,
+  fill: rgb("#FAFAFA"),
+  stroke: (left: 3pt + classic-crimson),
+  inset: (x: 12pt, y: 8pt),
+  radius: (right: 4pt),
+  margin: (bottom: 0.8em),
+)[
+  #text(weight: "bold", fill: classic-crimson, size: 10.5pt)[#title]
+  #v(0.2em)
+  #text(size: 10pt, fill: rgb("#2A2A2A"))[#body]
+]
+
+#let framework-badge(code) = box(
+  fill: accent.lighten(88%),
+  inset: (x: 6pt, y: 3pt),
+  radius: 3pt,
+  stroke: 0.5pt + accent.lighten(50%),
+)[#text(size: 9pt, weight: "bold", fill: accent)[#code]]
+#let risk-card(title, body) = block(
+  width: 100%,
+  fill: rgb("#FAFAFA"),
+  stroke: (left: 3pt + classic-crimson),
+  inset: (x: 12pt, y: 8pt),
+  radius: (right: 4pt),
+  below: 0.8em,
+)[
+  #text(weight: "bold", fill: classic-crimson, size: 10.5pt)[#title]
+  #v(0.2em)
+  #text(size: 10pt, fill: rgb("#2A2A2A"))[#body]
+]
+
+#let framework-badge(code) = box(
+  fill: accent.lighten(88%),
+  inset: (x: 6pt, y: 3pt),
+  radius: 3pt,
+  stroke: 0.5pt + accent.lighten(50%),
+)[#text(size: 9pt, weight: "bold", fill: accent)[#code]]
+
+
+
+ComplAI operates in a highly regulated environment because it provides AI-powered compliance support to European startups, initially focusing on fintech companies. Its customers may be subject to several overlapping EU frameworks:
+
+#v(0.4em)
+#align(center)[
+  #stack(
+    dir: ltr,
+    spacing: 8pt,
+    framework-badge("GDPR"),
+    framework-badge("DORA"),
+    framework-badge("NIS2"),
+    framework-badge("PSD2"),
+    framework-badge("MiCA"),
+    framework-badge("DSA"),
+    framework-badge("DMA"),
+  )
+]
+#v(0.6em)
+
+== Regulatory Considerations
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1.2cm,
+  row-gutter: 1cm,
+  [
+    === Legal-service positioning
+    ComplAI should be positioned as a compliance-support platform rather than a replacement for qualified legal advice. Its answers, assessments and generated documents could influence important business, licensing and market-entry decisions, so the limits of the service must be communicated clearly.
+  ],
+  [
+    === Data protection and confidentiality
+    The platform plans to process business models, legal documents and information about customers’ operations. This creates important GDPR obligations concerning lawful processing, data minimisation, confidentiality, retention, access control and security.
+  ],
+  [
+    === AI transparency and accountability
+    ComplAI should explain which regulatory sources support each answer and maintain records of how recommendations are generated. The deck states that the system will retrieve relevant regulatory passages before combining them with the user’s information, which can support more transparent and grounded outputs.
+  ],
+  [
+    === Regulatory updates
+    The service depends on access to current official EU texts through a continuously refreshed RAG system. Because regulations and supervisory guidance can change, outdated sources could lead to incorrect compliance recommendations.
+  ]
+)
+
+#v(0.5em)
+=== National legal differences
+The document-generation service is intended to support country-specific filing and regulatory-submission formats. ComplAI must therefore account for differences between EU-level legislation and national laws, procedures and templates.
+
+#v(1em)
+== Main Risks
+
+#risk-card("Incorrect or incomplete outputs", [
+  The AI may misunderstand a regulation, overlook an exception or fail to consider relevant context. This could lead customers to make non-compliant product or operational decisions.
+])
+
+#risk-card("Excessive user reliance", [
+  Customers may treat the platform’s output as definitive legal advice. This creates liability and reputational risk, especially when decisions concern licences, regulatory filings or market access.
+])
+
+#risk-card("Outdated information", [
+  If the regulatory database is not updated quickly enough, the system may provide guidance based on obsolete laws, guidance or implementation dates.
+])
+
+#risk-card("Privacy and cybersecurity risk", [
+  ComplAI may store confidential legal, financial and operational information. A data breach, unauthorised access or misuse of customer documents could result in regulatory penalties and loss of trust.
+])
+
+#risk-card("Document-generation risk", [
+  Automatically generated legal or compliance documents may contain errors or fail to satisfy filing requirements.
+])
+
+#risk-card("Jurisdictional complexity", [
+  A recommendation that is valid in one EU Member State may not be fully applicable in another because of national implementation, supervisory practice or local legal requirements.
+])
+
+#risk-card("Liability and reputational damage", [
+  If a customer suffers a fine, licensing delay or blocked market access after relying on ComplAI, the startup could face disputes, compensation claims and reputational harm. These are precisely the consequences of non-compliance highlighted in the deck.
+])
+
+#v(1em)
+== Risk-Mitigation Measures
+
+ComplAI has to:
+
+#block(
+  width: 100%,
+  fill: accent.lighten(94%),
+  stroke: (left: 4pt + accent),
+  inset: (x: 14pt, y: 12pt),
+  radius: (right: 4pt),
+)[
+  #set list(marker: text(fill: accent)[✓])
+  - use only official and regularly updated regulatory sources;
+  - provide source citations and explain the basis of each recommendation;
+  - include clear disclaimers stating that the platform does not replace professional legal advice;
+  - require human legal review for high-risk outputs and regulatory submissions;
+  - implement strong encryption, access controls and data-retention policies;
+  - test the system regularly for accuracy, hallucinations and missing regulatory context;
+  - maintain audit logs and version histories for regulations and generated outputs.
+]
+]<appx-regulations>
