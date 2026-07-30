@@ -39,7 +39,7 @@ We deliberately exclude high-friction channels such as door-to-door sales, manua
 
 == Customer relationships
 
-We combine automated tools with personal support to make the experience simple and reliable. Guided onboarding helps founders set up their assessments correctly, while technical support is available for everyday questions. Regular email updates keep users informed about regulatory changes, and the customer community offers a space to share practical advice and learn from other founders' experiences.
+We combine automated tools with personal support to make the experience simple and reliable. Guided onboarding helps founders set up their assessments correctly, while technical support is available for everyday questions. Regular email updates keep users informed about regulatory changes.
 
 // come revenue streams metterei una tabella esplicativa
 

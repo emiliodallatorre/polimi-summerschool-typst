@@ -4,7 +4,7 @@
 
 Coming from a strongly technical background, our first instinct as a team was to reach for the most sophisticated tool available rather than to start from the problem itself. We initially set out to detect financial crime on blockchain networks using Graph Neural Networks, drawn by the modelling challenge more than by a clearly scoped customer need.
 
-Market research and industry signals did confirm that transaction monitoring is a real and pressing issue. It was our validation interview with Niklas Ego from the Deutsche Bundesbank that changed our direction: he pointed out that the sheer volume of daily cryptocurrency transactions requires computing infrastructure on a multi-million, sometimes multi-billion euro scale, well outside what an early-stage startup could ever build or operate. A market pain point, however real, is not the same thing as a startup opportunity we could actually pursue with our resources.
+Market research and industry signals did confirm that transaction monitoring is a real and pressing issue. It was our validation interview with Niklas Ego from the Deutsche Bundesbank that changed our direction: he pointed out that the sheer volume of daily cryptocurrency transactions requires computing infrastructure on a multi-million, sometimes multi-billion euro scale, well outside what an early-stage startup could ever build or operate. A market pain point is not the same thing as a startup opportunity we could actually pursue with our resources.
 
 == What we underestimated
 
