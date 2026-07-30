@@ -38,4 +38,10 @@
 
  The TAM is based on the total number of EU SME, factoring in their total annual compliance spend. The SAM narrows this down specifically to EU FinTech startups and small FinTech enterprises, while the SOM targets the German and Italian FinTech markets.
 
- (see #link(<appx-market>)[Appendix] for full explanation of the TAM/SAM/SOM methodology and assumptions).
+== Go-to-market strategy
+
+ComplAI will enter the market with Tier 1, a simple and affordable chatbot that is less complex and less costly to develop and use. This gives founders an easy way to start using the platform without making a major commitment. Shortly after, we will introduce Tier 2, which adds continuous regulatory monitoring. After Year 0, ComplAI will also launch on-demand document generation, allowing users to prepare structured materials for legal review.
+
+We will initially focus on Italy and Germany. Italy is a natural starting point because we already have strong connections with local founders, while Germany is a key hub for the European FinTech startup ecosystem. To reach these users, ComplAI will partner with startup accelerators and incubators to build early traction and awareness. In parallel, law firms will serve as validation and referral partners, benefiting from better-prepared clients while introducing founders to ComplAI as part of their advisory process.
+
+ #footnote[See #link(<appx-market>)[Appendix] for a full explanation of the TAM/SAM/SOM methodology and assumptions.]
