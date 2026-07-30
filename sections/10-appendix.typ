@@ -137,7 +137,7 @@ This appendix collects the supporting evidence referenced throughout the report:
       *Outcome:* validation ongoing at the time of writing.],
   )
 ] <appx-test-cards>
-
+#pagebreak()
 #appendix-module[Market sizing estimate][
   We size the 2025 EU market for an AI regulatory-compliance assistant targeting startups and SMEs with a bottom-up model, then anchor our planning on its base scenario. The model starts from the EU SME universe, narrows it to companies with recurring compliance intensity (regulated sectors, cross-border operations, and compliance-sensitive digital firms), and applies an annual compliance spend per company across three non-overlapping buckets: external legal counsel, internal compliance labor, and compliance software/regtech:
 
@@ -250,7 +250,7 @@ Our investable SOM target for the next one to three years is €33.0M ARR (base 
   #v(3pt)
   #bmc-bullets(items-b)
 ]
-
+#pagebreak()
 #appendix-module[Business model canvas][
   #rounded-table(stroke: card-stroke, block(breakable: false)[
     #table(
@@ -393,6 +393,7 @@ Our investable SOM target for the next one to three years is €33.0M ARR (base 
   ))
 ] <appx-value-proposition-canvas>
 
+#pagebreak()
 #appendix-module[Key performance indicators][
   To measure how effectively ComplAI solves the core compliance bottleneck for early-stage FinTechs, the KPI framework prioritises problem-resolution efficacy over simple usage volume.
 
@@ -465,7 +466,7 @@ Our investable SOM target for the next one to three years is €33.0M ARR (base 
 #let risk-card(title, body) = info-card(title, body)
 
 #let framework-badge(code) = pill-badge(code)
-
+#pagebreak()
 #appendix-module[Regulation and risks][
   ComplAI operates in a highly regulated environment, since it provides AI-powered compliance support to European startups, initially FinTech companies. Our customers may fall under several overlapping EU frameworks, which our regulatory coverage has to track:
 
