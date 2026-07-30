@@ -403,7 +403,7 @@ Our investable SOM target for the next one to three years is €33.0M ARR (base 
     gutter: 8pt,
     info-card(
       "Regulatory Issue Remediation Rate",
-      [Tracks the percentage of identified regulatory gaps that founding teams successfully resolve using ComplAI's diagnostic recommendations. A high resolution rate confirms that the output is actionable and directly eliminates compliance risks in product logic, in advance with respect to market launch.],
+      [Tracks the percentage of identified regulatory gaps that founding teams resolve using ComplAI's diagnostic recommendations. A high resolution rate confirms that the output is actionable and directly eliminates compliance risks in product logic, in advance with respect to market launch.],
     ),
     info-card(
       "Legal Verification Acceptance Rate",
