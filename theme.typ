@@ -47,7 +47,7 @@
 // used before (now semi-transparent) so the pattern reads through subtly
 // instead of replacing the brand color outright.
 #let cover-pattern = "assets/pattern.jpg"
-#let bar-tint = 55%
+#let bar-tint = 80%
 
 #let page-background(show-number: true, numbering: "1", page-counter: none) = {
   if show-number and page-counter != none [
@@ -69,7 +69,6 @@
         height: 100%,
         fill: gradient.linear(accent.transparentize(bar-tint), white.transparentize(bar-tint)),
       ))
-      #place(top + left, rect(width: 100%, height: 100%, fill: black.transparentize(72%)))
       #align(horizon)[
         #pad(left: 3cm, right: 2cm)[
           #set text(size: 8pt, font: font)
@@ -198,39 +197,25 @@
       rect(width: 100%, height: 100%, fill: gradient.linear(vintage-grape, vintage-grape.darken(18%), angle: 25deg))
     })
 
-    // Brand duotone wash over the backdrop: ties whatever colors the
-    // pattern brings in back to the ComplAI palette, and gives every text
-    // element on the page a consistent minimum contrast to sit on.
-    #if pattern != none [
-      #place(top + left, rect(
-        width: 100%,
-        height: 100%,
-        fill: gradient.linear(
-          vintage-grape.transparentize(35%),
-          vintage-grape.darken(25%).transparentize(45%),
-          angle: 25deg,
-        ),
-      ))
-    ]
-
-    // Soft dark scrims at the top and bottom edges only (not the whole
-    // page), just enough to guarantee the wordmark and footer text stay
-    // legible while leaving the middle of the pattern uncovered.
+    // Localized dark patches only behind the wordmark and footer text zones
+    // (not the whole page), so the pattern reads at full color everywhere
+    // else and only these specific text areas get the contrast they need.
     #place(top + left, rect(
       width: 100%,
-      height: 8cm,
-      fill: gradient.linear(black.transparentize(35%), black.transparentize(100%), angle: 90deg),
+      height: 4cm,
+      fill: gradient.linear(black.transparentize(55%), black.transparentize(100%), angle: 90deg),
     ))
     #place(bottom + left, rect(
       width: 100%,
-      height: 7cm,
-      fill: gradient.linear(black.transparentize(100%), black.transparentize(45%), angle: 90deg),
+      height: 3.5cm,
+      fill: gradient.linear(black.transparentize(100%), black.transparentize(60%), angle: 90deg),
     ))
 
-    // A thin accent-gradient hairline near the top, echoing the full
-    // ComplAI palette, as a small signature detail independent of the
-    // pattern's own colors.
-    #place(top + left, dy: 3.6cm, rect(
+    // A thin accent-gradient hairline, echoing the full ComplAI palette, as
+    // a small signature detail independent of the pattern's own colors.
+    // Sits above the "Compliance, simplified" eyebrow line, not crossing
+    // through the ComplAI wordmark itself.
+    #place(top + left, dy: 1.2cm, rect(
       width: 100%,
       height: 0.12cm,
       fill: gradient.linear(sky-reflection, honey-bronze, classic-crimson, vintage-grape),
@@ -247,36 +232,35 @@
       #text(size: 34pt, weight: "bold", fill: white)[ComplAI]
     ])
 
-    // Soft radial vignette behind the middle content: darkens just enough
-    // for the white logo/title/subtitle to read clearly, fading smoothly
-    // into the pattern on every side instead of a hard-edged box.
-    #place(center + horizon, circle(
-      radius: 10cm,
-      fill: gradient.radial(black.transparentize(35%), black.transparentize(100%)),
+    // Localized dark patch behind the title block only, so this specific
+    // area stays legible while the rest of the pattern (top wordmark strip
+    // aside, and everywhere below/around this box) is left un-darkened.
+    #place(left + horizon, rect(
+      width: 75%,
+      height: 12cm,
+      fill: gradient.linear(black.transparentize(45%), black.transparentize(100%), angle: 0deg),
     ))
 
-    // Center content: white logo, context line, title and subtitle, sitting
-    // directly on the pattern (via the vignette above) rather than inside a
-    // solid card, so the texture reads through everywhere on the page.
-    #place(center + horizon, block(
-      width: 13.8cm,
-      inset: (x: 1.6cm, y: 1.5cm),
+    // Left-aligned content: white logo, context line, title and subtitle,
+    // sitting directly on the pattern (via the patch above) rather than
+    // inside a centered card, echoing the left-aligned wordmark/footer.
+    #place(left + horizon, block(
+      width: 100%,
+      inset: (x: 3cm),
     )[
       #set text(font: font)
-      #align(center)[
-        #box(width: 3cm, image("assets/logo-white.png"))
-        #v(0.8cm)
-        #if context-line != none [
-          #text(size: 10pt, tracking: 1pt, fill: white.transparentize(15%))[#context-line]
-          #v(0.4cm)
-        ]
-        #line(length: 30%, stroke: 1.5pt + white.transparentize(30%))
-        #v(0.7cm)
-        #text(size: 26pt, weight: "bold", fill: white)[#title]
-        #if subtitle != none [
-          #v(0.35cm)
-          #text(size: 12pt, fill: white.transparentize(15%))[#subtitle]
-        ]
+      #box(width: 3cm, image("assets/logo-white.png"))
+      #v(0.3cm)
+      #if context-line != none [
+        #text(size: 10pt, tracking: 1pt, fill: white.transparentize(15%))[#context-line]
+        #v(0.2cm)
+      ]
+      #line(length: 20%, stroke: 1.5pt + white.transparentize(30%))
+      #v(0.3cm)
+      #text(size: 40pt, weight: "bold", fill: white)[#title]
+      #if subtitle != none [
+        #v(0.05cm)
+        #text(size: 13pt, fill: white.transparentize(15%))[#subtitle]
       ]
     ])
 
