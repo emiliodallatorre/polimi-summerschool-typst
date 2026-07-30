@@ -16,6 +16,6 @@ Work was split up based on who was best suited for what, but we tried not to let
 
 == Individual contributions
 
-Roles were never assigned on paper, but looking back on the process that built this report and the subsequent pitch, each of us ended up covering a fairly consistent part of the work.
+We defined our role based on our personalities discussed during the activity orgnized by Prof. Dr. Thomas Funke.
 
 Sara acted as the Boss: when we got stuck arguing in circles, she was the one who made the call and moved us forward. Elisa was our Organiser, chasing deadlines and making sure meetings actually happened and led somewhere. Emilio was the Maker, the one who built things rather than just discussed them, from the service structure to the landing page. Matteo was our Consultant, mostly by disagreeing with us: he pushed back on assumptions and flagged risks we would have otherwise missed. Alessia was the Artist, responsible for how ComplAI looks, and also the one most likely to suggest we try something weirder. Arianna was the Helper and Enthusiast: she provided essential support where it was needed and kept the group's mood up when things got stressful.
