@@ -1,6 +1,6 @@
 = Appendix
 
-#import "../theme.typ": appendix-module, honey-bronze, accent, sky-reflection
+#import "../theme.typ": appendix-module, sky-reflection, accent
 
 This appendix collects the supporting evidence referenced throughout the report: interview transcripts, question sets, market data, plots, and other material too detailed for the main body. Each item below is a self-contained module with its own label, so it can be linked to directly from the relevant paragraph in the report rather than making the reader search for it.
 
@@ -204,7 +204,7 @@ Interview transcripts were obtained by recording each conversation and transcrib
   ]
 }
 
-#let bmc-cell(title, fill: honey-bronze.lighten(88%)) = block(
+#let bmc-cell(title, fill: sky-reflection.lighten(88%)) = block(
   width: 100%,
   height: 100%,
   fill: fill,
@@ -218,7 +218,7 @@ Interview transcripts were obtained by recording each conversation and transcrib
 // items underneath the title, for the value proposition canvas's six boxes
 // (which need actual content, unlike the business model canvas's simpler
 // single-title placeholders reused elsewhere).
-#let bmc-cell-filled(title, items, fill: honey-bronze.lighten(88%)) = block(
+#let bmc-cell-filled(title, items, fill: sky-reflection.lighten(88%)) = block(
   width: 100%,
   height: 100%,
   fill: fill,
@@ -259,7 +259,7 @@ Interview transcripts were obtained by recording each conversation and transcrib
       align: left + top,
       stroke: 0.6pt + accent.lighten(40%),
       inset: 6pt,
-      fill: honey-bronze.lighten(88%),
+      fill: sky-reflection.lighten(88%),
       bmc-cell-content(
         "Key partners",
         (
@@ -410,7 +410,7 @@ Interview transcripts were obtained by recording each conversation and transcrib
 #let kpi-box(title, body) = block(
   width: 100%,
   breakable: false,
-  fill: honey-bronze.lighten(88%),
+  fill: sky-reflection.lighten(88%),
   stroke: 0.6pt + accent.lighten(40%),
   radius: 4pt,
   inset: 10pt,
@@ -441,3 +441,51 @@ Interview transcripts were obtained by recording each conversation and transcrib
     ),
   )
 ] <appx-kpi>
+
+#appendix-module[Competitor analysis][
+  The European RegTech market for early-stage FinTech compliance remains fragmented across four competitive groups, none of which delivers a complete solution for founders navigating product-level regulatory risk.
+
+  Traditional legal providers (law firms and consultancies) dominate through authority and institutional trust, but they operate via slow, manual billable hours costing €300 to €600 per hour and €50,000 to €250,000 or more per licensing application. This cost structure prices out early-stage teams and contributes to the 80 to 85 percent failure or withdrawal rate seen in initial license applications, many of which fail due to poor submission quality rather than substantive risk.
+
+  Direct compliance competitors (Kalipso.ai, ÀLIA) represent the closest conceptual rivals, but each preserves a core limitation. Kalipso.ai functions as a static document tool that tracks policy text updates rather than actively checking product logic. ÀLIA pairs technology with mandatory human legal sign-off, which keeps the expensive billable-hour bottleneck intact rather than removing it. Neither platform evaluates how a product's engineering decisions interact with regulatory obligations before deployment.
+
+  Legal AI for lawyers (Harvey, Legora, Noxtua) offer genuinely powerful LLM tooling for research and contract drafting, but they are built for legal professionals working inside law firms, not for founders or engineering teams. Their workflows assume a lawyer as the end user, leaving a structural gap between legal research capability and product development cycles.
+
+  Horizontal B2B security SaaS (Vanta, Drata, Naq Cyber) succeed at automating IT control frameworks such as SOC 2 and ISO 27001, but they lack any financial regulatory depth. They cannot evaluate tokenomics design, MiCA thresholds, or PSD3 licensing requirements, since their architecture was built for generic infosec compliance rather than sector-specific financial law.
+
+  #v(0.4em)
+  #[
+    #set text(size: 8pt)
+    #figure(
+      table(
+        columns: (1.6fr, auto, auto, auto, auto, auto),
+        align: (left, center, center, center, center, center),
+        stroke: 0.6pt + sky-reflection.lighten(30%),
+        fill: (x, y) => if y == 0 {
+          sky-reflection
+        } else if calc.even(y) {
+          sky-reflection.lighten(88%)
+        } else {
+          white
+        },
+        table.header(
+          text(fill: white, weight: "bold")[Capability],
+          text(fill: white, weight: "bold")[Traditional law firms],
+          text(fill: white, weight: "bold")[Horizontal SaaS],
+          text(fill: white, weight: "bold")[Lawyer AI assistants],
+          text(fill: white, weight: "bold")[Direct RegTech tools],
+          text(fill: white, weight: "bold")[ComplAI],
+        ),
+        [FinTech regulatory depth (MiCA / DORA)], [✓], [✗], [○], [○], text(fill: accent, weight: "bold")[✓],
+        [Grounded EU vector RAG engine], [✗], [✗], [○], [○], text(fill: accent, weight: "bold")[✓],
+        [Product engineering logic diagnostic], [✗], [✗], [✗], [✗], text(fill: accent, weight: "bold")[✓],
+        [Pre-lawyer "red/green" risk triage], [✗], [✗], [✗], [○], text(fill: accent, weight: "bold")[✓],
+        [Startup-accessible self-serve pricing], [✗], [✓], [✗], [✓], text(fill: accent, weight: "bold")[✓],
+        [Jurisdiction document compilation], [○], [✗], [○], [✗], text(fill: accent, weight: "bold")[✓],
+      ),
+      caption: [Competitive comparison by market segment (✓ full, ○ partial, ✗ none)],
+    )
+  ]
+
+  ComplAI is positioned to occupy the space these four groups leave open: a "pre-lawyer" diagnostic layer that evaluates financial product logic against EU regulation directly, before code ships and before a lawyer is retained.
+] <appx-competitor-analysis>

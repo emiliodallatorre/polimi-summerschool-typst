@@ -1,6 +1,6 @@
 = Business model summary
 
-#import "../theme.typ": accent, honey-bronze
+#import "../theme.typ": accent, sky-reflection
 
 Hereafter, we provide a shallow introduction to our business model, through the formalization of the Business Model Canvas. The necessary assumptions, as well as the conclusions that led to the definition of what is in it, are motivated in the #link(<appx-business-model-canvas>)[Appendix].
 
@@ -57,22 +57,22 @@ Applying this formula across low, base, and high scenarios yields the following 
     table(
       columns: (1fr, auto, auto, auto, auto, auto, auto),
       align: (left, center, center, center, center, center, center),
-      stroke: 0.6pt + honey-bronze.lighten(30%),
+      stroke: 0.6pt + sky-reflection.lighten(30%),
       fill: (x, y) => if y == 0 {
-        honey-bronze
+        sky-reflection
       } else if calc.even(y) {
-        honey-bronze.lighten(88%)
+        sky-reflection.lighten(88%)
       } else {
         white
       },
       table.header(
-        text(fill: accent.darken(10%), weight: "bold")[Scenario],
-        text(fill: accent.darken(10%), weight: "bold")[Eligible companies],
-        text(fill: accent.darken(10%), weight: "bold")[Legal (€)],
-        text(fill: accent.darken(10%), weight: "bold")[Internal labor (€)],
-        text(fill: accent.darken(10%), weight: "bold")[Software (€)],
-        text(fill: accent.darken(10%), weight: "bold")[Total spend/company (€)],
-        text(fill: accent.darken(10%), weight: "bold")[TAM (€Bn/year)],
+        text(fill: white, weight: "bold")[Scenario],
+        text(fill: white, weight: "bold")[Eligible companies],
+        text(fill: white, weight: "bold")[Legal (€)],
+        text(fill: white, weight: "bold")[Internal labor (€)],
+        text(fill: white, weight: "bold")[Software (€)],
+        text(fill: white, weight: "bold")[Total spend/company (€)],
+        text(fill: white, weight: "bold")[TAM (€Bn/year)],
       ),
       [Low], [6.0M], [1,000], [1,500], [800], [3,300], text(fill: accent, weight: "bold")[19.8],
       [Base], [8.0M], [1,500], [2,500], [1,250], [5,250], text(fill: accent, weight: "bold")[42.0],
@@ -96,19 +96,19 @@ $ "SAM" = N_"EU fintech firms" times (C_"legal" + C_"internal labor" + C_"softwa
     table(
       columns: (1fr, auto, auto, auto),
       align: (left, center, center, center),
-      stroke: 0.6pt + honey-bronze.lighten(30%),
+      stroke: 0.6pt + sky-reflection.lighten(30%),
       fill: (x, y) => if y == 0 {
-        honey-bronze
+        sky-reflection
       } else if calc.even(y) {
-        honey-bronze.lighten(88%)
+        sky-reflection.lighten(88%)
       } else {
         white
       },
       table.header(
-        text(fill: accent.darken(10%), weight: "bold")[Scenario],
-        text(fill: accent.darken(10%), weight: "bold")[In-scope fintech firms],
-        text(fill: accent.darken(10%), weight: "bold")[Spend per firm/year],
-        text(fill: accent.darken(10%), weight: "bold")[SAM],
+        text(fill: white, weight: "bold")[Scenario],
+        text(fill: white, weight: "bold")[In-scope fintech firms],
+        text(fill: white, weight: "bold")[Spend per firm/year],
+        text(fill: white, weight: "bold")[SAM],
       ),
       [Low], [10,000], [€6,500], text(fill: accent, weight: "bold")[€65.0M],
       [Base], [10,000], [€11,000], text(fill: accent, weight: "bold")[€110.0M],
@@ -132,19 +132,19 @@ where $r$ is the obtainable share of that combined market.
     table(
       columns: (1fr, auto, auto, auto),
       align: (left, center, center, center),
-      stroke: 0.6pt + honey-bronze.lighten(30%),
+      stroke: 0.6pt + sky-reflection.lighten(30%),
       fill: (x, y) => if y == 0 {
-        honey-bronze
+        sky-reflection
       } else if calc.even(y) {
-        honey-bronze.lighten(88%)
+        sky-reflection.lighten(88%)
       } else {
         white
       },
       table.header(
-        text(fill: accent.darken(10%), weight: "bold")[Scenario],
-        text(fill: accent.darken(10%), weight: "bold")[DE + IT SAM (30% of EU SAM, €M)],
-        text(fill: accent.darken(10%), weight: "bold")[Obtainable share ($r$)],
-        text(fill: accent.darken(10%), weight: "bold")[SOM (€M/year)],
+        text(fill: white, weight: "bold")[Scenario],
+        text(fill: white, weight: "bold")[DE + IT SAM (30% of EU SAM, €M)],
+        text(fill: white, weight: "bold")[Obtainable share ($r$)],
+        text(fill: white, weight: "bold")[SOM (€M/year)],
       ),
       [Low], [€19.5M], [2%], text(fill: accent, weight: "bold")[€0.39M],
       [Base], [€33.0M], [5%], text(fill: accent, weight: "bold")[€1.65M],
@@ -158,7 +158,7 @@ Our investable SOM target for the next one to three years is €1.65M ARR (base 
 
 == Value proposition
 
-ComplAI helps early-stage start-ups understand what they need to do to become compliant, without having to rely on expensive legal support from day one. It guides them through the initial assessment, highlights possible compliance gaps, and prepares clear documents that lawyers can review and validate. In this way, start-ups can reduce legal costs, move faster through licensing, and make their legal and compliance work more organised and efficient.
+ComplAI helps early-stage start-ups understand what they need to do to become compliant, without having to rely on expensive legal support from day one. It guides them through the initial assessment, highlights possible compliance gaps, and prepares clear documents that lawyers can review and validate. In this way, start-ups can reduce legal costs, move faster through licensing, and make their legal and compliance work more organised and efficient. No existing player combines this depth of FinTech regulatory coverage with a pre-lawyer, product-level diagnostic (see #link(<appx-competitor-analysis>)[Appendix] for the full competitor analysis).
 
 == Channels
 
@@ -200,21 +200,21 @@ Building on the tiered pricing above and the SOM estimated earlier, we project r
     table(
       columns: (1.4fr, auto, auto, auto, auto, auto),
       align: (left, center, center, center, center, center),
-      stroke: 0.6pt + honey-bronze.lighten(30%),
+      stroke: 0.6pt + sky-reflection.lighten(30%),
       fill: (x, y) => if y == 0 {
-        honey-bronze
+        sky-reflection
       } else if calc.even(y) {
-        honey-bronze.lighten(88%)
+        sky-reflection.lighten(88%)
       } else {
         white
       },
       table.header(
-        text(fill: accent.darken(10%), weight: "bold")[Segment],
-        text(fill: accent.darken(10%), weight: "bold")[Year 1],
-        text(fill: accent.darken(10%), weight: "bold")[Year 2],
-        text(fill: accent.darken(10%), weight: "bold")[Year 3],
-        text(fill: accent.darken(10%), weight: "bold")[Year 4],
-        text(fill: accent.darken(10%), weight: "bold")[Year 5],
+        text(fill: white, weight: "bold")[Segment],
+        text(fill: white, weight: "bold")[Year 1],
+        text(fill: white, weight: "bold")[Year 2],
+        text(fill: white, weight: "bold")[Year 3],
+        text(fill: white, weight: "bold")[Year 4],
+        text(fill: white, weight: "bold")[Year 5],
       ),
       [Tier 1 (wedge)], [30], [100], [250], [500], [1,000],
       [Tier 2 (core)], [2], [15], [40], [85], [180],
@@ -230,21 +230,21 @@ Building on the tiered pricing above and the SOM estimated earlier, we project r
     table(
       columns: (1.4fr, auto, auto, auto, auto, auto),
       align: (left, center, center, center, center, center),
-      stroke: 0.6pt + honey-bronze.lighten(30%),
+      stroke: 0.6pt + sky-reflection.lighten(30%),
       fill: (x, y) => if y == 0 {
-        honey-bronze
+        sky-reflection
       } else if calc.even(y) {
-        honey-bronze.lighten(88%)
+        sky-reflection.lighten(88%)
       } else {
         white
       },
       table.header(
-        text(fill: accent.darken(10%), weight: "bold")[Revenue stream],
-        text(fill: accent.darken(10%), weight: "bold")[Year 1],
-        text(fill: accent.darken(10%), weight: "bold")[Year 2],
-        text(fill: accent.darken(10%), weight: "bold")[Year 3],
-        text(fill: accent.darken(10%), weight: "bold")[Year 4],
-        text(fill: accent.darken(10%), weight: "bold")[Year 5],
+        text(fill: white, weight: "bold")[Revenue stream],
+        text(fill: white, weight: "bold")[Year 1],
+        text(fill: white, weight: "bold")[Year 2],
+        text(fill: white, weight: "bold")[Year 3],
+        text(fill: white, weight: "bold")[Year 4],
+        text(fill: white, weight: "bold")[Year 5],
       ),
       [Tier 1 SaaS], [€36,000], [€120,000], [€300,000], [€600,000], [€1,200,000],
       [Tier 2 CI/CD SaaS], [€90,000], [€675,000], [€1,800,000], [€3,825,000], [€8,100,000],
@@ -264,21 +264,21 @@ On the cost side, spend covers engineering headcount (including legal-engineers)
     table(
       columns: (1.4fr, auto, auto, auto, auto, auto),
       align: (left, center, center, center, center, center),
-      stroke: 0.6pt + honey-bronze.lighten(30%),
+      stroke: 0.6pt + sky-reflection.lighten(30%),
       fill: (x, y) => if y == 0 {
-        honey-bronze
+        sky-reflection
       } else if calc.even(y) {
-        honey-bronze.lighten(88%)
+        sky-reflection.lighten(88%)
       } else {
         white
       },
       table.header(
-        text(fill: accent.darken(10%), weight: "bold")[Expense category],
-        text(fill: accent.darken(10%), weight: "bold")[Year 1],
-        text(fill: accent.darken(10%), weight: "bold")[Year 2],
-        text(fill: accent.darken(10%), weight: "bold")[Year 3],
-        text(fill: accent.darken(10%), weight: "bold")[Year 4],
-        text(fill: accent.darken(10%), weight: "bold")[Year 5],
+        text(fill: white, weight: "bold")[Expense category],
+        text(fill: white, weight: "bold")[Year 1],
+        text(fill: white, weight: "bold")[Year 2],
+        text(fill: white, weight: "bold")[Year 3],
+        text(fill: white, weight: "bold")[Year 4],
+        text(fill: white, weight: "bold")[Year 5],
       ),
       [R&D / engineering], [€250,000], [€500,000], [€1,000,000], [€1,700,000], [€2,500,000],
       [Sales & marketing], [€80,000], [€250,000], [€600,000], [€1,400,000], [€2,500,000],
@@ -298,21 +298,21 @@ Combining both sides gives the profit-and-loss picture below, and with it a clea
     table(
       columns: (1.4fr, auto, auto, auto, auto, auto),
       align: (left, center, center, center, center, center),
-      stroke: 0.6pt + honey-bronze.lighten(30%),
+      stroke: 0.6pt + sky-reflection.lighten(30%),
       fill: (x, y) => if y == 0 {
-        honey-bronze
+        sky-reflection
       } else if calc.even(y) {
-        honey-bronze.lighten(88%)
+        sky-reflection.lighten(88%)
       } else {
         white
       },
       table.header(
-        text(fill: accent.darken(10%), weight: "bold")[Metric],
-        text(fill: accent.darken(10%), weight: "bold")[Year 1],
-        text(fill: accent.darken(10%), weight: "bold")[Year 2],
-        text(fill: accent.darken(10%), weight: "bold")[Year 3],
-        text(fill: accent.darken(10%), weight: "bold")[Year 4],
-        text(fill: accent.darken(10%), weight: "bold")[Year 5],
+        text(fill: white, weight: "bold")[Metric],
+        text(fill: white, weight: "bold")[Year 1],
+        text(fill: white, weight: "bold")[Year 2],
+        text(fill: white, weight: "bold")[Year 3],
+        text(fill: white, weight: "bold")[Year 4],
+        text(fill: white, weight: "bold")[Year 5],
       ),
       [Total revenue], [€166,000], [€955,000], [€2,500,000], [€5,325,000], [€11,100,000],
       [Total costs], [€420,000], [€950,000], [€2,100,000], [€4,100,000], [€6,800,000],

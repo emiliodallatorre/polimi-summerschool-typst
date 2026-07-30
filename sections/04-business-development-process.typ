@@ -1,6 +1,6 @@
 = Business development process
 
-#import "../theme.typ": accent, honey-bronze
+#import "../theme.typ": accent, sky-reflection
 
 == Need and niche identification
 
@@ -16,18 +16,18 @@ To validate problem-solution fit, willingness to pay, and core assumptions, we c
   table(
     columns: (auto, auto, 1fr),
     align: (left, center, left),
-    stroke: 0.6pt + honey-bronze.lighten(30%),
+    stroke: 0.6pt + sky-reflection.lighten(30%),
     fill: (x, y) => if y == 0 {
-      honey-bronze
+      sky-reflection
     } else if calc.even(y) {
-      honey-bronze.lighten(88%)
+      sky-reflection.lighten(88%)
     } else {
       white
     },
     table.header(
-      text(fill: accent.darken(10%), weight: "bold")[Group],
-      text(fill: accent.darken(10%), weight: "bold")[Participants],
-      text(fill: accent.darken(10%), weight: "bold")[Role in validation],
+      text(fill: white, weight: "bold")[Group],
+      text(fill: white, weight: "bold")[Participants],
+      text(fill: white, weight: "bold")[Role in validation],
     ),
     [FinTech and AI founders], text(fill: accent, weight: "bold")[10], [How small teams handle regulatory research, manage heavy legal costs, and view AI-driven diagnostic tools before hiring lawyers],
     [Banking and finance professionals], text(fill: accent, weight: "bold")[2], [Perspective on institutional compliance workflows and regulatory expectations],
@@ -48,17 +48,17 @@ Across our 14 interviewees, the metrics strongly confirmed market demand. The ta
   table(
     columns: (1fr, auto),
     align: (left, center),
-    stroke: 0.6pt + honey-bronze.lighten(30%),
+    stroke: 0.6pt + sky-reflection.lighten(30%),
     fill: (x, y) => if y == 0 {
-      honey-bronze
+      sky-reflection
     } else if calc.even(y) {
-      honey-bronze.lighten(88%)
+      sky-reflection.lighten(88%)
     } else {
       white
     },
     table.header(
-      text(fill: accent.darken(10%), weight: "bold")[Statement],
-      text(fill: accent.darken(10%), weight: "bold")[Agreement],
+      text(fill: white, weight: "bold")[Statement],
+      text(fill: white, weight: "bold")[Agreement],
     ),
     [Navigating EU financial regulation before licensing is one of the most time-consuming barriers to launching a FinTech venture], text(fill: accent, weight: "bold")[11 / 14],
     [My startup relies entirely on external legal consultants during discovery, due to a lack of internal expertise], text(fill: accent, weight: "bold")[12 / 14],
