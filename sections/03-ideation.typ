@@ -10,7 +10,7 @@ The second direction, which became ComplAI, was an AI-native diagnostic tool to 
 
 To evaluate both ideas, we applied a feasibility and market-barrier assessment grounded in customer discovery and expert interviews, prioritizing real feedback over our own assumptions to test whether a lean team could build and sell each idea quickly.
 
-Testing the crypto monitoring concept revealed two major obstacles. Domain experts, such as Niklas Ego at the Deutsche Bundesbank, noted that established, heavily funded players dominate the space. More critically, buyer interviews showed banks rarely invest in advanced detection unless under direct threat of sanctions --- a barrier an early-stage startup cannot realistically break into.
+Testing the crypto monitoring concept revealed two major obstacles. Domain experts, such as Niklas Ego at the Deutsche Bundesbank, noted that established, heavily funded players dominate the space. More critically, buyer interviews showed banks rarely invest in advanced detection unless under direct threat of sanctions -- a barrier an early-stage startup cannot realistically break into.
 
 Applied to the ComplAI concept, the same filter produced a clearly different result: interviews with founders, former bankers, and legal experts confirmed a clear pain point and real willingness to pay, and a diagnostic tool required a far lower barrier to entry than a real-time institutional monitoring system.
 

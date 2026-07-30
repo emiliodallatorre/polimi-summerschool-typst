@@ -139,7 +139,7 @@ Deeply integrated, compliant AI infrastructure requires upfront engineering inve
   inset: 8pt,
 )[
   #set text(fill: white)
-  #text(size: 11pt, weight: "bold")[#amount --- #phase]
+  #text(size: 11pt, weight: "bold")[#amount -- #phase]
   #v(2pt)
   #text(size: 9pt)[#detail]
 ]
@@ -152,7 +152,7 @@ Deeply integrated, compliant AI infrastructure requires upfront engineering inve
   alloc-block(
     "€280,000",
     "Year 0",
-    "Pre-revenue build: R&D, security compliance, closed beta pilots --- no premature monetization.",
+    "Pre-revenue build: R&D, security compliance, closed beta pilots -- no premature monetization.",
     accent,
   ),
   alloc-block(
