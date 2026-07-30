@@ -42,7 +42,7 @@ Across all groups, questions centered on four themes: current compliance practic
 
 === Quantitative validation metrics
 
-Across our 14 interviewees, the metrics strongly confirmed market demand. The table below summarises how many interviewees agreed with each statement put to them during the interviews.
+Across our 14 interviewees, the metrics strongly confirmed market demand. The table below summarises how many founder interviewees agreed with each statement put to them during the interviews.
 
 #figure(
   table(
@@ -60,11 +60,11 @@ Across our 14 interviewees, the metrics strongly confirmed market demand. The ta
       text(fill: white, weight: "bold")[Statement],
       text(fill: white, weight: "bold")[Agreement],
     ),
-    [Navigating EU financial regulation before licensing is one of the most time-consuming barriers to launching a FinTech venture], text(fill: accent, weight: "bold")[11 / 14],
-    [My startup relies entirely on external legal consultants during discovery, due to a lack of internal expertise], text(fill: accent, weight: "bold")[12 / 14],
-    [My startup would actively use an AI platform identifying obligations, flagging gaps, and generating reports for legal review], text(fill: accent, weight: "bold")[11 / 14],
-    [I identify continuous post-licensing monitoring as a critical secondary capability], text(fill: accent, weight: "bold")[10 / 14],
-    [Expressed explicit willingness to pay if the platform demonstrably cut legal billable hours and accelerated licensing timelines], text(fill: accent, weight: "bold")[12 / 14],
+    [Navigating EU financial regulation before licensing is one of the most time-consuming barriers to launching a FinTech venture], text(fill: accent, weight: "bold")[8 / 10],
+    [My startup relies entirely on external legal consultants during discovery, due to a lack of internal expertise], text(fill: accent, weight: "bold")[9 / 10],
+    [My startup would actively use an AI platform identifying obligations, flagging gaps, and generating reports for legal review], text(fill: accent, weight: "bold")[8 / 10],
+    [Identify continuous post-licensing monitoring as a critical secondary capability], text(fill: accent, weight: "bold")[7 / 10],
+    [Expressed explicit willingness to pay if the platform demonstrably cut legal billable hours and accelerated licensing timelines], text(fill: accent, weight: "bold")[9 / 10],
   ),
   caption: [Interview agreement rates across the 14 exploratory interviews],
 )
