@@ -5,12 +5,10 @@
 Hereafter, we provide a shallow introduction to our business model, through the formalization of the Business Model Canvas. The necessary assumptions, as well as the conclusions that led to the definition of what is in it, are motivated in the #link(<appx-business-model-canvas>)[Appendix].
 
 == Customer segments
-
 ComplAI operates in the B2B market and targets two groups: early-stage FinTech startups, and FinTech companies with an internal legal team seeking to accelerate compliance job.
-
-Because early-stage FinTech ventures rarely have specialized departments, we define this persona at the organizational level rather than around a single buyer role: a pre-seed to Seed-stage FinTech startup, typically a lean team of 5 to 15 employees based within the EU, where purchasing decisions reflect a shared assessment of risk and resource allocation across the founding team rather than one stakeholder's preference.
-
+Because early-stage FinTech ventures rarely have specialized departments, we define this persona at the organizational level rather than around a single buyer role: a pre-seed to Seed-stage FinTech startup, typically a lean team of 5 to 15 employees based within the EU, where purchasing decisions reflect a shared assessment of risk and resource allocation across the founding team rather than one stakeholder's preference. In practice, the typical founder behind this persona is a product-driven entrepreneur, much like our initial case study profile, who possesses strong technical vision but lacks a formal background in European financial regulation. Consequently, the startup's founding team relies on flexible internal team members who step outside their formal titles to manage operational friction, triage compliance complexity, and stretch limited runway.
 We target these startups because they face a structural pressure that makes early regulatory alignment a condition for survival rather than an operational nice-to-have. Regulatory frameworks such as DORA and MiCA, combined with licensing rejection rates estimated at 80 to 85 percent @ccn-mica-failure-rate-2025, mean that a poorly documented or non-compliant product architecture can block a launch or sink a license application. At the same time, these ventures operate on constrained runway and cannot absorb the cost of retaining external legal counsel early and continuously. This combination of high regulatory exposure and limited financial capacity to address it through traditional means is what makes early-stage FinTech startups a coherent and urgent customer segment for ComplAI.
+
 
 == Value proposition
 
