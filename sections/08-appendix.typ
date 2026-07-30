@@ -608,12 +608,12 @@ Our investable SOM target for the next one to three years is €1.65M ARR (base 
 #let risk-card(title, body) = block(
   width: 100%,
   fill: rgb("#FAFAFA"),
-  stroke: (left: 3pt + classic-crimson),
+  stroke: (left: 3pt + rgb("#6a97d2")),
   inset: (x: 12pt, y: 8pt),
   radius: (right: 4pt),
   margin: (bottom: 0.8em),
 )[
-  #text(weight: "bold", fill: classic-crimson, size: 10.5pt)[#title]
+  #text(weight: "bold", fill: rgb("#6a97d2"), size: 11pt)[#title]
   #v(0.2em)
   #text(size: 10pt, fill: rgb("#2A2A2A"))[#body]
 ]
@@ -627,12 +627,12 @@ Our investable SOM target for the next one to three years is €1.65M ARR (base 
 #let risk-card(title, body) = block(
   width: 100%,
   fill: rgb("#FAFAFA"),
-  stroke: (left: 3pt + classic-crimson),
+  stroke: (left: 3pt + rgb("#6a97d2")),
   inset: (x: 12pt, y: 8pt),
   radius: (right: 4pt),
   below: 0.8em,
 )[
-  #text(weight: "bold", fill: classic-crimson, size: 10.5pt)[#title]
+  #text(weight: "bold", fill: rgb("#6a97d2"), size: 11pt)[#title]
   #v(0.2em)
   #text(size: 10pt, fill: rgb("#2A2A2A"))[#body]
 ]
@@ -730,8 +730,8 @@ ComplAI has to:
 
 #block(
   width: 100%,
-  fill: accent.lighten(94%),
-  stroke: (left: 4pt + accent),
+  fill: rgb("#6a97d2").lighten(94%),
+  stroke: (left: 4pt + rgb("#6a97d2")),
   inset: (x: 14pt, y: 12pt),
   radius: (right: 4pt),
 )[
