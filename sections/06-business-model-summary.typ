@@ -78,6 +78,8 @@ We build partnerships with lawyers to gain expert validation and referrals, whil
 
 Our main spending goes toward running our cloud infrastructure and continuously refining our RAG system for high accuracy and clear source tracking. Beyond technical overhead, our expenses cover keeping regulatory data up to date, ongoing software development, marketing efforts, customer support, and managing key partnerships.
 
+For a visual overview of the full Business Model Canvas, see #link(<appx-business-model-canvas>)[Appendix].
+
 == Financial projections
 
 Building on the tiered pricing above and the SOM estimated earlier, we project revenue, cost, and break-even over a six-year horizon. Tier 1 (the self-serve Q&A wedge) is modelled at €1,200/year (€100/month); Tier 2 (the continuous-monitoring core subscription) at €45,000/year on average, reflecting the €2,500–7,500/month range; and Tier 3 (on-demand document generation) at a flat €20,000 per client per year. Market phasing follows the SOM/SAM/TAM logic set out above: Year 0 is a zero-revenue phase dedicated to R&D, MVP development, and closed beta pilots; Years 1–2 focus on penetrating our initial SOM in Germany and Italy and early monetization; Year 3 targets a €2.1M SOM ARR sufficient to unlock a Series A round; and Years 4–5 pursue EU expansion into the UK and France alongside broader TAM capture across SMEs.
@@ -223,6 +225,6 @@ We are raising a €500,000 pre-seed round, sized to give us 18 months of runway
 
 This target reflects the reality that deeply integrated, compliant AI infrastructure requires upfront engineering investment before scalable monetization begins. €280,000 of the raise fully funds a pre-revenue Year 0, letting us focus on R&D, security compliance, and closed beta pilots without the distraction of premature monetization; enterprise clients expect secure, stress-tested environments before signing. This €500k raise provides the necessary runway to firmly establish our initial clients in Germany and Italy, allowing us to validate the product and build a compelling case for a larger seed round to fund our Year 2 expansion. 
 
-For investors, three points follow from this plan. The dedicated Year 0 timeline is a realistic acknowledgement of what enterprise-grade AI deployment requires before scaling sales. The €100/month Tier 1 wedge keeps adoption frictionless and helps offset the Year 1 go-to-market burn of €260,000. And fully capitalizing the build and early go-to-market phases upfront gives us the runway to aggressively pursue the €950,000 Year 2 revenue target, landing at operational break-even exceptionally early for an AI SaaS platform.
+For investors, three points follow from this plan. The dedicated Year 0 timeline is a realistic acknowledgement of what enterprise-grade AI deployment requires before scaling sales. The €100/month Tier 1 wedge keeps adoption frictionless and helps offset the Year 1 go-to-market burn of €260,000. And fully capitalizing the build and early go-to-market phases upfront gives us the runway to aggressively pursue the €950,000 Year 2 revenue target, landing at operational break-even early for an AI SaaS platform.
 
-For a visual overview of the full Business Model Canvas, see #link(<appx-business-model-canvas>)[Appendix].
+

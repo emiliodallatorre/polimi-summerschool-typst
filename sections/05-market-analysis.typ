@@ -1,4 +1,4 @@
-= Market Analysis
+= Market analysis
 #import "../theme.typ": accent, sky-reflection
 
 #align(center)[

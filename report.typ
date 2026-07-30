@@ -31,11 +31,11 @@
 #include "sections/02-teamwork.typ"
 #include "sections/03-ideation.typ"
 #include "sections/04-business-development-process.typ"
-#include "sections/market_analysis.typ"
-#include "sections/05-business-model-summary.typ"
-#include "sections/chapter2.typ"
-#include "sections/06-learning-reflection.typ"
-#include "sections/07-conclusion-outlook.typ"
+#include "sections/05-market-analysis.typ"
+#include "sections/06-business-model-summary.typ"
+#include "sections/07-financial-model.typ"
+#include "sections/08-learning-reflection.typ"
+#include "sections/09-conclusion-outlook.typ"
 
 #pagebreak()
 
@@ -45,4 +45,4 @@
 
 #set page(background: page-background(numbering: "I", page-counter: appendix-page-counter))
 
-#include "sections/08-appendix.typ"
+#include "sections/10-appendix.typ"
