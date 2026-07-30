@@ -512,18 +512,16 @@ $ "SAM" = N_"EU fintech firms" times (C_"legal" + C_"internal labor" + C_"softwa
 
 On this basis, we use the base scenario for planning: €110.0M/year. The full mechanical range is €0.9–4.4Bn; for investor communication, a tighter planning band of roughly €1.2–3.7Bn is reasonable depending on how strictly we define "fintech startups/small enterprises" and regulatory intensity. Key references used: EU fintech ecosystem mapping via the EU Digital Finance Platform's Fintech Map @ec-fintech-map, compliance cost evidence from the EBA's report on supervisory reporting compliance costs @eba-supervisory-reporting-cost, and market context from Finch Capital's State of European Fintech 2025 @finch-capital-fintech-2025.
 
-Our immediate go-to-market strategy targets Germany and Italy. Germany retains a leading position in the European fintech ecosystem, and together with Italy, these two markets provide a highly concentrated pool of early adopters. We assume Germany and Italy jointly represent roughly 30% of the European SAM, and that this combined pool constitutes our SOM:
+Our immediate go-to-market strategy targets Germany and Italy. Germany retains a leading position in the European fintech ecosystem, and together with Italy, these two markets provide a highly concentrated pool of early adopters. We assume Germany and Italy jointly represent roughly 30% of the European SAM, and for planning purposes we define our SOM as this combined DE + IT market directly:
 
-$ "SOM" = "SAM"_"EU" times 30% times r $
-
-where $r$ is the obtainable share of that combined market.
+$ "SOM" = "DE" + "IT" $
 
 #[
   #set text(size: 9pt)
   #figure(
     table(
-      columns: (1fr, auto, auto, auto),
-      align: (left, center, center, center),
+      columns: (1fr, 1.2fr),
+      align: (center, center),
       stroke: 0.6pt + sky-reflection.lighten(30%),
       fill: (x, y) => if y == 0 {
         sky-reflection
@@ -534,19 +532,17 @@ where $r$ is the obtainable share of that combined market.
       },
       table.header(
         text(fill: white, weight: "bold")[Scenario],
-        text(fill: white, weight: "bold")[DE + IT SAM (30% of EU SAM, €M)],
-        text(fill: white, weight: "bold")[Obtainable share ($r$)],
-        text(fill: white, weight: "bold")[SOM (€M/year)],
+        text(fill: white, weight: "bold")[DE + IT SOM (€M/year)],
       ),
-      [Low], [€19.5M], [2%], text(fill: accent, weight: "bold")[€0.39M],
-      [Base], [€33.0M], [5%], text(fill: accent, weight: "bold")[€1.65M],
-      [High], [€47.1M], [10%], text(fill: accent, weight: "bold")[€4.71M],
+      [Low], text(fill: accent, weight: "bold")[€19.5M],
+      [Base], text(fill: accent, weight: "bold")[€33.0M],
+      [High], text(fill: accent, weight: "bold")[€47.1M],
     ),
     caption: [SOM scenarios for the German and Italian fintech markets],
   )
 ]
 
-Our investable SOM target for the next one to three years is €1.65M ARR (base case), representing a highly achievable 5% capture of the strictly defined German and Italian fintech startup markets.
+Our investable SOM target for the next one to three years is €33.0M ARR (base case), corresponding to the combined German and Italian market we define as our near-term opportunity.
 
 ] <appx-market>
 #let regs-subhead(title) = [
