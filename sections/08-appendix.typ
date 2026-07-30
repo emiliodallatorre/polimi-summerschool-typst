@@ -458,7 +458,7 @@ Interview transcripts were obtained by recording each conversation and transcrib
     #set text(size: 8pt)
     #figure(
       table(
-        columns: (1.6fr, auto, auto, auto, auto, auto),
+        columns: (3fr, 1fr, 1fr, 1fr, 1fr, 1fr),
         align: (left, center, center, center, center, center),
         stroke: 0.6pt + sky-reflection.lighten(30%),
         fill: (x, y) => if y == 0 {
