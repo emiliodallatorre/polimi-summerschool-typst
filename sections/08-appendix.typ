@@ -489,3 +489,117 @@ Interview transcripts were obtained by recording each conversation and transcrib
 
   ComplAI is positioned to occupy the space these four groups leave open: a "pre-lawyer" diagnostic layer that evaluates financial product logic against EU regulation directly, before code ships and before a lawyer is retained.
 ] <appx-competitor-analysis>
+
+#appendix-module[Market sizing estimate][
+  We size the 2025 EU market for an AI regulatory-compliance assistant targeting startups and SMEs with a bottom-up model, then anchor our planning on its base scenario. The model starts from the EU SME universe, narrows it to companies with recurring compliance intensity (regulated sectors, cross-border operations, and compliance-sensitive digital firms), and applies an annual compliance spend per company across three non-overlapping buckets: external legal counsel, internal compliance labor, and compliance software/regtech:
+
+$ "TAM" = N_"eligible companies" times (C_"legal" + C_"internal labor" + C_"software") $
+
+Applying this formula across low, base, and high scenarios yields the following outputs.
+
+#[
+  #set text(size: 9pt)
+  #figure(
+    table(
+      columns: (1fr, auto, auto, auto, auto, auto, auto),
+      align: (left, center, center, center, center, center, center),
+      stroke: 0.6pt + sky-reflection.lighten(30%),
+      fill: (x, y) => if y == 0 {
+        sky-reflection
+      } else if calc.even(y) {
+        sky-reflection.lighten(88%)
+      } else {
+        white
+      },
+      table.header(
+        text(fill: white, weight: "bold")[Scenario],
+        text(fill: white, weight: "bold")[Eligible companies],
+        text(fill: white, weight: "bold")[Legal (€)],
+        text(fill: white, weight: "bold")[Internal labor (€)],
+        text(fill: white, weight: "bold")[Software (€)],
+        text(fill: white, weight: "bold")[Total spend/company (€)],
+        text(fill: white, weight: "bold")[TAM (€Bn/year)],
+      ),
+      [Low], [6.0M], [1,000], [1,500], [800], [3,300], text(fill: accent, weight: "bold")[19.8],
+      [Base], [8.0M], [1,500], [2,500], [1,250], [5,250], text(fill: accent, weight: "bold")[42.0],
+      [High], [10.0M], [2,000], [4,000], [1,400], [7,400], text(fill: accent, weight: "bold")[74.0],
+    ),
+    caption: [TAM scenarios for the EU AI regulatory-compliance assistant market],
+  )
+]
+
+While this mechanical range is broad, we frame a tighter investable band of roughly €21–54Bn/year to reflect uncertainty on how many SMEs truly face recurring regulatory complexity. For strategic planning, fundraising narrative, and the downstream SAM/SOM conversion below, we anchor on the base case: a €42.0Bn/year TAM, with sensitivity around company count and internal compliance effort.
+
+This estimate is grounded in public sources: the EU SME population from the European Commission's Annual Report on European SMEs @ec-sme-report-2025, enterprise-structure context from Eurostat's Structural Business Statistics @eurostat-sbs, segmentation support from JRC evidence @jrc-147223, compliance-burden benchmarking from the European Parliament's tax compliance cost study @ep-tax-compliance-cost-2023, and regulatory-cost intensity checks from Intellera's AI Act cost analysis @intellera-ai-act-cost-2024.
+
+For SAM, we narrow to the segment we can serve immediately: EU fintech startups and small fintech enterprises with recurring compliance demand. Using the same bottom-up method as TAM, we model SAM as the number of in-scope fintech firms times the annual compliance spend per firm, split into the same three non-overlapping buckets:
+
+$ "SAM" = N_"EU fintech firms" times (C_"legal" + C_"internal labor" + C_"software") $
+
+#[
+  #set text(size: 9pt)
+  #figure(
+    table(
+      columns: (1fr, auto, auto, auto),
+      align: (left, center, center, center),
+      stroke: 0.6pt + sky-reflection.lighten(30%),
+      fill: (x, y) => if y == 0 {
+        sky-reflection
+      } else if calc.even(y) {
+        sky-reflection.lighten(88%)
+      } else {
+        white
+      },
+      table.header(
+        text(fill: white, weight: "bold")[Scenario],
+        text(fill: white, weight: "bold")[In-scope fintech firms],
+        text(fill: white, weight: "bold")[Spend per firm/year],
+        text(fill: white, weight: "bold")[SAM],
+      ),
+      [Low], [10,000], [€6,500], text(fill: accent, weight: "bold")[€65.0M],
+      [Base], [10,000], [€11,000], text(fill: accent, weight: "bold")[€110.0M],
+      [High], [10,000], [€15,700], text(fill: accent, weight: "bold")[€157.0M],
+    ),
+    caption: [SAM scenarios for EU fintech startups and small enterprises],
+  )
+]
+
+On this basis, we use the base scenario for planning: €110.0M/year. The full mechanical range is €0.9–4.4Bn; for investor communication, a tighter planning band of roughly €1.2–3.7Bn is reasonable depending on how strictly we define "fintech startups/small enterprises" and regulatory intensity. Key references used: EU fintech ecosystem mapping via the EU Digital Finance Platform's Fintech Map @ec-fintech-map, compliance cost evidence from the EBA's report on supervisory reporting compliance costs @eba-supervisory-reporting-cost, and market context from Finch Capital's State of European Fintech 2025 @finch-capital-fintech-2025.
+
+Our immediate go-to-market strategy targets Germany and Italy. Germany retains a leading position in the European fintech ecosystem, and together with Italy, these two markets provide a highly concentrated pool of early adopters. We assume Germany and Italy jointly represent roughly 30% of the European SAM, and that this combined pool constitutes our SOM:
+
+$ "SOM" = "SAM"_"EU" times 30% times r $
+
+where $r$ is the obtainable share of that combined market.
+
+#[
+  #set text(size: 9pt)
+  #figure(
+    table(
+      columns: (1fr, auto, auto, auto),
+      align: (left, center, center, center),
+      stroke: 0.6pt + sky-reflection.lighten(30%),
+      fill: (x, y) => if y == 0 {
+        sky-reflection
+      } else if calc.even(y) {
+        sky-reflection.lighten(88%)
+      } else {
+        white
+      },
+      table.header(
+        text(fill: white, weight: "bold")[Scenario],
+        text(fill: white, weight: "bold")[DE + IT SAM (30% of EU SAM, €M)],
+        text(fill: white, weight: "bold")[Obtainable share ($r$)],
+        text(fill: white, weight: "bold")[SOM (€M/year)],
+      ),
+      [Low], [€19.5M], [2%], text(fill: accent, weight: "bold")[€0.39M],
+      [Base], [€33.0M], [5%], text(fill: accent, weight: "bold")[€1.65M],
+      [High], [€47.1M], [10%], text(fill: accent, weight: "bold")[€4.71M],
+    ),
+    caption: [SOM scenarios for the German and Italian fintech markets],
+  )
+]
+
+Our investable SOM target for the next one to three years is €1.65M ARR (base case), representing a highly achievable 5% capture of the strictly defined German and Italian fintech startup markets.
+
+] <appx-market>
