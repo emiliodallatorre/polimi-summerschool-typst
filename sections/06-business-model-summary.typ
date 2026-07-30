@@ -35,7 +35,7 @@ Our market-access strategy rests on three coordinated channels, chosen to achiev
   ),
 )
 
-We deliberately exclude high-friction channels such as door-to-door sales, manual educational workshops, and open-source maintenance, so the model stays operationally scalable. The product itself is engineered to be self-serve: founders onboard, run diagnostics, and access compliance frameworks without manual guidance from our team. The sales motion stays aligned with the pricing tiers, moving users smoothly from entry-level self-serve assessments to structured, license-readiness modules as their ventures mature.
+We deliberately exclude high-friction channels such as door-to-door sales, manual educational workshops, and open-source maintenance, so the model stays operationally scalable. The product itself is engineered to be self-serve: founders onboard, run diagnostics, and access compliance frameworks without manual. The sales motion stays aligned with the pricing tiers, moving users smoothly from entry-level self-serve assessments to structured, license-readiness modules as their ventures mature.
 
 == Customer relationships
 
