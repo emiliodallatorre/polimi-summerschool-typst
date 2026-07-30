@@ -406,3 +406,38 @@ Interview transcripts were obtained by recording each conversation and transcrib
     )
   ]
 ] <appx-value-proposition-canvas>
+
+#let kpi-box(title, body) = block(
+  width: 100%,
+  breakable: false,
+  fill: honey-bronze.lighten(88%),
+  stroke: 0.6pt + accent.lighten(40%),
+  radius: 4pt,
+  inset: 10pt,
+)[
+  #text(size: 9.5pt, weight: "bold", fill: accent)[#title]
+  #v(4pt)
+  #text(size: 8.5pt)[#body]
+]
+
+#appendix-module[Key performance indicators][
+  To measure how effectively ComplAI solves the core compliance bottleneck for early-stage FinTechs, the KPI framework prioritises problem-resolution efficacy over simple usage volume.
+
+  #v(0.4em)
+  #grid(
+    columns: (1fr, 1fr, 1fr),
+    gutter: 8pt,
+    kpi-box(
+      "Regulatory Issue Remediation Rate",
+      [Tracks the percentage of identified regulatory gaps that founding teams successfully resolve using ComplAI's diagnostic recommendations. A high resolution rate confirms that the output is actionable and directly eliminates compliance risks in product logic, in advance with respect to market launch.],
+    ),
+    kpi-box(
+      "Legal Verification Acceptance Rate",
+      [Measures the proportion of ComplAI-generated diagnostic reports approved by external legal counsel without requiring major rework. A high acceptance rate directly validates the "pre-lawyer" value proposition, proving that the platform genuinely reduces billable legal hours and advisory friction.],
+    ),
+    kpi-box(
+      "First-Time Submission Pass Rate",
+      [Evaluates the proportion of regulatory filings and licensing applications pre-audited through ComplAI that pass initial regulator screening without rejection. High first-time pass rates demonstrate that the platform effectively solves the complex burden of EU regulatory compliance.],
+    ),
+  )
+] <appx-kpi>
