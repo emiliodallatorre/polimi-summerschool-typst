@@ -1,6 +1,6 @@
 = Business model summary
 
-#import "../theme.typ": accent, sky-reflection
+#import "../theme.typ": info-card, stat-badge
 
 Hereafter, we provide a shallow introduction to our business model, through the formalization of the Business Model Canvas. The necessary assumptions, as well as the conclusions that led to the definition of what is in it, are motivated in the #link(<appx-business-model-canvas>)[Appendix].
 
@@ -18,31 +18,18 @@ ComplAI helps early-stage start-ups understand what they need to do to become co
 
 Our market-access strategy rests on three coordinated channels, chosen to achieve efficient customer acquisition without resource-intensive sales overhead.
 
-#let channel-box(title, body) = block(
-  width: 100%,
-  breakable: false,
-  fill: sky-reflection.lighten(88%),
-  stroke: 0.6pt + accent.lighten(40%),
-  radius: 4pt,
-  inset: 9pt,
-)[
-  #text(size: 9.5pt, weight: "bold", fill: accent)[#title]
-  #v(4pt)
-  #text(size: 8pt)[#body]
-]
-
 #grid(
   columns: (1fr, 1fr, 1fr),
   gutter: 8pt,
-  channel-box(
+  info-card(
     "Hub & accelerator partnerships",
     [Our primary distribution engine: embedding directly into incoming cohorts at TechQuartier in Frankfurt and at the FinTech District, PoliHub, and B4i in Milan, giving us access to pre-screened founders facing imminent licensing requirements.],
   ),
-  channel-box(
+  info-card(
     "Targeted PR & thought leadership",
     [Publishing problem-solution case studies and regulatory analyses in outlets such as Business Insider, to build domain authority and organic brand awareness among founders actively researching compliance solutions.],
   ),
-  channel-box(
+  info-card(
     "FinTech conferences & founder events",
     [Attending focused gatherings such as FinTech Week to engage directly with early-stage builders at the precise moment they are structuring their technical and operational roadmaps, enacting a lobbying activity towards ComplAI.],
   ),
@@ -58,7 +45,16 @@ We combine automated tools with personal support to make the experience simple a
 
 == Revenue streams
 
-We use a flexible SaaS model with three main options. First is a €100 monthly subscription for basic self-serve compliance Q&As. Second is a custom monthly plan (€2,500 to €7,500) for real-time monitoring and regulatory alerts. Third is a pay-per-use option for generating reports on demand. This gives us steady monthly income while letting clients scale up as they need.
+We use a flexible SaaS model with three tiers, giving us steady monthly income while letting clients scale up as they need.
+
+#grid(
+  columns: (1fr, 1fr, 1fr),
+  column-gutter: 8pt,
+  align: (horizon, horizon, horizon),
+  stat-badge("€100/mo", "TIER 1 · SELF-SERVE Q&A"),
+  stat-badge("€2,500-7,500/mo", "TIER 2 · MONITORING & ALERTS"),
+  stat-badge("Pay-per-use", "TIER 3 · ON-DEMAND REPORTS"),
+)
 
 == Key resources
 

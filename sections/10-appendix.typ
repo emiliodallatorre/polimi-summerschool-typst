@@ -1,6 +1,6 @@
 = Appendix
 
-#import "../theme.typ": appendix-module, sky-reflection, accent
+#import "../theme.typ": appendix-module, sky-reflection, accent, card-stroke, card-fill, card-radius, table-stroke, zebra-fill, info-card, pill-badge, rounded-table
 
 This appendix collects the supporting evidence referenced throughout the report: question sets, market data, plots, and other material too detailed for the main body. Each item below is a self-contained module with its own label, so it can be linked to directly from the relevant paragraph in the report rather than making the reader search for it.
 
@@ -41,8 +41,8 @@ This appendix collects the supporting evidence referenced throughout the report:
 ) = block(
   width: 100%,
   breakable: false,
-  stroke: 0.6pt + accent.lighten(40%),
-  radius: 4pt,
+  stroke: card-stroke,
+  radius: card-radius,
   clip: true,
   below: 1em,
 )[
@@ -70,13 +70,13 @@ This appendix collects the supporting evidence referenced throughout the report:
     )
   ]
   #let field(label, hint, value) = (
-    text(size: 8.5pt, weight: "bold", fill: accent)[#label],
+    text(size: 9.5pt, weight: "bold", fill: accent)[#label],
     if value == none {
       // Prompt phrasing, then blank writing room. The space is added inside
       // the cell rather than fixed as a row height, so a filled field can
       // grow past it instead of being clipped.
       [
-        #text(size: 8.5pt, style: "italic", fill: sky-reflection.darken(10%))[#hint]
+        #text(size: 9pt, style: "italic", fill: sky-reflection.darken(10%))[#hint]
         #v(tc-blank-height)
       ]
     } else {
@@ -91,7 +91,7 @@ This appendix collects the supporting evidence referenced throughout the report:
     inset: (x: 8pt, y: 7pt),
     // Label column tinted so the four fields stay legible while the card is
     // still blank and the right-hand column is empty.
-    fill: (x, y) => if x == 0 { sky-reflection.lighten(88%) },
+    fill: (x, y) => if x == 0 { card-fill },
     ..field("Hypothesis", "We believe that…", hypothesis),
     ..field("Test", "To verify that, we will…", test),
     ..field("Metric", "And measure…", metric),
@@ -138,41 +138,99 @@ This appendix collects the supporting evidence referenced throughout the report:
   )
 ] <appx-test-cards>
 
+#appendix-module[Market sizing estimate][
+  We size the 2025 EU market for an AI regulatory-compliance assistant targeting startups and SMEs with a bottom-up model, then anchor our planning on its base scenario. The model starts from the EU SME universe, narrows it to companies with recurring compliance intensity (regulated sectors, cross-border operations, and compliance-sensitive digital firms), and applies an annual compliance spend per company across three non-overlapping buckets: external legal counsel, internal compliance labor, and compliance software/regtech:
+
+$ "TAM" = N_"eligible companies" times (C_"legal" + C_"internal labor" + C_"software") $
+
+Applying this formula across low, base, and high scenarios yields the following outputs.
+
+#figure(
+  rounded-table(table(
+    // Scenario and eligible-company count share one column: as separate
+    // columns the two headers collided, and the count is really just a
+    // property of the scenario rather than an independent variable.
+    columns: (auto, auto, auto, auto, auto, auto),
+    align: (left, center, center, center, center, center),
+    stroke: table-stroke,
+    fill: (x, y) => zebra-fill(y),
+    table.header(
+      text(fill: white, weight: "bold")[Scenario (eligible companies)],
+      text(fill: white, weight: "bold")[Legal (€)],
+      text(fill: white, weight: "bold")[Internal labor (€)],
+      text(fill: white, weight: "bold")[Software (€)],
+      text(fill: white, weight: "bold")[Total spend/company (€)],
+      text(fill: white, weight: "bold")[TAM (€Bn/year)],
+    ),
+    [Low — 6.0M], [1,000], [1,500], [800], [3,300], text(fill: accent, weight: "bold")[19.8],
+    [Base — 8.0M], [1,500], [2,500], [1,250], [5,250], text(fill: accent, weight: "bold")[42.0],
+    [High — 10.0M], [2,000], [4,000], [1,400], [7,400], text(fill: accent, weight: "bold")[74.0],
+  )),
+  caption: [TAM scenarios for the EU AI regulatory-compliance assistant market],
+)
+
+While this mechanical range is broad, we frame a tighter investable band of roughly €21–54Bn/year to reflect uncertainty on how many SMEs truly face recurring regulatory complexity. For strategic planning, fundraising narrative, and the downstream SAM/SOM conversion below, we anchor on the base case: a €42.0Bn/year TAM, with sensitivity around company count and internal compliance effort.
+
+This estimate is grounded in public sources: the EU SME population from the European Commission's Annual Report on European SMEs @ec-sme-report-2025, enterprise-structure context from Eurostat's Structural Business Statistics @eurostat-sbs, segmentation support from JRC evidence @jrc-147223, compliance-burden benchmarking from the European Parliament's tax compliance cost study @ep-tax-compliance-cost-2023, and regulatory-cost intensity checks from Intellera's AI Act cost analysis @intellera-ai-act-cost-2024.
+
+For SAM, we narrow to the segment we can serve immediately: EU fintech startups and small fintech enterprises with recurring compliance demand. Using the same bottom-up method as TAM, we model SAM as the number of in-scope fintech firms times the annual compliance spend per firm, split into the same three non-overlapping buckets:
+
+$ "SAM" = N_"EU fintech firms" times (C_"legal" + C_"internal labor" + C_"software") $
+
+#figure(
+  rounded-table(table(
+    columns: (1fr, auto, auto, auto),
+    align: (left, center, center, center),
+    stroke: table-stroke,
+    fill: (x, y) => zebra-fill(y),
+    table.header(
+      text(fill: white, weight: "bold")[Scenario],
+      text(fill: white, weight: "bold")[In-scope fintech firms],
+      text(fill: white, weight: "bold")[Spend per firm/year],
+      text(fill: white, weight: "bold")[SAM],
+    ),
+    [Low], [10,000], [€6,500], text(fill: accent, weight: "bold")[€65.0M],
+    [Base], [10,000], [€11,000], text(fill: accent, weight: "bold")[€110.0M],
+    [High], [10,000], [€15,700], text(fill: accent, weight: "bold")[€157.0M],
+  )),
+  caption: [SAM scenarios for EU fintech startups and small enterprises],
+)
+
+On this basis, we use the base scenario for planning: €110.0M/year. The full mechanical range is €0.9–4.4Bn; for investor communication, a tighter planning band of roughly €1.2–3.7Bn is reasonable depending on how strictly we define "fintech startups/small enterprises" and regulatory intensity. Key references used: EU fintech ecosystem mapping via the EU Digital Finance Platform's Fintech Map @ec-fintech-map, compliance cost evidence from the EBA's report on supervisory reporting compliance costs @eba-supervisory-reporting-cost, and market context from Finch Capital's State of European Fintech 2025 @finch-capital-fintech-2025.
+
+Our immediate go-to-market strategy targets Germany and Italy. Germany retains a leading position in the European fintech ecosystem, and together with Italy, these two markets provide a highly concentrated pool of early adopters. We assume Germany and Italy jointly represent roughly 30% of the European SAM, and for planning purposes we define our SOM as this combined DE + IT market directly:
+
+$ "SOM" = "DE" + "IT" $
+
+#figure(
+  rounded-table(table(
+    columns: (1fr, 1.2fr),
+    align: (center, center),
+    stroke: table-stroke,
+    fill: (x, y) => zebra-fill(y),
+    table.header(
+      text(fill: white, weight: "bold")[Scenario],
+      text(fill: white, weight: "bold")[DE + IT SOM (€M/year)],
+    ),
+    [Low], text(fill: accent, weight: "bold")[€19.5M],
+    [Base], text(fill: accent, weight: "bold")[€33.0M],
+    [High], text(fill: accent, weight: "bold")[€47.1M],
+  )),
+  caption: [SOM scenarios for the German and Italian fintech markets],
+)
+
+Our investable SOM target for the next one to three years is €33.0M ARR (base case), corresponding to the combined German and Italian market we define as our near-term opportunity.
+] <appx-market>
+
 #let bmc-bullets(items) = {
-  set text(size: 7.5pt)
+  set text(size: 9pt)
   for item in items [
     - #item
   ]
 }
 
-#let bmc-cell(title, fill: sky-reflection.lighten(88%)) = block(
-  width: 100%,
-  height: 100%,
-  fill: fill,
-  stroke: 0.6pt + accent.lighten(40%),
-  inset: 6pt,
-)[
-  #text(size: 8.5pt, weight: "bold", fill: accent)[#title]
-]
-
-// Same visual treatment as `bmc-cell`, but also renders a bullet list of
-// items underneath the title, for the value proposition canvas's six boxes
-// (which need actual content, unlike the business model canvas's simpler
-// single-title placeholders reused elsewhere).
-#let bmc-cell-filled(title, items, fill: sky-reflection.lighten(88%)) = block(
-  width: 100%,
-  height: 100%,
-  fill: fill,
-  stroke: 0.6pt + accent.lighten(40%),
-  inset: 6pt,
-)[
-  #text(size: 8.5pt, weight: "bold", fill: accent)[#title]
-  #v(3pt)
-  #bmc-bullets(items)
-]
-
 #let bmc-cell-content(title, items) = [
-  #text(size: 8pt, weight: "bold", fill: accent)[#title]
+  #text(size: 9.5pt, weight: "bold", fill: accent)[#title]
   #v(3pt)
   #bmc-bullets(items)
 ]
@@ -182,25 +240,25 @@ This appendix collects the supporting evidence referenced throughout the report:
 // column. Stacking them inside one cell keeps the whole canvas a single-row
 // table, whose cells always stretch to a shared row height automatically.
 #let bmc-dual-cell(title-a, items-a, title-b, items-b) = [
-  #text(size: 8pt, weight: "bold", fill: accent)[#title-a]
+  #text(size: 9.5pt, weight: "bold", fill: accent)[#title-a]
   #v(3pt)
   #bmc-bullets(items-a)
   #v(6pt)
   #line(length: 100%, stroke: 0.5pt + accent.lighten(55%))
   #v(6pt)
-  #text(size: 8pt, weight: "bold", fill: accent)[#title-b]
+  #text(size: 9.5pt, weight: "bold", fill: accent)[#title-b]
   #v(3pt)
   #bmc-bullets(items-b)
 ]
 
 #appendix-module[Business model canvas][
-  #block(breakable: false)[
+  #rounded-table(stroke: card-stroke, block(breakable: false)[
     #table(
       columns: (1fr, 1fr, 1fr, 1fr, 1fr),
       align: left + top,
-      stroke: 0.6pt + accent.lighten(40%),
+      stroke: card-stroke,
       inset: 6pt,
-      fill: sky-reflection.lighten(88%),
+      fill: card-fill,
       bmc-cell-content(
         "Key partners",
         (
@@ -272,7 +330,7 @@ This appendix collects the supporting evidence referenced throughout the report:
         ),
       )],
     )
-  ]
+  ])
 ] <appx-business-model-canvas>
 
 #pagebreak()
@@ -280,86 +338,60 @@ This appendix collects the supporting evidence referenced throughout the report:
 #appendix-module[Value proposition canvas][
   The canvas below maps ComplAI's value map (products & services, gain creators, pain relievers) against the customer profile of our early-stage FinTech target segment (customer jobs, gains, pains).
 
-  #block(breakable: false)[
-    #grid(
-      columns: (1fr, 1fr),
-      rows: (1cm,),
-      gutter: 3pt,
-      [#bmc-cell(fill: accent.lighten(85%))[Value map]],
-      [#bmc-cell(fill: sky-reflection.lighten(75%))[Customer profile]],
-    )
-    #v(3pt)
-    #grid(
-      columns: (1fr, 1fr),
-      rows: (3cm, 3cm, 3cm),
-      gutter: 3pt,
-      bmc-cell-filled(
-        "Products & services",
-        (
-          "Chatbot assessment paired with ready-to-review document generation",
-          "Continuous monitoring of official EU regulatory sources",
-        ),
-        fill: accent.lighten(90%),
+  #rounded-table(stroke: card-stroke, table(
+    columns: (1fr, 1fr),
+    align: left + top,
+    stroke: card-stroke,
+    inset: 6pt,
+    table.cell(fill: accent.lighten(85%))[#text(size: 9.5pt, weight: "bold", fill: accent)[Value map]],
+    table.cell(fill: sky-reflection.lighten(75%))[#text(size: 9.5pt, weight: "bold", fill: accent)[Customer profile]],
+    table.cell(fill: accent.lighten(90%))[#bmc-cell-content(
+      "Products & services",
+      (
+        "Chatbot assessment paired with ready-to-review document generation",
+        "Continuous monitoring of official EU regulatory sources",
       ),
-      bmc-cell-filled(
-        "Customer jobs",
-        (
-          "Assess and prepare compliance documentation for EU regulatory requirements",
-          "Stay compliant as regulation evolves across member states and as the product evolves",
-        ),
-        fill: sky-reflection.lighten(85%),
+    )],
+    table.cell(fill: sky-reflection.lighten(85%))[#bmc-cell-content(
+      "Customer jobs",
+      (
+        "Assess and prepare compliance documentation for EU regulatory requirements",
+        "Stay compliant as regulation evolves across member states and as the product evolves",
       ),
-      bmc-cell-filled(
-        "Gain creators",
-        (
-          "Lawyer involvement reduced to final validation only",
-          "Early alignment with upcoming rules before they take effect",
-        ),
-        fill: accent.lighten(90%),
+    )],
+    table.cell(fill: accent.lighten(90%))[#bmc-cell-content(
+      "Gain creators",
+      (
+        "Lawyer involvement reduced to final validation only",
+        "Early alignment with upcoming rules before they take effect",
       ),
-      bmc-cell-filled(
-        "Gains",
-        (
-          "Minimised legal costs",
-          "Anticipation of upcoming regulation",
-          "Peace of mind throughout the process",
-        ),
-        fill: sky-reflection.lighten(85%),
+    )],
+    table.cell(fill: sky-reflection.lighten(85%))[#bmc-cell-content(
+      "Gains",
+      (
+        "Minimised legal costs",
+        "Anticipation of upcoming regulation",
+        "Peace of mind throughout the process",
       ),
-      bmc-cell-filled(
-        "Pain relievers",
-        (
-          "Plain-language translation of legal requirements",
-          "Automated research, cutting hours of manual consultation",
-          "Up to 60% lower cost than traditional legal consulting",
-        ),
-        fill: accent.lighten(90%),
+    )],
+    table.cell(fill: accent.lighten(90%))[#bmc-cell-content(
+      "Pain relievers",
+      (
+        "Plain-language translation of legal requirements",
+        "Automated research, cutting hours of manual consultation",
+        "Up to 60% lower cost than traditional legal consulting",
       ),
-      bmc-cell-filled(
-        "Pains",
-        (
-          "Regulatory fragmentation is hard to understand",
-          "Compliance work is time-consuming",
-          "High cost relative to lawyer consultancy",
-        ),
-        fill: sky-reflection.lighten(85%),
+    )],
+    table.cell(fill: sky-reflection.lighten(85%))[#bmc-cell-content(
+      "Pains",
+      (
+        "Regulatory fragmentation is hard to understand",
+        "Compliance work is time-consuming",
+        "High cost relative to lawyer consultancy",
       ),
-    )
-  ]
+    )],
+  ))
 ] <appx-value-proposition-canvas>
-
-#let kpi-box(title, body) = block(
-  width: 100%,
-  breakable: false,
-  fill: sky-reflection.lighten(88%),
-  stroke: 0.6pt + accent.lighten(40%),
-  radius: 4pt,
-  inset: 10pt,
-)[
-  #text(size: 9.5pt, weight: "bold", fill: accent)[#title]
-  #v(4pt)
-  #text(size: 8.5pt)[#body]
-]
 
 #appendix-module[Key performance indicators][
   To measure how effectively ComplAI solves the core compliance bottleneck for early-stage FinTechs, the KPI framework prioritises problem-resolution efficacy over simple usage volume.
@@ -368,15 +400,15 @@ This appendix collects the supporting evidence referenced throughout the report:
   #grid(
     columns: (1fr, 1fr, 1fr),
     gutter: 8pt,
-    kpi-box(
+    info-card(
       "Regulatory Issue Remediation Rate",
       [Tracks the percentage of identified regulatory gaps that founding teams successfully resolve using ComplAI's diagnostic recommendations. A high resolution rate confirms that the output is actionable and directly eliminates compliance risks in product logic, in advance with respect to market launch.],
     ),
-    kpi-box(
+    info-card(
       "Legal Verification Acceptance Rate",
       [Measures the proportion of ComplAI-generated diagnostic reports approved by external legal counsel without requiring major rework. A high acceptance rate directly validates the "pre-lawyer" value proposition, proving that the platform genuinely reduces billable legal hours and advisory friction.],
     ),
-    kpi-box(
+    info-card(
       "First-Time Submission Pass Rate",
       [Evaluates the proportion of regulatory filings and licensing applications pre-audited through ComplAI that pass initial regulator screening without rejection. High first-time pass rates demonstrate that the platform effectively solves the complex burden of EU regulatory compliance.],
     ),
@@ -388,187 +420,51 @@ This appendix collects the supporting evidence referenced throughout the report:
 
   Traditional legal providers (law firms and consultancies) dominate through authority and institutional trust, but they operate via slow, manual billable hours costing €300 to €600 per hour and €50,000 to €250,000 or more per licensing application. This cost structure prices out early-stage teams and contributes to the 80 to 85 percent failure or withdrawal rate seen in initial MiCA license applications @ccn-mica-failure-rate-2025, many of which fail due to poor submission quality rather than substantive risk.
 
-  Direct compliance competitors (Kalipso.ai, ÀLIA) represent the closest conceptual rivals, but each preserves a core limitation. Kalipso.ai functions as a static document tool that tracks policy text updates rather than actively checking product logic. ÀLIA pairs technology with mandatory human legal sign-off, which keeps the expensive billable-hour bottleneck intact rather than removing it. Neither platform evaluates how a product's engineering decisions interact with regulatory obligations before deployment.
+  Direct compliance competitors like Kalipso.ai and ÀLIA represent our closest conceptual rivals, yet both preserve critical structural limitations for early stage FinTech startups. Kalipso.ai operates primarily as a static document workspace that tracks regulatory text changes, remaining detached from live product logic and engineering workflows. Meanwhile, ÀLIA functions as a tech-enabled consultancy that pairs software with mandatory human legal review, keeping the high billable-hour bottleneck firmly intact. Crucially, neither platform evaluates how a startup's underlying technical architecture and code logic trigger specific regulatory obligations before deployment.
 
   Legal AI for lawyers (Harvey, Legora, Noxtua) offer genuinely powerful LLM tooling for research and contract drafting, but they are built for legal professionals working inside law firms, not for founders or engineering teams. Their workflows assume a lawyer as the end user, leaving a structural gap between legal research capability and product development cycles.
 
-  Horizontal B2B security SaaS (Vanta, Drata, Naq Cyber) succeed at automating IT control frameworks such as SOC 2 and ISO 27001, but they lack any financial regulatory depth. They cannot evaluate tokenomics design, MiCA thresholds, or PSD3 licensing requirements, since their architecture was built for generic infosec compliance rather than sector-specific financial law.
+  Horizontal security platforms such as Vanta, Drata, and Naq Cyber are great at automating basic standards like SOC 2 and ISO 27001, but they fall short when it comes to financial regulations. Because their software was built for broad cybersecurity compliance, it cannot assess complex financial rules. It has no way to evaluate tokenomics models, check MiCA regulatory thresholds, or navigate PSD3 licensing requirements.
 
   #v(0.4em)
-  #[
-    #set text(size: 8pt)
-    #figure(
-      table(
-        // The capability column is prose and reads badly when hyphenated, so
-        // it takes the width it needs while the segment columns share what's
-        // left and wrap their headers over two lines instead.
-        columns: (auto, 1fr, 1fr, 1fr, 1fr, auto),
-        align: (left + horizon, center + horizon, center + horizon, center + horizon, center + horizon, center + horizon),
-        stroke: 0.6pt + sky-reflection.lighten(30%),
-        fill: (x, y) => if y == 0 {
-          sky-reflection
-        } else if calc.even(y) {
-          sky-reflection.lighten(88%)
-        } else {
-          white
-        },
-        table.header(
-          text(fill: white, weight: "bold")[Capability],
-          text(fill: white, weight: "bold")[Traditional law firms],
-          text(fill: white, weight: "bold")[Horizontal SaaS],
-          text(fill: white, weight: "bold")[Lawyer AI assistants],
-          text(fill: white, weight: "bold")[Direct RegTech tools],
-          text(fill: white, weight: "bold")[ComplAI],
-        ),
-        [FinTech regulatory depth (MiCA / DORA)], [✓], [✗], [○], [○], text(fill: accent, weight: "bold")[✓],
-        [Grounded EU vector RAG engine], [✗], [✗], [○], [○], text(fill: accent, weight: "bold")[✓],
-        [Product engineering logic diagnostic], [✗], [✗], [✗], [✗], text(fill: accent, weight: "bold")[✓],
-        [Pre-lawyer "red/green" risk triage], [✗], [✗], [✗], [○], text(fill: accent, weight: "bold")[✓],
-        [Startup-accessible self-serve pricing], [✗], [✓], [✗], [✓], text(fill: accent, weight: "bold")[✓],
-        [Jurisdiction document compilation], [○], [✗], [○], [✗], text(fill: accent, weight: "bold")[✓],
+  #figure(
+    rounded-table(table(
+      // The capability column is prose and reads badly when hyphenated, so
+      // it takes the width it needs while the segment columns share what's
+      // left and wrap their headers over two lines instead.
+      columns: (auto, 1fr, 1fr, 1fr, 1fr, auto),
+      align: (left + horizon, center + horizon, center + horizon, center + horizon, center + horizon, center + horizon),
+      stroke: table-stroke,
+      fill: (x, y) => zebra-fill(y),
+      table.header(
+        text(fill: white, weight: "bold")[Capability],
+        text(fill: white, weight: "bold")[Traditional law firms],
+        text(fill: white, weight: "bold")[Horizontal SaaS],
+        text(fill: white, weight: "bold")[Lawyer AI assistants],
+        text(fill: white, weight: "bold")[Direct RegTech tools],
+        text(fill: white, weight: "bold")[ComplAI],
       ),
-      caption: [Competitive comparison by market segment (✓ full, ○ partial, ✗ none)],
-    )
-  ]
+      [FinTech regulatory depth (MiCA / DORA)], [✓], [✗], [○], [✓], text(fill: accent, weight: "bold")[✓],
+      [Grounded EU vector RAG engine], [✗], [✗], [○], [○], text(fill: accent, weight: "bold")[✓],
+      [Product engineering logic diagnostic], [✗], [✗], [✗], [✗], text(fill: accent, weight: "bold")[✓],
+      [Pre-lawyer "red/green" risk triage], [✗], [✗], [✗], [○], text(fill: accent, weight: "bold")[✓],
+      [Startup-accessible self-serve pricing], [✗], [✓], [✗], [○], text(fill: accent, weight: "bold")[✓],
+      [Jurisdiction document compilation], [✓], [✗], [○], [○], text(fill: accent, weight: "bold")[✓],
+    )),
+    caption: [Competitive comparison by market segment (✓ full, ○ partial, ✗ none)],
+  )
 
   ComplAI is positioned to occupy the space these four groups leave open: a "pre-lawyer" diagnostic layer that evaluates financial product logic against EU regulation directly, before code ships and before a lawyer is retained.
 ] <appx-competitor-analysis>
 
-#appendix-module[Market sizing estimate][
-  We size the 2025 EU market for an AI regulatory-compliance assistant targeting startups and SMEs with a bottom-up model, then anchor our planning on its base scenario. The model starts from the EU SME universe, narrows it to companies with recurring compliance intensity (regulated sectors, cross-border operations, and compliance-sensitive digital firms), and applies an annual compliance spend per company across three non-overlapping buckets: external legal counsel, internal compliance labor, and compliance software/regtech:
-
-$ "TAM" = N_"eligible companies" times (C_"legal" + C_"internal labor" + C_"software") $
-
-Applying this formula across low, base, and high scenarios yields the following outputs.
-
-#[
-  #set text(size: 9pt)
-  #figure(
-    table(
-      // Scenario and eligible-company count share one column: as separate
-      // columns the two headers collided, and the count is really just a
-      // property of the scenario rather than an independent variable.
-      columns: (auto, auto, auto, auto, auto, auto),
-      align: (left, center, center, center, center, center),
-      stroke: 0.6pt + sky-reflection.lighten(30%),
-      fill: (x, y) => if y == 0 {
-        sky-reflection
-      } else if calc.even(y) {
-        sky-reflection.lighten(88%)
-      } else {
-        white
-      },
-      table.header(
-        text(fill: white, weight: "bold")[Scenario (eligible companies)],
-        text(fill: white, weight: "bold")[Legal (€)],
-        text(fill: white, weight: "bold")[Internal labor (€)],
-        text(fill: white, weight: "bold")[Software (€)],
-        text(fill: white, weight: "bold")[Total spend/company (€)],
-        text(fill: white, weight: "bold")[TAM (€Bn/year)],
-      ),
-      [Low — 6.0M], [1,000], [1,500], [800], [3,300], text(fill: accent, weight: "bold")[19.8],
-      [Base — 8.0M], [1,500], [2,500], [1,250], [5,250], text(fill: accent, weight: "bold")[42.0],
-      [High — 10.0M], [2,000], [4,000], [1,400], [7,400], text(fill: accent, weight: "bold")[74.0],
-    ),
-    caption: [TAM scenarios for the EU AI regulatory-compliance assistant market],
-  )
-]
-
-While this mechanical range is broad, we frame a tighter investable band of roughly €21–54Bn/year to reflect uncertainty on how many SMEs truly face recurring regulatory complexity. For strategic planning, fundraising narrative, and the downstream SAM/SOM conversion below, we anchor on the base case: a €42.0Bn/year TAM, with sensitivity around company count and internal compliance effort.
-
-This estimate is grounded in public sources: the EU SME population from the European Commission's Annual Report on European SMEs @ec-sme-report-2025, enterprise-structure context from Eurostat's Structural Business Statistics @eurostat-sbs, segmentation support from JRC evidence @jrc-147223, compliance-burden benchmarking from the European Parliament's tax compliance cost study @ep-tax-compliance-cost-2023, and regulatory-cost intensity checks from Intellera's AI Act cost analysis @intellera-ai-act-cost-2024.
-
-For SAM, we narrow to the segment we can serve immediately: EU fintech startups and small fintech enterprises with recurring compliance demand. Using the same bottom-up method as TAM, we model SAM as the number of in-scope fintech firms times the annual compliance spend per firm, split into the same three non-overlapping buckets:
-
-$ "SAM" = N_"EU fintech firms" times (C_"legal" + C_"internal labor" + C_"software") $
-
-#[
-  #set text(size: 9pt)
-  #figure(
-    table(
-      columns: (1fr, auto, auto, auto),
-      align: (left, center, center, center),
-      stroke: 0.6pt + sky-reflection.lighten(30%),
-      fill: (x, y) => if y == 0 {
-        sky-reflection
-      } else if calc.even(y) {
-        sky-reflection.lighten(88%)
-      } else {
-        white
-      },
-      table.header(
-        text(fill: white, weight: "bold")[Scenario],
-        text(fill: white, weight: "bold")[In-scope fintech firms],
-        text(fill: white, weight: "bold")[Spend per firm/year],
-        text(fill: white, weight: "bold")[SAM],
-      ),
-      [Low], [10,000], [€6,500], text(fill: accent, weight: "bold")[€65.0M],
-      [Base], [10,000], [€11,000], text(fill: accent, weight: "bold")[€110.0M],
-      [High], [10,000], [€15,700], text(fill: accent, weight: "bold")[€157.0M],
-    ),
-    caption: [SAM scenarios for EU fintech startups and small enterprises],
-  )
-]
-
-On this basis, we use the base scenario for planning: €110.0M/year. The full mechanical range is €0.9–4.4Bn; for investor communication, a tighter planning band of roughly €1.2–3.7Bn is reasonable depending on how strictly we define "fintech startups/small enterprises" and regulatory intensity. Key references used: EU fintech ecosystem mapping via the EU Digital Finance Platform's Fintech Map @ec-fintech-map, compliance cost evidence from the EBA's report on supervisory reporting compliance costs @eba-supervisory-reporting-cost, and market context from Finch Capital's State of European Fintech 2025 @finch-capital-fintech-2025.
-
-Our immediate go-to-market strategy targets Germany and Italy. Germany retains a leading position in the European fintech ecosystem, and together with Italy, these two markets provide a highly concentrated pool of early adopters. We assume Germany and Italy jointly represent roughly 30% of the European SAM, and for planning purposes we define our SOM as this combined DE + IT market directly:
-
-$ "SOM" = "DE" + "IT" $
-
-#[
-  #set text(size: 9pt)
-  #figure(
-    table(
-      columns: (1fr, 1.2fr),
-      align: (center, center),
-      stroke: 0.6pt + sky-reflection.lighten(30%),
-      fill: (x, y) => if y == 0 {
-        sky-reflection
-      } else if calc.even(y) {
-        sky-reflection.lighten(88%)
-      } else {
-        white
-      },
-      table.header(
-        text(fill: white, weight: "bold")[Scenario],
-        text(fill: white, weight: "bold")[DE + IT SOM (€M/year)],
-      ),
-      [Low], text(fill: accent, weight: "bold")[€19.5M],
-      [Base], text(fill: accent, weight: "bold")[€33.0M],
-      [High], text(fill: accent, weight: "bold")[€47.1M],
-    ),
-    caption: [SOM scenarios for the German and Italian fintech markets],
-  )
-]
-
-Our investable SOM target for the next one to three years is €33.0M ARR (base case), corresponding to the combined German and Italian market we define as our near-term opportunity.
-
-] <appx-market>
 #let regs-subhead(title) = [
   #text(size: 10.5pt, weight: "bold", fill: accent)[#title]
   #v(0.25em)
 ]
 
-#let risk-card(title, body) = block(
-  width: 100%,
-  breakable: false,
-  fill: sky-reflection.lighten(88%),
-  stroke: 0.6pt + accent.lighten(40%),
-  radius: 4pt,
-  inset: 10pt,
-)[
-  #text(size: 9.5pt, weight: "bold", fill: accent)[#title]
-  #v(4pt)
-  #text(size: 8.5pt)[#body]
-]
+#let risk-card(title, body) = info-card(title, body)
 
-#let framework-badge(code) = box(
-  fill: accent.lighten(88%),
-  inset: (x: 6pt, y: 3pt),
-  radius: 3pt,
-  stroke: 0.5pt + accent.lighten(50%),
-)[#text(size: 9pt, weight: "bold", fill: accent)[#code]]
+#let framework-badge(code) = pill-badge(code)
 
 #appendix-module[Regulation and risks][
   ComplAI operates in a highly regulated environment, since it provides AI-powered compliance support to European startups, initially FinTech companies. Our customers may fall under several overlapping EU frameworks, which our regulatory coverage has to track:
@@ -652,12 +548,12 @@ Our investable SOM target for the next one to three years is €33.0M ARR (base 
     #block(
       width: 100%,
       breakable: false,
-      fill: sky-reflection.lighten(88%),
-      stroke: 0.6pt + accent.lighten(40%),
-      radius: 4pt,
+      fill: card-fill,
+      stroke: card-stroke,
+      radius: card-radius,
       inset: 10pt,
     )[
-      #set text(size: 8.5pt)
+      #set text(size: 9pt)
       - Draw only on official, regularly updated regulatory sources
       - Cite those sources and explain the basis of every recommendation
       - State clearly, in-product and contractually, that the platform does not replace professional legal advice

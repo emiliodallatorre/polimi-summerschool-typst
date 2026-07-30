@@ -1,6 +1,6 @@
 = Business development process
 
-#import "../theme.typ": accent, sky-reflection
+#import "../theme.typ": accent, card-stroke, card-fill, card-radius, table-stroke, zebra-fill, rounded-table
 
 == Need and niche identification
 
@@ -13,17 +13,11 @@ Through discovery with founders and experts, we identified a severe gap in how e
 To validate problem-solution fit, willingness to pay, and core assumptions, we conducted 14 exploratory, semi-structured interviews across three stakeholder groups, summarised below.
 
 #figure(
-  table(
+  rounded-table(table(
     columns: (auto, auto, 1fr),
     align: (left, center, left),
-    stroke: 0.6pt + sky-reflection.lighten(30%),
-    fill: (x, y) => if y == 0 {
-      sky-reflection
-    } else if calc.even(y) {
-      sky-reflection.lighten(88%)
-    } else {
-      white
-    },
+    stroke: table-stroke,
+    fill: (x, y) => zebra-fill(y),
     table.header(
       text(fill: white, weight: "bold")[Group],
       text(fill: white, weight: "bold")[Participants],
@@ -32,7 +26,7 @@ To validate problem-solution fit, willingness to pay, and core assumptions, we c
     [FinTech and AI founders], text(fill: accent, weight: "bold")[10], [How small teams handle regulatory research, manage heavy legal costs, and view AI-driven diagnostic tools before hiring lawyers],
     [Banking and finance professionals], text(fill: accent, weight: "bold")[2], [Perspective on institutional compliance workflows and regulatory expectations],
     [Legal experts], text(fill: accent, weight: "bold")[2], [How advisors evaluate client submissions and judge the feasibility of AI-generated compliance reports],
-  ),
+  )),
   caption: [Stakeholder groups interviewed during the validation process],
 )
 
@@ -47,17 +41,11 @@ We structured each round of validation as an explicit experiment rather than an 
 Across our 14 interviewees, the metrics strongly confirmed market demand. The table below summarises how many founder interviewees agreed with each statement put to them during the interviews.
 
 #figure(
-  table(
+  rounded-table(table(
     columns: (1fr, auto),
     align: (left, center),
-    stroke: 0.6pt + sky-reflection.lighten(30%),
-    fill: (x, y) => if y == 0 {
-      sky-reflection
-    } else if calc.even(y) {
-      sky-reflection.lighten(88%)
-    } else {
-      white
-    },
+    stroke: table-stroke,
+    fill: (x, y) => zebra-fill(y),
     table.header(
       text(fill: white, weight: "bold")[Statement],
       text(fill: white, weight: "bold")[Agreement],
@@ -67,7 +55,7 @@ Across our 14 interviewees, the metrics strongly confirmed market demand. The ta
     [My startup would actively use an AI platform identifying obligations, flagging gaps, and generating reports for legal review], text(fill: accent, weight: "bold")[8 / 10],
     [Identify continuous post-licensing monitoring as a critical secondary capability], text(fill: accent, weight: "bold")[7 / 10],
     [Expressed explicit willingness to pay if the platform demonstrably cut legal billable hours and accelerated licensing timelines], text(fill: accent, weight: "bold")[9 / 10],
-  ),
+  )),
   caption: [Interview agreement rates across the 14 exploratory interviews],
 )
 
@@ -75,17 +63,71 @@ Together, these figures confirmed the problem was a consistent pattern, not an i
 
 === Qualitative insights and stakeholder evidence
 
-Regulatory delay is an existential risk for early startups. Our interview with Peter Grouev, founder of Tapline, revealed that regulatory friction is a primary cause of startup failure, not merely an expense. Peter explained that "half of our EUR 500K pre-seed round went straight to lawyers," and separately noted that his team "lost the first two years waiting on BaFin's approval of our custom contract." His experience showed how regulatory delays consume critical runway, leaving startups vulnerable to competitors in lighter regulatory regimes.
+Beyond the agreement rates, six accounts reshaped how we framed the problem. Each insight below is paired with the evidence that produced it.
 
-Founders use AI as a pre-consulting bridge. Christine, a founder we interviewed, explained that early founders rely on AI to gain basic domain literacy before engaging expensive human experts: "AI helps bridge the gap before you talk to human consultants... If you don't understand the details, you can't communicate effectively with an expert."
+// One filled card per insight, in a single 2-column grid, deliberately reusing
+// the same visual language as the `pivot-box` cards further down this section
+// via the shared `card-fill`/`card-stroke`/`card-radius` theme tokens. Each
+// card is a plain block placed directly as a grid child (not grid.cell) so
+// Typst stretches every row to its tallest sibling and keeps a card's title
+// glued to its own quote across a page break.
+#let insight(title, source, quote) = block(
+  width: 100%,
+  breakable: false,
+  fill: card-fill,
+  stroke: card-stroke,
+  radius: card-radius,
+  inset: 8pt,
+)[
+  #set par(leading: 0.6em, justify: false)
+  #text(size: 9.5pt, weight: "bold", fill: accent)[#title]
+  #v(3pt)
+  #text(size: 9pt, style: "italic")[#quote]
+  #v(3pt)
+  #text(size: 9pt, fill: accent.lighten(15%))[--- #source]
+]
 
-External legal counsel views AI as an efficiency enabler. Marco Dalla Torre (Senior Lawyer) confirmed that founders often arrive with unstructured business models, forcing lawyers to spend dozens of billable hours on basic explanations. As they noted: "If a platform can pre-triage a startup's architecture and map compliance gaps into a structured report, we can skip basic research and focus directly on final validation." This validated ComplAI's positioning as an upstream efficiency tool, not a replacement for legal sign-off.
+// Columns pair insights that make the same kind of point: the cost of getting
+// compliance wrong, how external counsel reads the tool, how founders behave.
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 8pt,
+  row-gutter: 8pt,
+  insight(
+    "Regulatory delay is existential",
+    [Peter Grouev, founder, Tapline],
+    ["half of our EUR 500K pre-seed round went straight to lawyers \[...\] lost the first two years waiting on BaFin's approval of our custom contract"],
+  ),
+  insight(
+    "Late compliance fixes are ruinous",
+    [Simone, financial expert],
+    ["The real cost isn't just lawyer fees; it is having to rebuild your entire product architecture six months in because your core feature accidentally breached financial rules."],
+  ),
+  insight(
+    "Counsel sees AI as an efficiency gain",
+    [Marco Dalla Torre, senior lawyer],
+    ["If a platform can pre-triage a startup's architecture and map compliance gaps into a structured report, we can skip basic research and focus directly on final validation."],
+  ),
+  insight(
+    "Counsel confirmed our approach is feasible",
+    [Miroslav Duric, UK and EU qualified lawyer],
+    ["A system that captures the relevant features of a company's business model, maps them against applicable compliance requirements, and highlights areas requiring further review is both technically achievable and highly useful in practice."],
+  ),
+  insight(
+    "AI is a pre-consulting bridge",
+    [Christine, founder],
+    ["AI helps bridge the gap before you talk to human consultants... If you don't understand the details, you can't communicate effectively with an expert."],
+  ),
+  insight(
+    "Founders benchmark against general LLMs",
+    [Peter Grouev, founder, Tapline],
+    ["Startups don't have much money, so you may need to offer a heavily discounted or near-free entry tier just to build traction."],
+  ),
+)
 
-External legal counsel validated ComplAI's value proposition. Miroslav Duric, an experienced UK and EU qualified lawyer with a strong background in financial services and cross-border legal matters, confirmed that ComplAI is both feasible and practically useful in addressing inefficiencies in the early assessment of complex legal questions. As he noted: "A system that captures the relevant features of a company's business model, maps them against applicable compliance requirements, and highlights areas requiring further review is both technically achievable and highly useful in practice."
+#v(4pt)
 
-Fixing compliance after product launch is prohibitively expensive. Simone (Financial Expert) emphasized the operational danger of late-stage compliance adjustments, stating: "The real cost isn't just lawyer fees; it is having to rebuild your entire product architecture six months in because your core feature accidentally breached financial rules."
-
-Pricing expectations and the LLM benchmark. Peter Grouev also forced us to re-evaluate our pricing assumptions, pointing out that founders compare specialized tools to general AI models such as Claude Sonnet: "Startups don't have much money, so you may need to offer a heavily discounted or near-free entry tier just to build traction."
+Read together, these accounts showed that regulatory friction consumes runway rather than merely money, and they positioned ComplAI as an upstream diagnostic layer that shortens legal review instead of replacing human sign-off.
 
 == Pivots
 
@@ -94,16 +136,16 @@ Along the way of our validation process, we made three major pivots in response 
 #let pivot-box(title, trigger, reasoning) = block(
   width: 100%,
   breakable: false,
-  fill: sky-reflection.lighten(88%),
-  stroke: 0.6pt + accent.lighten(40%),
-  radius: 4pt,
+  fill: card-fill,
+  stroke: card-stroke,
+  radius: card-radius,
   inset: 8pt,
 )[
-  #text(size: 9pt, weight: "bold", fill: accent)[#title]
+  #text(size: 9.5pt, weight: "bold", fill: accent)[#title]
   #v(3pt)
-  #text(size: 7.5pt)[*Trigger:* #trigger]
+  #text(size: 9pt)[*Trigger:* #trigger]
   #v(2pt)
-  #text(size: 7.5pt)[*Reasoning:* #reasoning]
+  #text(size: 9pt)[*Reasoning:* #reasoning]
 ]
 
 #grid(

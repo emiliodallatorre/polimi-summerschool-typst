@@ -6,7 +6,7 @@
 
 #let members = (
   ("Arianna Balducci", "assets/people/arianna.jpeg", "Artificial Intelligence with Affective Computing (AIAC)"),
-  ("Emilio Dalla Torre", "assets/people/emilio.jpeg", "Cloud and Networking Infrastructure and HPC (CNIHPC)"),
+  ("Emilio Dalla Torre", "assets/people/emilio.jpeg", "High Performance Computing Engineering (CNIHPC)"),
   ("Matteo Mugnai", "assets/people/matteo.jpeg", "Data Science\n(DSC)"),
   ("Sara Patano", "assets/people/sara.jpeg", "Data Science\n(DSC)"),
   ("Elisa Saiz", "assets/people/elisa.jpeg", "Data Science\n(DSC)"),

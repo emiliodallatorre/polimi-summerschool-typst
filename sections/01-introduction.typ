@@ -1,7 +1,7 @@
 = Introduction
 
-This report outlines the development of a digital finance venture during the EIT Summer School in Digital Finance & Entrepreneurship that was held in Frankfurt, at TechQuartier. The primary objective of this program was to ideate, validate, and pitch an innovative business model in the field of fintech.
+This report outlines the development of a digital finance venture during the EIT Summer School in Digital Finance & Entrepreneurship, held in Frankfurt at TechQuartier, whose objective was to ideate, validate, and pitch an innovative fintech business model.
 
-To address this challenge, our team developed the ComplAI platform. ComplAI is an AI-native diagnostic platform and LLM designed to assist early-stage startups in navigating the complex landscape of European regulatory frameworks, including MiCA, DORA, and PSD3, before incurring prohibitive external legal costs.
+To address this challenge, our team developed ComplAI, an AI-native diagnostic platform and LLM that helps early-stage startups navigate European regulatory frameworks such as MiCA, DORA, and PSD3 before incurring prohibitive legal costs.
 
-This report documents our business development journey, and includes an appendix that contains the evidence of the analysis used to sustain our assumptions, our validation and the numerical results we presented in this report as well as in the pitch that was held at the final workshop of the Summer School.
+This report documents our business development journey, with an appendix containing the evidence behind our assumptions, validation, and numerical results, as presented in this report and in the final pitch.

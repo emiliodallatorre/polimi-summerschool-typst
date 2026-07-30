@@ -87,6 +87,89 @@
 }
 
 // ---------------------------------------------------------------------------
+// Shared card/table design tokens, centralized here so every section's boxes,
+// badges, and tables read as one consistent visual system instead of each
+// section re-deriving its own radius/stroke/fill combination.
+#let card-radius = 4pt
+#let pill-radius = 3pt
+#let card-stroke = 0.6pt + accent.lighten(40%)
+#let card-fill = sky-reflection.lighten(88%)
+#let table-stroke = 0.6pt + sky-reflection.lighten(30%)
+
+// Zebra-striped row fill for data tables: header in solid sky-reflection,
+// alternating tint on even rows, white on odd rows. Pass as
+// `fill: (x, y) => zebra-fill(y)` so every table in the report stripes the
+// same way instead of redefining this closure locally each time.
+#let zebra-fill(y) = if y == 0 {
+  sky-reflection
+} else if calc.even(y) {
+  sky-reflection.lighten(88%)
+} else {
+  white
+}
+
+// Typst's `table` has no `radius` argument of its own, so rounded-corner
+// tables need an outer block that clips to a rounded rect. Clipping alone
+// isn't enough though: the table draws its own square-cornered border, so
+// clipping it to a curve chops that border off right at each corner. Giving
+// the outer block a matching stroke draws a continuous rounded border on
+// top, covering that gap. This also sets the table's text to a single
+// consistent size (smaller than body text, to visually separate data from
+// prose) so every table reads the same regardless of which section calls
+// it, instead of each call site remembering its own `#set text(size: ...)`.
+// Wrap any table (or figure containing one) in this instead of a bare
+// `#[...]` so every data table in the report gets the same rounded corners
+// and text size as the rest.
+#let rounded-table(body, stroke: table-stroke, size: 9pt) = block(radius: card-radius, clip: true, stroke: stroke)[
+  #set text(size: size)
+  #body
+]
+
+// Generic light card: accent-bordered, rounded, subtly filled, a bold title
+// over a body. This is the shape behind every "insight/point/risk/channel"
+// box across the report; sections call it instead of hand-rolling their own
+// block(fill:, stroke:, radius:, inset:) so a single style change here
+// propagates everywhere.
+#let info-card(title, body, fill: card-fill, title-size: 9.5pt, body-size: 9pt) = block(
+  width: 100%,
+  breakable: false,
+  fill: fill,
+  stroke: card-stroke,
+  radius: card-radius,
+  inset: 8pt,
+)[
+  #text(size: title-size, weight: "bold", fill: accent)[#title]
+  #v(3pt)
+  #text(size: body-size)[#body]
+]
+
+// Dark stat badge: a large bold value over a small tracked caption, for
+// headline numbers (pricing tiers, the funding ask, allocation splits).
+#let stat-badge(
+  value,
+  label,
+  fill: accent,
+  value-size: 11pt,
+  label-size: 6.5pt,
+  gap: -2pt,
+  inset: (x: 10pt, y: 5pt),
+  width: 100%,
+) = block(width: width, fill: fill, radius: card-radius, inset: inset)[
+  #set text(fill: white)
+  #text(size: value-size, weight: "bold")[#value]
+  #v(gap)
+  #text(size: label-size, tracking: 0.5pt)[#label]
+]
+
+// Small inline pill badge, e.g. for a row of regulatory-framework tags.
+#let pill-badge(code, fill: accent.lighten(88%), text-fill: accent, stroke-color: accent.lighten(50%)) = box(
+  fill: fill,
+  inset: (x: 6pt, y: 3pt),
+  radius: pill-radius,
+  stroke: 0.5pt + stroke-color,
+)[#text(size: 9pt, weight: "bold", fill: text-fill)[#code]]
+
+// ---------------------------------------------------------------------------
 // Main theme: page setup, typography, headings, footnotes, captions, tables.
 #let theme(doc) = {
   set page(
@@ -131,7 +214,7 @@
 
   // Tables: single spacing, accent-colored border.
   show table.cell: set par(leading: 0.65em)
-  set table(stroke: 0.6pt + accent.lighten(40%))
+  set table(stroke: card-stroke)
 
   doc
 }
@@ -148,6 +231,7 @@
   breakable: true,
   stroke: 0.6pt + accent.lighten(40%),
   radius: 4pt,
+  clip: true,
   inset: 12pt,
   above: 1.4em,
   below: 1em,
