@@ -12,47 +12,6 @@ Because early-stage FinTech ventures rarely have specialized departments, we def
 
 We target these startups because they face a structural pressure that makes early regulatory alignment a condition for survival rather than an operational nice-to-have. Regulatory frameworks such as DORA and MiCA, combined with licensing rejection rates estimated at 80 to 85 percent @ccn-mica-failure-rate-2025, mean that a poorly documented or non-compliant product architecture can block a launch or sink a license application. At the same time, these ventures operate on constrained runway and cannot absorb the cost of retaining external legal counsel early and continuously. This combination of high regulatory exposure and limited financial capacity to address it through traditional means is what makes early-stage FinTech startups a coherent and urgent customer segment for ComplAI.
 
-== Market sizing estimate <sec-market-sizing>
-
-#align(center)[
-  #v(0.3cm)
-  #stack(
-    dir: ttb,
-    spacing: 0.12cm,
-    align(center)[
-      #box(width: 90%, height: 1.7cm, fill: accent, radius: 3pt)[
-        #align(center + horizon)[
-          #text(fill: white, weight: "bold", size: 12pt)[TAM] #linebreak()
-          #text(fill: white, size: 10pt)[€42.0Bn / year]
-        ]
-      ]
-    ],
-    align(center)[
-      #box(width: 58%, height: 1.7cm, fill: accent.lighten(30%), radius: 3pt)[
-        #align(center + horizon)[
-          #text(fill: white, weight: "bold", size: 12pt)[SAM] #linebreak()
-          #text(fill: white, size: 10pt)[€110.0M / year]
-        ]
-      ]
-    ],
-    align(center)[
-      #box(width: 28%, height: 1.7cm, fill: accent.lighten(58%), radius: 3pt)[
-        #align(center + horizon)[
-          #text(fill: accent.darken(30%), weight: "bold", size: 12pt)[SOM] #linebreak()
-          #text(fill: accent.darken(30%), size: 10pt)[€1.65M / year]
-        ]
-      ]
-    ],
-  )
-  #v(0.15cm)
-  #text(size: 8pt, style: "italic", fill: rgb("#555555"))[Base-case estimates; see the scenario tables below for the full ranges.]
-  #v(0.2cm)
-]
-
- The TAM is based on the total number of EU SME, factoring in their total annual compliance spend. The SAM narrows this down specifically to EU FinTech startups and small FinTech enterprises, while the SOM targets the German and Italian FinTech markets.
-
- (see #link(<appx-market>)[Appendix] for full explanation of the TAM/SAM/SOM methodology and assumptions).
-
 == Value proposition
 
 ComplAI helps early-stage start-ups understand what they need to do to become compliant, without having to rely on expensive legal support from day one. It guides them through the initial assessment, highlights possible compliance gaps, and prepares clear documents that lawyers can review and validate. In this way, start-ups can reduce legal costs, move faster through licensing, and make their legal and compliance work more organised and efficient. No existing player combines this depth of FinTech regulatory coverage with a pre-lawyer, product-level diagnostic (see #link(<appx-value-proposition-canvas>)[Appendix] for the complete Value Proposition Canvas).

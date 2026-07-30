@@ -31,7 +31,7 @@
 #include "sections/02-teamwork.typ"
 #include "sections/03-ideation.typ"
 #include "sections/04-business-development-process.typ"
-#include "sections/chapter1.typ"
+#include "sections/market_analysis.typ"
 #include "sections/05-business-model-summary.typ"
 #include "sections/chapter2.typ"
 #include "sections/06-learning-reflection.typ"
