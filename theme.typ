@@ -100,7 +100,6 @@
   set text(font: font, size: 11pt, fill: rgb("#1A1A1A"))
   set par(leading: 0.975em, justify: true) // 0.65em (default) * 1.5
 
-
   // Links and lists pick up the theme color.
   show link: set text(fill: accent)
   set list(marker: text(fill: accent)[•])
@@ -126,7 +125,9 @@
   // Captions: 9pt, single spacing, accent-colored label.
   show figure.caption: set text(size: 9pt)
   show figure.caption: set par(leading: 0.65em)
-  show figure.caption: it => text(fill: accent.darken(10%))[*#it.supplement #it.counter.display(it.numbering)*#it.separator#it.body]
+  show figure.caption: it => text(
+    fill: accent.darken(10%),
+  )[*#it.supplement #it.counter.display(it.numbering)*#it.separator#it.body]
 
   // Tables: single spacing, accent-colored border.
   show table.cell: set par(leading: 0.65em)
@@ -343,6 +344,12 @@
         ]
       ]),
     )
+
+
+    #align(center)[
+      #v(2cm)
+      #image("assets/summer-school.jpg", width: 40%)
+    ]
   ]
 }
 
