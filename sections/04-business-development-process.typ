@@ -96,7 +96,7 @@ Beyond the agreement rates, six accounts reshaped how we framed the problem. Eac
   insight(
     "Regulatory delay is existential",
     [Peter Grouev, founder, Tapline],
-    ["half of our EUR 500K pre-seed round went straight to lawyers \[...\] lost the first two years waiting on BaFin's approval of our custom contract"],
+    ["half of our EUR 500K pre-seed round went straight to lawyers \[...\] lost the first two years waiting on BaFin's approval of our custom contract that was still being developed"],
   ),
   insight(
     "Late compliance fixes are ruinous",
@@ -106,7 +106,7 @@ Beyond the agreement rates, six accounts reshaped how we framed the problem. Eac
   insight(
     "Counsel sees AI as an efficiency gain",
     [Marco Dalla Torre, senior lawyer],
-    ["If a platform can pre-triage a startup's architecture and map compliance gaps into a structured report, we can skip basic research and focus directly on final validation."],
+    ["If a platform can pre-triage a startup's architecture and map compliance gaps into a structured report, we can skip basic research and focus directly on final validation, allowing for a way faster go-to market and less lawyer billable hours."],
   ),
   insight(
     "Counsel confirmed our approach is feasible",
@@ -159,7 +159,7 @@ Along the way of our validation process, we made three major pivots in response 
   pivot-box(
     "2. Freemium Q&A tier",
     "Mentor feedback challenged our single-price model after founder interviews.",
-    "Cash-constrained founders benchmark against cheap general LLMs, so we added a low-cost entry tier.",
+    "Cash-constrained founders benchmark against cheap general LLMs, so we added a low-cost entry tier to captivate that market.",
   ),
   pivot-box(
     "3. Partnering with law firms",

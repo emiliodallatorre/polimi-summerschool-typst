@@ -178,6 +178,6 @@ Deeply integrated, compliant AI infrastructure requires upfront engineering inve
   ),
   info-card(
     "An aggressive, funded Year 2",
-    [Full upfront capitalization gives us the runway to pursue the €950,000 Year 2 revenue target and reach break-even early for an AI SaaS platform.],
+    [Full capitalization gives us the runway to pursue the €950,000 Year 2 revenue target, reaching break-even early for an AI SaaS .],
   ),
 )

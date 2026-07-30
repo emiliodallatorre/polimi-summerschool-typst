@@ -27,7 +27,7 @@ Our market-access strategy rests on three coordinated channels, chosen to achiev
   ),
   info-card(
     "Targeted PR & thought leadership",
-    [Publishing problem-solution case studies and regulatory analyses in outlets such as Business Insider, to build domain authority and organic brand awareness among founders actively researching compliance solutions.],
+    [Publishing problem-solution case studies and regulatory analyses in outlets such as Business Insider, to build domain authority and organic brand awareness among founders actively researching alternative compliance solutions.],
   ),
   info-card(
     "FinTech conferences & founder events",
