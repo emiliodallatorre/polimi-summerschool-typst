@@ -10,10 +10,10 @@ This appendix collects the supporting evidence referenced throughout the report:
 #appendix-module[Interview question sets][
   Validation interviews were structured around four core research questions:
 
-  - How do you currently approach regulatory compliance
-  - What are the main pain points during the licensing process
-  - What specific tools or resources do you rely on prior to retaining expensive legal counsel
-  - Would you be willing to pay for an AI-powered regulatory diagnostic platform
+  - How do you currently approach regulatory compliance?
+  - What are the main pain points during the licensing process?
+  - What specific tools or resources do you rely on prior to retaining expensive legal counsel?
+  - Would you be willing to pay for an AI-powered regulatory diagnostic platform?
 ] <appx-interview-questions>
 
 // ---------------------------------------------------------------------------
