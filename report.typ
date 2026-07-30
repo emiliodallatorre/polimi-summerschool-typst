@@ -37,6 +37,10 @@
 
 #pagebreak()
 
+#bibliography("references.bib", title: "References", style: "ieee")
+
+#pagebreak()
+
 #set page(background: page-background(numbering: "I", page-counter: appendix-page-counter))
 
 #include "sections/08-appendix.typ"
