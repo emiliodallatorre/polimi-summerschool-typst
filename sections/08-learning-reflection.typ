@@ -16,6 +16,6 @@ Our mentor also pushed us in this direction, repeatedly steering us back to what
 
 Given more time, we would tighten our validation process in two respects.
 
-We would push interviewees for numbers rather than settling for general impressions of a problem. Instead of hearing that compliance work is "time-consuming," we would ask how many hours it takes, what that costs in practice, and what a delayed launch is worth to them. Concrete figures would give us a far more reliable read on whether the pain is big enough to build a business on.
+We would push interviewees for numbers rather than settling for general impressions of a problem. Instead of hearing that compliance work is "time-consuming", we would ask how many hours it takes, what that costs in practice, and what a delayed launch costs them. Concrete figures would give us a more reliable read on whether the pain is big enough to build a business.
 
 We would also test a working prototype rather than describing the idea verbally. Explaining ComplAI in conversation was enough to confirm that people find EU compliance genuinely difficult, but it also invites polite agreement rather than honest reaction. Putting an interactive MVP in front of FinTech founders and compliance officers would let us watch how they actually use it, rather than how they say they would, and give us a much better sense of whether they would pay for it.
