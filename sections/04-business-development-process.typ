@@ -87,11 +87,42 @@ Pricing expectations and the LLM benchmark. Peter Grouev also forced us to re-ev
 
 == Pivots
 
-Pivot 1: From Autonomous Compliance Auditor to Human-in-the-Loop Diagnostic Layer. Trigger: feedback from the legal expert, confirming no regulator would accept AI output as a binding guarantee. Reasoning: we originally envisioned ComplAI producing final compliance determinations independently, a framing structurally incompatible with regulated finance. We repositioned the product as a preparation layer that flags gaps ahead of qualified human sign-off.
+Along the way of our validation process, we made three major pivots in response to the evidence we collected.
 
-Pivot 2: Introducing a Freemium Q&A Tier After Mentor Feedback. Trigger: our first structured mentoring session, held after our initial founder interviews, where our mentor challenged our early pricing model. Reasoning: Our first design assumed a single subscription price. This created friction for cash-constrained founders who, as Peter Grouev noted, compare specialized tools to a €20 general LLM. In response, we introduced Tier 1: a low-cost Q&A option designed as a frictionless entry point that guided our overall go-to-market strategy.
+#let pivot-box(title, trigger, reasoning) = block(
+  width: 100%,
+  breakable: false,
+  fill: sky-reflection.lighten(88%),
+  stroke: 0.6pt + accent.lighten(40%),
+  radius: 4pt,
+  inset: 8pt,
+)[
+  #text(size: 9pt, weight: "bold", fill: accent)[#title]
+  #v(3pt)
+  #text(size: 7.5pt)[*Trigger:* #trigger]
+  #v(2pt)
+  #text(size: 7.5pt)[*Reasoning:* #reasoning]
+]
 
-Pivot 3: From Competing with Law Firms to Partnering with Them. Trigger: Feedback from legal experts and accelerator advisers on how startups work with outside lawyers. Reasoning: Our early materials presented law firms as an expensive cost to eliminate. Once we learned that lawyers actually appreciate receiving pre-screened information instead of starting from scratch, we reframed them as referral partners rather than competitors.
+#grid(
+  columns: (1fr, 1fr, 1fr),
+  gutter: 8pt,
+  pivot-box(
+    "1. Human-in-the-loop, not autonomous",
+    "Legal experts confirmed no regulator would accept AI output as a binding guarantee.",
+    "Repositioned from an autonomous auditor to a prep layer flagging gaps ahead of human sign-off.",
+  ),
+  pivot-box(
+    "2. Freemium Q&A tier",
+    "Mentor feedback challenged our single-price model after founder interviews.",
+    "Cash-constrained founders benchmark against cheap general LLMs, so we added a low-cost entry tier.",
+  ),
+  pivot-box(
+    "3. Partnering with law firms",
+    "Legal experts and accelerator advisers described how startups actually work with lawyers.",
+    "Lawyers value pre-screened information, so we reframed them as referral partners, not competitors.",
+  ),
+)
 
 == Business model evolution
 
