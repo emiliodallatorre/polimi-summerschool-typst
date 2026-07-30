@@ -38,6 +38,8 @@ To validate problem-solution fit, willingness to pay, and core assumptions, we c
 
 Across all groups, questions centered on four themes: current compliance practices, the time and cost involved, the main pain points in the licensing process, and the tools relied upon before engaging costly legal counsel. Keeping the same thematic anchors across groups allowed us to compare responses consistently despite differing professional backgrounds. Full question sets are provided in the #link(<appx-interview-questions>)[Appendix].
 
+We structured each round of validation as an explicit experiment rather than an open-ended conversation, recording the hypothesis under test, the test itself, the metric observed, and the criteria that would count as confirmation. The #link(<appx-test-cards>)[test cards in the Appendix] document these experiments.
+
 == Key findings that changed our thinking
 
 === Quantitative validation metrics

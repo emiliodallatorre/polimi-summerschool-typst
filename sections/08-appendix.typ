@@ -1,14 +1,11 @@
 = Appendix
 
-#import "../theme.typ": appendix-module, sky-reflection, accent, honey-bronze, classic-crimson
+#import "../theme.typ": appendix-module, sky-reflection, accent
 
-This appendix collects the supporting evidence referenced throughout the report: interview transcripts, question sets, market data, plots, and other material too detailed for the main body. Each item below is a self-contained module with its own label, so it can be linked to directly from the relevant paragraph in the report rather than making the reader search for it.
+This appendix collects the supporting evidence referenced throughout the report: question sets, market data, plots, and other material too detailed for the main body. Each item below is a self-contained module with its own label, so it can be linked to directly from the relevant paragraph in the report rather than making the reader search for it.
 
-Interview transcripts were obtained by recording each conversation and transcribing it with AI assistance. They are reproduced as close to verbatim as possible, but since the transcription process is automated, small errors (misheard words, mangled names, missed nuances) may remain.
-
-// TODO: Replace the placeholders below with real content, and add a label
-// after each module (e.g. `<appx-interview-questions>`) so it can be linked
-// to from the report body with `#link(<appx-interview-questions>)[...]`.
+// Each module below carries a label (e.g. `<appx-interview-questions>`) so it
+// can be linked to from the report body with `#link(<appx-interview-questions>)[...]`.
 
 #appendix-module[Interview question sets][
   Validation interviews were structured around four core research questions:
@@ -19,183 +16,127 @@ Interview transcripts were obtained by recording each conversation and transcrib
   - Would you be willing to pay for an AI-powered regulatory diagnostic platform
 ] <appx-interview-questions>
 
-#appendix-module[Interview transcript — Christine, stealth startup founder][
-  *Context:* Startup & AI interview \
-  *Participants:* Arianna, Sara, Christine
-
-  *Arianna:* Oh, sure. Okay. You can tell me about a character, and I can tell you... Maybe first we could ask you some questions, just so we don't bias you. It could be better, but in general, it's really not a specific questionnaire, you know? Okay, so... we are Italian students. I'm Arianna, she's Sara. Nice to meet you.
-
-  *Christine:* And you are? I'm Christine. Nice to meet you too.
-
-  *Arianna:* Basically, we wanted to ask if you're in the early stages of developing your idea right now. Are you having trouble with compliance, bureaucracy, or EU regulations, or does it depend?
-
-  *Christine:* You know, there are different ways to start a startup. Some people work a parallel job and build their startup at the same time. From my experience, that is almost impossible unless your startup is already at a very advanced stage where you just need to meet people.
-
-  To develop the initial concept while working a job is very difficult because the conceptual phase requires deep concentration. You have to sit down, do it, rework it many times, and sometimes change the entire concept. It becomes especially crazy when you get to the financial calculations process — especially if you're building a substantial project rather than something small. It takes a lot of time and is very complicated.
-
-  Because of this, some people take a sabbatical so they can still get paid, because you need money to live. In Germany, the government has something like Bürgergeld — the state pays you if you're not working. So some people use that, but in reality, you are working even harder than people who have a standard job.
-
-  *Arianna:* So did you take a sabbatical like that?
-
-  *Christine:* Yeah, a sabbatical, or you just quit your job and start working on your startup stuff. The problem is — from my point of view — this stage feels like a very bad setup. It's great that we have social safety nets, but the state should make a distinction for people who aren't working because they are founding a company. Officially, I am registered as Arbeitslos (unemployed), but how am I unemployed if I'm working?
-
-  There is something called Gründungszuschuss, which is a grant for founders (Gründer). But it is so small! If you receive standard unemployment benefits (Bürgergeld), the grant only pays about 50% of that. Plus, to get it, you have to go through an intense evaluation process where an external company has to assess your startup. From my point of view, it's a very strange situation because it doesn't reflect the reality of starting a business.
-
-  *Arianna:* If I can ask, since it's so difficult to work all day with so little pay, why did you choose this path? What is your background, where did you work previously, and did you have such a strong idea that you really wanted to pursue it?
-
-  *Christine:* I have so many ideas! But I am not a standard case. I graduated with an Executive MBA and worked for a long time at a strategic level in banking and industry.
-
-  Then I had a few years where I couldn't work because I had issues with my housing, so I had to quit my job to resolve those personal matters and survive. After that was settled, I had to choose what to do next. I had opportunities and invitations to go back to my old company, but it wasn't interesting to me anymore.
-
-  When you work at a strategic level in a large German corporation, it involves a lot of internal politics. You have to build strategies just to survive corporate politics — figuratively, you have to derail other people's careers before they derail yours. It's tough.
-
-  If you don't have a good idea, it's hard to start a company. But if you have specialized education in strategy, you naturally generate ideas. You have experience, and you can "feel" the market. Also, as a regular human living your life, you have daily needs — and you notice when your needs aren't being met by current products. That's where an idea comes from: a real problem to solve. I've read many biographies of successful founders, and most of them started by covering a personal need.
-
-  *Sara:* Are you working on this idea alone?
-
-  *Christine:* At the moment, yes. But I have people who evaluate specific parts for me because, of course, I'm not a specialist in everything.
-
-  *Arianna:* Like lawyers?
-
-  *Christine:* Yes, lawyers, financial controllers to check calculations, and engineers for technological processes.
-
-  *Sara:* Is consulting expensive for you right now?
-
-  *Christine:* Normally no, because first of all, I have no money! And consultants understand that.
-
-  That's a very interesting question. Why do people help? Some people help because they want to participate — they might do the work in exchange for equity in the company down the line. If their personality fits with mine and their qualifications match what the company will need, I agree to that. Other people help simply because they have a mentor mentality — they want to share their knowledge with active, ambitious founders.
-
-  *Sara:* So you don't think legal consulting, licensing, and bureaucracy are major barriers to starting out? Is money the main barrier?
-
-  *Christine:* It depends on where you look for expertise. If you go directly to an established firm, they won't move a finger without money.
-
-  However, there are expert networks and apps available now. What worked for me was finding the right individuals. For example, right now, I need a patent lawyer to apply for some patents and licenses. That was pretty difficult. You need someone with specific expertise in your domain.
-
-  I picked three candidates: one "star" lawyer and two younger lawyers. I was able to build a rapport with the younger ones. They initially quoted EUR 1,000, which was too much for me. But we negotiated: I signed an agreement stating that once my company secures funding and officially launches, I will pay them. They agreed to work without upfront payment. It's not super common, but if lawyers see that your project has real economic prospects, they can evaluate it and choose to wait for payment.
-
-  I also use another source that might sound funny, but I find it very efficient: artificial intelligence.
-
-  *Sara:* Okay!
-
-  *Christine:* You can't rely on everything AI says — there is 100% a lot of "bullshit" output, so you have to be careful. But if you ask specific questions and know exactly what you're looking for, it can give great answers. In fact, I found out how to handle my initial patent steps by asking AI! It gave me my first guidance on patents, which led me to select those three lawyers.
-
-  AI helps bridge the gap before you talk to human consultants. I use it to understand the technical details. If you don't understand the details, you can't communicate effectively with an expert.
-
-  *Sara:* What topics are you asking AI about most today? Technical details, legal matters, or bureaucracy?
-
-  *Christine:* It depends on where you are in the process. Within the early stages, there are sub-stages.
-
-  Technical issues: when working on the concept, technical feasibility comes first.
-
-  Calculations: next, you build the financial structure. That's difficult because calculations are very systematic, whereas technical processes are fluid. Combining both requires effort, and AI helps build that framework.
-
-  Details and pricing: then you look for specific details, like market prices and CAPEX/OPEX.
-
-  *Sara:* Isn't it important to see immediately if an idea is feasible regarding EU regulations and compliance?
-
-  *Christine:* Of course. Throughout the whole process, I am constantly checking: is this allowed? Are there restrictions? AI is extremely helpful for checking regulatory restrictions quickly before I consult human experts.
-
-  Honestly, some regulatory things in Germany are very strange. There is heavy regulation for things that shouldn't need it, while other areas that should be regulated have no rules at all! It can be pretty complicated, but you just have to navigate through it.
-
-  *Arianna:* Okay, thank you so much for your time!
-
-  *Sara:* Thank you! It was really nice and very helpful.
-] <appx-interview-christine>
-
-#appendix-module[Interview transcript — Peter Grouev, founder of Tapline][
-  *Context:* EIT Summer School — Fintech RegTech project \
-  *Participants:* Emilio, Peter Grouev
-
-  *Emilio:* If you guys need, we can always do it later, right?
-
-  *Peter:* Next week I'm traveling, so I'm only in Wednesday and Thursday. We should meet today or tomorrow to have more time to chat — otherwise you can reach me by email. Thanks for making time.
-
-  *Emilio:* So it's not this compliance/regulatory idea anymore, from the description we got by email?
-
-  *Peter:* No — now we're doing compliance. The original idea was to track blockchain transactions to flag suspicious activity or influence. Yesterday we spoke with someone from the Central Bank who told us the market and clients exist, but the barrier to entry runs into millions and years of development, because players like JPMorgan and Goldman Sachs are already spending huge sums tracking these transactions. It isn't a realistic space for a startup. So we changed the core idea but kept the sector. We'd rather explain our new idea later, so it doesn't bias the interview.
-
-  *Emilio:* Just a quick question — are you guys coming from an engineering background?
-
-  *Peter:* Yeah. That's good, generally.
-
-  *Emilio:* Before founding your startup, were you worried about legal compliance and regulation?
-
-  *Peter:* Very much so, especially in Germany. Let me give you some context on my business and how we ended up where we are.
-
-  I'm an ex-banker, moved from the US, and have been in Frankfurt seven or eight years. I spent a couple of years figuring out how to approach the startup ecosystem — hanging around TechQuartier, joining an Africa-focused impact accelerator, then moving to Berlin to start a fintech lending business. My prior expertise was in underwriting and asset classes like railway leasing, and we decided to apply that experience to a live topic in fintech lending.
-
-  Being based in Germany turned out to be both good and bad in retrospect. Regulation is a big topic, and it matters a lot to solve it early — but solving it well requires a lot of lawyers and a lot of money to pay them.
-
-  We took something of a shortcut, which ultimately backfired through delays. The core technology we built relied on open banking (PSD2): a small or medium-sized enterprise links their account through our API, we pull their transactions via an external provider (we used GoCardless, later acquired), and we built a categorization engine — cash in, cash out — feeding a credit-scoring algorithm. That layer of the business (open banking/PSD2) is now well solved in the market; there are just a handful of established providers.
-
-  The real regulatory problem hit within the first six months: disbursing credit is heavily regulated in Germany. We raised roughly EUR 500K in pre-seed funding and allocated EUR 250K of it explicitly to solving this legal problem. On the business side, we onboarded 10-20 MVP clients and kept them "warm" for six to twelve months, which was its own chicken-and-egg problem — how do you keep demand alive while you're still solving your own regulatory access?
-
-  During that first year we ran three to five test loans funded by angel investors, deliberately avoiding a "plan-based" approach, purely to hit a regulatory threshold. We eventually found a lawyer who filed an application with BaFin (the German regulator).
-
-  To lend to everyone you'd need a full banking/credit license, which runs EUR 3-5 million — too expensive for us. We looked at a factoring license instead (roughly EUR 0.5-1 million) — still too much. In the end we designed a custom carve-out: our lawyer drafted a bespoke contract structuring our loans as a 12-month receivables purchase against software contracts, sitting under general business lending rather than requiring a credit license. It took a year to structure, cost EUR 250K in legal fees, but saved us roughly half a million relative to a licensed alternative.
-
-  The problem only became clear in years two and three: the solution was very "boutique" and only applicable to a narrow set of SaaS-type clients. When we tried to scale, we couldn't grow fast enough. Meanwhile, a direct competitor raised EUR 10 million and went straight for a proper license, paying about EUR 1.5 million for it — and by year three or four they were growing much faster because they could address a much bigger market.
-
-  By 2025, our growth had stalled. We needed another EUR 5 million from shareholders just to keep going, and instead ended up looking for a buyer. We spoke to three to five potential acquirers — mostly competitors — and eventually sold. I'm now part of the company that acquired us, a Czech business (part of the Flow group), which had solved its licensing and expansion much more efficiently, partly because they started inside a regulatory sandbox.
-
-  The Czech regulator operates very differently from BaFin: rather than demanding a license upfront, they let you start operating and monitor you over time, granting a full license progressively. By the time we compared notes in 2025, they had about 600 client loans to our roughly 60 — ten times our scale — because they'd expanded early into the Czech Republic, Slovakia, and the Netherlands, markets with a much lighter regulatory burden for licensed credit lending. They now hold an EU passporting license for their credit activities.
-
-  *Emilio:* So the main blocker to scaling was fundamentally regulatory?
-
-  *Peter:* Yes. We lost the first two years waiting to solve our regulatory problem — 2022 and 2023 — with only five to ten test clients while we waited on BaFin's approval of our custom contract, which took about twelve months. By the time we started scaling publicly, our Czech competitor already had 300+ loans and EUR 10 million+ in bookings — they were already generating meaningful revenue while we had close to zero for two and a half years.
-
-  The lesson: unless you have a genuinely favorable regulatory environment, you either need to avoid the heavy-regulation route entirely or have significantly more capital to solve it quickly, because going two-plus years without revenue is a serious problem for fundraising today. Compared to, say, an AI startup that can show MRR within two months, waiting years to show revenue just doesn't work anymore with today's investors.
-
-  If I were doing it again, I'd avoid heavily regulated markets like Italy, France, and Germany at first (depending on the specific regulatory topic) and instead start in Estonia, the Czech Republic, Malta, or Cyprus — get traction and revenue there, show investors what's achievable in six months, and then raise the EUR 5-10 million needed to expand into the rest of Europe. It's essentially the Revolut playbook: they didn't wait for full licensing, they built traction first and only secured a full UK banking license roughly a decade in.
-
-  *Emilio:* In the beginning, did you have an external legal team, or was it internal?
-
-  *Peter:* In the beginning we used external counsel; today it's internalized.
-
-  *Emilio:* Can we share our idea now?
-
-  *Peter:* Sure.
-
-  *Emilio:* The idea is to connect the regulatory rules — published on central bank websites and official gazettes — with a company's own documents and business model, using an AI pipeline that checks compliance against current regulation (and even upcoming regulation, since we know some rules will only become official in 2027), without the cost of a full legal review. Essentially, using low-cost LLMs to give a company clarity before it goes to a lawyer for actual licensing.
-
-  *Peter:* That's a good idea, if you can make it accessible. Your ideal client profile could really be early-stage founding teams — pure pre-revenue startups — because you're delivering a very cheap service. That's the stage that killed us: half of our EUR 500K pre-seed round went straight to lawyers. Getting traction with founders before they've even raised money is smart, because this is exactly the pain point.
-
-  That said, this segment pays very little — startups will always want to discount this cost. I acted as our CFO, and my role was constantly negotiating legal spend down. In hindsight we wasted EUR 250K on our custom contract. Startups don't have much money, so you may need to offer a heavily discounted or near-free entry tier (say, EUR 1,000/month) just to build traction and product feedback, understanding that willingness to pay at this stage is low. You won't be able to sell to a KKR or a bank on day one — those enterprise sales cycles run twelve-plus months, even for something genuinely good. That's part of why we ended up selling rather than scaling into banks ourselves.
-
-  *Matteo:* Our plan is to start with startups, since they can't afford a license anyway, get feedback without needing to issue any licensing advice ourselves, then bootstrap or raise, and eventually move up to larger enterprises and banks — which would also help speed up how lawyers work today, since from what we've seen, they largely do this compliance-checking by hand. Generic tools like Gemini or ChatGPT can synthesize information, but nothing currently connects a company's own documents directly with the applicable regulations.
-
-  *Peter:* If your team is fully technical, you may want to loop in someone with regulatory/legal expertise fairly soon. You can rent tools like Harvey or Legora for LLM-based legal summarization, but someone still needs to validate whether what the model outputs actually makes sense. That might not need to be a full-time hire immediately, but it's worth thinking about team composition early — and also how your contract disclaims liability (e.g., "this is not legal advice, just an information summary") since that shapes your legal exposure.
-
-  *Matteo:* We're actually more focused on validating the problem than the technology at this stage. If the problem doesn't really exist, building the technology doesn't matter.
-
-  *Peter:* Fair.
-
-  *Emilio:* What do you think our addressable market looks like?
-
-  *Peter:* If you start with startups only, across Europe you're probably looking at a market of something like 100-200 companies at the very early stage that would find this useful — because once a company is past that ultra-early stage, if I can just do this cheaply myself with a tool like Claude, why would I pay you?
-
-  *Matteo:* We could potentially scale to larger startups too.
-
-  *Peter:* The real question is differentiation. Right now I already use Claude fairly effectively for legal summarization internally — for example, we recently asked it which Eastern European countries would be easiest to expand our loan contract into. It quickly flagged Croatia, Lithuania, and Estonia as straightforward, and Bulgaria and Romania as difficult. So the honest competitive question is: what's your top-line USP beyond what a generalist model already does reasonably well?
-
-  One angle: are you running locally on enterprise data, or sending everything to the cloud? In Europe, especially, you often can't send data outside the EU. If your product keeps a company's documents and regulatory matching entirely inside the company's own environment — no data leaving Europe — that's a real differentiator, particularly for clients (Germans especially) who are sensitive about data sovereignty. That's worth building into your pitch: EU data sovereignty, local/on-prem processing, specialized regulatory knowledge that doesn't require sending data abroad.
-
-  On pricing: don't worry about it on day one, but think it through within the first three months once you have traction. Right now, with models like Claude Sonnet giving ~95% accuracy for about \$20/month, that effectively sets a price ceiling for what early-stage startups expect to pay. You may want to price near that ceiling initially, or focus on making the product experience meaningfully better and easier to use than a generic LLM, since otherwise a founder will just ask, "why wouldn't I just use Claude for \$20/month?"
-
-  *Peter:* One more thing on fundraising: assuming this all works and you have a market of ~200 startups, that's a fine market to test your product in year one, but a VC will likely say that market is too small on its own. You need a credible answer for your second-layer market.
-
-  Thinking in terms of fintech verticals: lending, fundraising/investing (crowdfunding — mostly already solved via Lithuanian/Estonian licenses and passporting), payments (PSD2/PSD3, e-money licensing — also largely figured out), wealth management/brokering (MiFID), operational resilience (DORA), and crypto/blockchain (MiCA) — which is very hot right now, with maybe 500 blockchain startups across Europe experimenting in the space.
-
-  Across all these verticals your total addressable market in year one is maybe 200-500 fintech startups — good enough to validate the product, but you'll want a story for what comes next. Firms like Legora and Harvey started narrowly (serving lawyers) and expanded broadly (SMEs, banks, governments) to reach \$100 million+ in revenue. You should think similarly: what's the second market you expand into once you've proven the model with startups? There's roughly \$50 trillion in assets in the US alone, much of which doesn't flow into Europe because those funds don't know how to navigate European regulation — private equity funds, private debt funds, pension funds could all be a much larger addressable market down the line.
-
-  *Emilio:* So you think the digital finance/fintech-startup market alone is too small, and we should have a broader target market in mind, even if we start narrow to get initial traction?
-
-  *Peter:* Right. Whatever infrastructure you build, have a view on how you tell that story to investors — "we validated this in year one with fintech startups, here's where we expand next" — rather than pitching purely as fintech-startup-focused infrastructure. VCs will challenge you on willingness to pay at the startup level, so you want a credible path to a much bigger revenue pool.
-
-  *Emilio:* Understood — thank you.
-
-  *Peter:* Cool, thank you. I need to head out for a bit, but I'll see you at lunch. Thanks again for your time — feel free to reach out by email or LinkedIn.
-] <appx-interview-peter-grouev>
+// ---------------------------------------------------------------------------
+// Test card (Strategyzer format): one experiment per card, recording the
+// hypothesis, the test that probes it, the metric observed, and the success
+// criteria together with the outcome. Every field is optional: a card called
+// with no arguments renders blank but keeps writing room in each field, so
+// cards can be laid out first and filled in later.
+//
+//   #test-card(1)                                    // blank card
+//   #test-card(2, title: "Willingness to pay",       // filled card
+//     hypothesis: [...], test: [...],
+//     metric: [...], criteria: [...], status: "Validated")
+//
+#let tc-blank-height = 0.9cm
+
+#let test-card(
+  number,
+  title: none,
+  hypothesis: none,
+  test: none,
+  metric: none,
+  criteria: none,
+  status: none,
+) = block(
+  width: 100%,
+  breakable: false,
+  stroke: 0.6pt + accent.lighten(40%),
+  radius: 4pt,
+  clip: true,
+  below: 1em,
+)[
+  // Header strip: card number and subject line on the left, the experiment's
+  // current status as a badge on the right.
+  // `sticky` keeps it attached to the table that follows.
+  #block(width: 100%, fill: accent, inset: (x: 10pt, y: 6pt), sticky: true, below: 0pt)[
+    #grid(
+      columns: (1fr, auto),
+      align: (left + horizon, right + horizon),
+      text(size: 9pt, weight: "bold", fill: white)[
+        Test card #number
+        #if title != none [
+          #h(0.4em) · #h(0.4em) #title
+        ]
+      ],
+      if status != none {
+        box(
+          fill: white.transparentize(80%),
+          stroke: 0.5pt + white.transparentize(50%),
+          inset: (x: 5pt, y: 2.5pt),
+          radius: 2pt,
+        )[#text(size: 7.5pt, weight: "bold", fill: white)[#upper(status)]]
+      },
+    )
+  ]
+  #let field(label, hint, value) = (
+    text(size: 8.5pt, weight: "bold", fill: accent)[#label],
+    if value == none {
+      // Prompt phrasing, then blank writing room. The space is added inside
+      // the cell rather than fixed as a row height, so a filled field can
+      // grow past it instead of being clipped.
+      [
+        #text(size: 8.5pt, style: "italic", fill: sky-reflection.darken(10%))[#hint]
+        #v(tc-blank-height)
+      ]
+    } else {
+      text(size: 9pt)[#value]
+    },
+  )
+
+  #table(
+    columns: (3.3cm, 1fr),
+    align: left + top,
+    stroke: 0.6pt + accent.lighten(60%),
+    inset: (x: 8pt, y: 7pt),
+    // Label column tinted so the four fields stay legible while the card is
+    // still blank and the right-hand column is empty.
+    fill: (x, y) => if x == 0 { sky-reflection.lighten(88%) },
+    ..field("Hypothesis", "We believe that…", hypothesis),
+    ..field("Test", "To verify that, we will…", test),
+    ..field("Metric", "And measure…", metric),
+    ..field("Criteria & outcome", "We are right if… — what we observed:", criteria),
+  )
+]
+
+#appendix-module[Validation test cards][
+  Each experiment run during validation is recorded on its own test card, stating the hypothesis under test, how we probed it, what we measured, and the threshold that would count as confirmation, alongside what we actually observed.
+
+  #v(0.4em)
+  #test-card(
+    1,
+    title: "Pre-launch compliance bottleneck",
+    status: "Validated",
+    hypothesis: [For early-stage FinTech founders, the primary source of delay and expense is navigating regulatory compliance rather than developing the core technical infrastructure.],
+    test: [Structured discovery interviews with early-stage FinTech founders, banking and finance professionals, and legal practitioners.],
+    metric: [The share of founders citing compliance as their primary pre-launch barrier and resource drain.],
+    criteria: [We are right if 80% of founders report regulatory compliance as a higher friction factor than technical product development.
+
+      *Outcome:* validated. 8 of 10 founders identified regulatory navigation, not engineering, as the binding constraint before launch.],
+  )
+  #test-card(
+    2,
+    title: "Legal cost burden",
+    status: "Validated",
+    hypothesis: [Traditional legal billable hours, at €300 to €600 per hour, are cost-prohibitive for early-stage FinTechs, forcing founders to choose between existential legal costs and deploying unverified product logic.],
+    test: [Budget and cost-structure analysis through founder interviews, benchmarked against advisory pricing.],
+    metric: [The proportion of founders identifying initial legal licensing and advisory fees as unaffordable on a pre-seed or seed budget.],
+    criteria: [We are right if at least 60% of early-stage teams identify traditional legal fees as a blocker to proper regulatory verification before deployment.
+
+      *Outcome:* validated, and by a wider margin than our threshold. 9 of 10 founders reported relying entirely on external counsel while treating its cost as prohibitive.],
+  )
+  #test-card(
+    3,
+    title: "Landing page color",
+    status: "Ongoing",
+    hypothesis: [A blue landing page generates more trust, and so converts better, than a green one.],
+    test: [Two otherwise identical versions of the landing page, differing only in primary color: blue in one, green in the other.],
+    metric: [The difference in appreciation rate between the two versions.],
+    criteria: [We are right if the blue version achieves an appreciation rate at least 20% higher than the green one.
+
+      *Outcome:* validation ongoing at the time of writing.],
+  )
+] <appx-test-cards>
 
 #let bmc-bullets(items) = {
   set text(size: 7.5pt)
@@ -458,8 +399,11 @@ Interview transcripts were obtained by recording each conversation and transcrib
     #set text(size: 8pt)
     #figure(
       table(
-        columns: (3fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-        align: (left, center, center, center, center, center),
+        // The capability column is prose and reads badly when hyphenated, so
+        // it takes the width it needs while the segment columns share what's
+        // left and wrap their headers over two lines instead.
+        columns: (auto, 1fr, 1fr, 1fr, 1fr, auto),
+        align: (left + horizon, center + horizon, center + horizon, center + horizon, center + horizon, center + horizon),
         stroke: 0.6pt + sky-reflection.lighten(30%),
         fill: (x, y) => if y == 0 {
           sky-reflection
@@ -501,8 +445,11 @@ Applying this formula across low, base, and high scenarios yields the following 
   #set text(size: 9pt)
   #figure(
     table(
-      columns: (1fr, auto, auto, auto, auto, auto, auto),
-      align: (left, center, center, center, center, center, center),
+      // Scenario and eligible-company count share one column: as separate
+      // columns the two headers collided, and the count is really just a
+      // property of the scenario rather than an independent variable.
+      columns: (auto, auto, auto, auto, auto, auto),
+      align: (left, center, center, center, center, center),
       stroke: 0.6pt + sky-reflection.lighten(30%),
       fill: (x, y) => if y == 0 {
         sky-reflection
@@ -512,17 +459,16 @@ Applying this formula across low, base, and high scenarios yields the following 
         white
       },
       table.header(
-        text(fill: white, weight: "bold")[Scenario],
-        text(fill: white, weight: "bold")[Eligible companies],
+        text(fill: white, weight: "bold")[Scenario (eligible companies)],
         text(fill: white, weight: "bold")[Legal (€)],
         text(fill: white, weight: "bold")[Internal labor (€)],
         text(fill: white, weight: "bold")[Software (€)],
         text(fill: white, weight: "bold")[Total spend/company (€)],
         text(fill: white, weight: "bold")[TAM (€Bn/year)],
       ),
-      [Low], [6.0M], [1,000], [1,500], [800], [3,300], text(fill: accent, weight: "bold")[19.8],
-      [Base], [8.0M], [1,500], [2,500], [1,250], [5,250], text(fill: accent, weight: "bold")[42.0],
-      [High], [10.0M], [2,000], [4,000], [1,400], [7,400], text(fill: accent, weight: "bold")[74.0],
+      [Low — 6.0M], [1,000], [1,500], [800], [3,300], text(fill: accent, weight: "bold")[19.8],
+      [Base — 8.0M], [1,500], [2,500], [1,250], [5,250], text(fill: accent, weight: "bold")[42.0],
+      [High — 10.0M], [2,000], [4,000], [1,400], [7,400], text(fill: accent, weight: "bold")[74.0],
     ),
     caption: [TAM scenarios for the EU AI regulatory-compliance assistant market],
   )
@@ -603,38 +549,22 @@ where $r$ is the obtainable share of that combined market.
 Our investable SOM target for the next one to three years is €1.65M ARR (base case), representing a highly achievable 5% capture of the strictly defined German and Italian fintech startup markets.
 
 ] <appx-market>
-#appendix-module[Regulations & Risks][
-// --- Helper Components ---
-#let risk-card(title, body) = block(
-  width: 100%,
-  fill: rgb("#FAFAFA"),
-  stroke: (left: 3pt + rgb("#6a97d2")),
-  inset: (x: 12pt, y: 8pt),
-  radius: (right: 4pt),
-  margin: (bottom: 0.8em),
-)[
-  #text(weight: "bold", fill: rgb("#6a97d2"), size: 11pt)[#title]
-  #v(0.2em)
-  #text(size: 10pt, fill: rgb("#2A2A2A"))[#body]
+#let regs-subhead(title) = [
+  #text(size: 10.5pt, weight: "bold", fill: accent)[#title]
+  #v(0.25em)
 ]
 
-#let framework-badge(code) = box(
-  fill: accent.lighten(88%),
-  inset: (x: 6pt, y: 3pt),
-  radius: 3pt,
-  stroke: 0.5pt + accent.lighten(50%),
-)[#text(size: 9pt, weight: "bold", fill: accent)[#code]]
 #let risk-card(title, body) = block(
   width: 100%,
-  fill: rgb("#FAFAFA"),
-  stroke: (left: 3pt + rgb("#6a97d2")),
-  inset: (x: 12pt, y: 8pt),
-  radius: (right: 4pt),
-  below: 0.8em,
+  breakable: false,
+  fill: sky-reflection.lighten(88%),
+  stroke: 0.6pt + accent.lighten(40%),
+  radius: 4pt,
+  inset: 10pt,
 )[
-  #text(weight: "bold", fill: rgb("#6a97d2"), size: 11pt)[#title]
-  #v(0.2em)
-  #text(size: 10pt, fill: rgb("#2A2A2A"))[#body]
+  #text(size: 9.5pt, weight: "bold", fill: accent)[#title]
+  #v(4pt)
+  #text(size: 8.5pt)[#body]
 ]
 
 #let framework-badge(code) = box(
@@ -644,104 +574,101 @@ Our investable SOM target for the next one to three years is €1.65M ARR (base 
   stroke: 0.5pt + accent.lighten(50%),
 )[#text(size: 9pt, weight: "bold", fill: accent)[#code]]
 
+#appendix-module[Regulation and risks][
+  ComplAI operates in a highly regulated environment, since it provides AI-powered compliance support to European startups, initially FinTech companies. Our customers may fall under several overlapping EU frameworks, which our regulatory coverage has to track:
 
-
-ComplAI operates in a highly regulated environment because it provides AI-powered compliance support to European startups, initially focusing on fintech companies. Its customers may be subject to several overlapping EU frameworks:
-
-#v(0.4em)
-#align(center)[
-  #stack(
-    dir: ltr,
-    spacing: 8pt,
-    framework-badge("GDPR"),
-    framework-badge("DORA"),
-    framework-badge("NIS2"),
-    framework-badge("PSD2"),
-    framework-badge("MiCA"),
-    framework-badge("DSA"),
-    framework-badge("DMA"),
-  )
-]
-#v(0.6em)
-
-== Regulatory Considerations
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1.2cm,
-  row-gutter: 1cm,
-  [
-    === Legal-service positioning
-    ComplAI should be positioned as a compliance-support platform rather than a replacement for qualified legal advice. Its answers, assessments and generated documents could influence important business, licensing and market-entry decisions, so the limits of the service must be communicated clearly.
-  ],
-  [
-    === Data protection and confidentiality
-    The platform plans to process business models, legal documents and information about customers’ operations. This creates important GDPR obligations concerning lawful processing, data minimisation, confidentiality, retention, access control and security.
-  ],
-  [
-    === AI transparency and accountability
-    ComplAI should explain which regulatory sources support each answer and maintain records of how recommendations are generated. The deck states that the system will retrieve relevant regulatory passages before combining them with the user’s information, which can support more transparent and grounded outputs.
-  ],
-  [
-    === Regulatory updates
-    The service depends on access to current official EU texts through a continuously refreshed RAG system. Because regulations and supervisory guidance can change, outdated sources could lead to incorrect compliance recommendations.
+  #v(0.4em)
+  #align(center)[
+    #stack(
+      dir: ltr,
+      spacing: 8pt,
+      framework-badge("GDPR"),
+      framework-badge("DORA"),
+      framework-badge("NIS2"),
+      framework-badge("PSD2 / PSD3"),
+      framework-badge("MiCA"),
+      framework-badge("DSA"),
+      framework-badge("DMA"),
+    )
   ]
-)
+  #v(0.8em)
 
-#v(0.5em)
-=== National legal differences
-The document-generation service is intended to support country-specific filing and regulatory-submission formats. ComplAI must therefore account for differences between EU-level legislation and national laws, procedures and templates.
+  #regs-subhead[Regulatory considerations]
 
-#v(1em)
-== Main Risks
+  #grid(
+    columns: (1fr, 1fr),
+    column-gutter: 0.8cm,
+    row-gutter: 1.6em,
+    [
+      *Legal-service positioning.* ComplAI is positioned as a compliance-support platform, not as a replacement for qualified legal advice. Since its assessments and generated documents can influence licensing and market-entry decisions, the limits of the service have to be stated clearly to every user.
+    ],
+    [
+      *Data protection and confidentiality.* The platform processes business models, legal documents and information about our customers' operations. This creates substantial GDPR obligations around lawful processing, data minimisation, confidentiality, retention, access control and security.
+    ],
+    [
+      *AI transparency and accountability.* Every answer cites the regulatory sources supporting it, and we keep records of how each recommendation was produced. The system retrieves the relevant passages before combining them with the user's own information, which keeps outputs grounded and auditable.
+    ],
+    [
+      *Regulatory updates.* The service depends on access to current official EU texts through a continuously refreshed RAG pipeline. Regulations and supervisory guidance change often, and an outdated source would translate directly into an incorrect compliance recommendation that the customer cannot detect.
+    ],
+  )
 
-#risk-card("Incorrect or incomplete outputs", [
-  The AI may misunderstand a regulation, overlook an exception or fail to consider relevant context. This could lead customers to make non-compliant product or operational decisions.
-])
+  #v(0.7em)
+  *National legal differences.* The document-generation service targets country-specific filing and submission formats, so ComplAI has to account for the gap between EU-level legislation and the national laws, procedures and templates that implement it.
 
-#risk-card("Excessive user reliance", [
-  Customers may treat the platform’s output as definitive legal advice. This creates liability and reputational risk, especially when decisions concern licences, regulatory filings or market access.
-])
+  #v(1em)
+  #regs-subhead[Main risks]
 
-#risk-card("Outdated information", [
-  If the regulatory database is not updated quickly enough, the system may provide guidance based on obsolete laws, guidance or implementation dates.
-])
+  #v(0.2em)
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    risk-card("Incorrect or incomplete outputs", [
+      The model may misread a regulation, overlook an exception or miss context that changes the conclusion, leading customers to make non-compliant product or operational decisions.
+    ]),
+    risk-card("Excessive user reliance", [
+      Customers may treat our output as definitive legal advice. This creates liability and reputational exposure, especially where the decision concerns licences, regulatory filings or market access.
+    ]),
+    risk-card("Outdated information", [
+      If the regulatory database is not refreshed quickly enough, the system may answer on the basis of superseded laws, guidance or implementation dates that no longer apply to the customer.
+    ]),
+    risk-card("Privacy and cybersecurity risk", [
+      ComplAI stores confidential legal, financial and operational information. A breach or misuse of customer documents would mean regulatory penalties and a loss of trust that is hard to recover.
+    ]),
+    risk-card("Document-generation risk", [
+      Automatically generated compliance documents may contain errors or fail to satisfy the formal requirements of the receiving authority, delaying or invalidating a submission.
+    ]),
+    risk-card("Jurisdictional complexity", [
+      A recommendation that holds in one member state may not fully apply in another, because of differences in national implementation, supervisory practice or local legal requirements.
+    ]),
+    grid.cell(colspan: 2, risk-card("Liability and reputational damage", [
+      If a customer suffers a fine, a licensing delay or blocked market access after relying on ComplAI, we could face disputes, compensation claims and reputational harm, which are exactly the consequences of non-compliance our product exists to prevent.
+    ])),
+  )
 
-#risk-card("Privacy and cybersecurity risk", [
-  ComplAI may store confidential legal, financial and operational information. A data breach, unauthorised access or misuse of customer documents could result in regulatory penalties and loss of trust.
-])
+  #v(1em)
+  #block(breakable: false)[
+    #regs-subhead[Risk-mitigation measures]
 
-#risk-card("Document-generation risk", [
-  Automatically generated legal or compliance documents may contain errors or fail to satisfy filing requirements.
-])
+    To keep this exposure manageable, ComplAI commits to:
 
-#risk-card("Jurisdictional complexity", [
-  A recommendation that is valid in one EU Member State may not be fully applicable in another because of national implementation, supervisory practice or local legal requirements.
-])
-
-#risk-card("Liability and reputational damage", [
-  If a customer suffers a fine, licensing delay or blocked market access after relying on ComplAI, the startup could face disputes, compensation claims and reputational harm. These are precisely the consequences of non-compliance highlighted in the deck.
-])
-
-#v(1em)
-== Risk-Mitigation Measures
-
-ComplAI has to:
-
-#block(
-  width: 100%,
-  fill: rgb("#6a97d2").lighten(94%),
-  stroke: (left: 4pt + rgb("#6a97d2")),
-  inset: (x: 14pt, y: 12pt),
-  radius: (right: 4pt),
-)[
-  #set list(marker: text(fill: accent)[✓])
-  - use only official and regularly updated regulatory sources;
-  - provide source citations and explain the basis of each recommendation;
-  - include clear disclaimers stating that the platform does not replace professional legal advice;
-  - require human legal review for high-risk outputs and regulatory submissions;
-  - implement strong encryption, access controls and data-retention policies;
-  - test the system regularly for accuracy, hallucinations and missing regulatory context;
-  - maintain audit logs and version histories for regulations and generated outputs.
-]
-]<appx-regulations>
+    #v(0.2em)
+    #block(
+      width: 100%,
+      breakable: false,
+      fill: sky-reflection.lighten(88%),
+      stroke: 0.6pt + accent.lighten(40%),
+      radius: 4pt,
+      inset: 10pt,
+    )[
+      #set text(size: 8.5pt)
+      - Draw only on official, regularly updated regulatory sources
+      - Cite those sources and explain the basis of every recommendation
+      - State clearly, in-product and contractually, that the platform does not replace professional legal advice
+      - Require human legal review for high-risk outputs and for any regulatory submission
+      - Implement strong encryption, access controls and data-retention policies
+      - Test regularly for accuracy, hallucinations and missing regulatory context
+      - Maintain audit logs and version histories for both regulations and generated outputs
+    ]
+  ]
+] <appx-regulations>
