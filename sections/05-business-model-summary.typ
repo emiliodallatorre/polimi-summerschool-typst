@@ -8,6 +8,10 @@ Hereafter, we provide a shallow introduction to our business model, through the 
 
 ComplAI operates in the B2B market and targets two groups: early-stage FinTech startups, and FinTech companies with an internal legal team seeking to accelerate compliance job.
 
+Because early-stage FinTech ventures rarely have specialized departments, we define this persona at the organizational level rather than around a single buyer role: a pre-seed to Seed-stage FinTech startup, typically a lean team of 5 to 15 employees based within the EU, where purchasing decisions reflect a shared assessment of risk and resource allocation across the founding team rather than one stakeholder's preference.
+
+We target these startups because they face a structural pressure that makes early regulatory alignment a condition for survival rather than an operational nice-to-have. Regulatory frameworks such as DORA and MiCA, combined with licensing rejection rates estimated at 80 to 85 percent @ccn-mica-failure-rate-2025, mean that a poorly documented or non-compliant product architecture can block a launch or sink a license application. At the same time, these ventures operate on constrained runway and cannot absorb the cost of retaining external legal counsel early and continuously. This combination of high regulatory exposure and limited financial capacity to address it through traditional means is what makes early-stage FinTech startups a coherent and urgent customer segment for ComplAI.
+
 == Market sizing estimate <sec-market-sizing>
 
 #align(center)[
@@ -55,7 +59,39 @@ ComplAI helps early-stage start-ups understand what they need to do to become co
 
 == Channels
 
-We connect with potential customers through startup hubs and accelerators, where we can reach founders at the moment compliance becomes a real concern. We also use digital marketing and media coverage to attract people searching for support online, while FinTech events and webinars help us build trust and speak directly with the founder community.
+Our market-access strategy rests on three coordinated channels, chosen to achieve efficient customer acquisition without resource-intensive sales overhead.
+
+#let channel-box(title, body) = block(
+  width: 100%,
+  breakable: false,
+  fill: sky-reflection.lighten(88%),
+  stroke: 0.6pt + accent.lighten(40%),
+  radius: 4pt,
+  inset: 9pt,
+)[
+  #text(size: 9.5pt, weight: "bold", fill: accent)[#title]
+  #v(4pt)
+  #text(size: 8pt)[#body]
+]
+
+#grid(
+  columns: (1fr, 1fr, 1fr),
+  gutter: 8pt,
+  channel-box(
+    "Hub & accelerator partnerships",
+    [Our primary distribution engine: embedding directly into incoming cohorts at TechQuartier in Frankfurt and at the FinTech District, PoliHub, and B4i in Milan, giving us access to pre-screened founders facing imminent licensing requirements.],
+  ),
+  channel-box(
+    "Targeted PR & thought leadership",
+    [Publishing problem-solution case studies and regulatory analyses in outlets such as Business Insider, to build domain authority and organic brand awareness among founders actively researching compliance solutions.],
+  ),
+  channel-box(
+    "FinTech conferences & founder events",
+    [Attending focused gatherings such as FinTech Week to engage directly with early-stage builders at the precise moment they are structuring their technical and operational roadmaps, enacting a lobbying activity towards ComplAI.],
+  ),
+)
+
+We deliberately exclude high-friction channels such as door-to-door sales, manual educational workshops, and open-source maintenance, so the model stays operationally scalable. The product itself is engineered to be self-serve: founders onboard, run diagnostics, and access compliance frameworks without manual guidance from our team. The sales motion stays aligned with the pricing tiers, moving users smoothly from entry-level self-serve assessments to structured, license-readiness modules as their ventures mature.
 
 == Customer relationships
 
