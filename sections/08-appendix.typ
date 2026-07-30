@@ -214,6 +214,22 @@ Interview transcripts were obtained by recording each conversation and transcrib
   #text(size: 8.5pt, weight: "bold", fill: accent)[#title]
 ]
 
+// Same visual treatment as `bmc-cell`, but also renders a bullet list of
+// items underneath the title, for the value proposition canvas's six boxes
+// (which need actual content, unlike the business model canvas's simpler
+// single-title placeholders reused elsewhere).
+#let bmc-cell-filled(title, items, fill: honey-bronze.lighten(88%)) = block(
+  width: 100%,
+  height: 100%,
+  fill: fill,
+  stroke: 0.6pt + accent.lighten(40%),
+  inset: 6pt,
+)[
+  #text(size: 8.5pt, weight: "bold", fill: accent)[#title]
+  #v(3pt)
+  #bmc-bullets(items)
+]
+
 #let bmc-cell-content(title, items) = [
   #text(size: 8pt, weight: "bold", fill: accent)[#title]
   #v(3pt)
@@ -320,8 +336,8 @@ Interview transcripts were obtained by recording each conversation and transcrib
 
 #pagebreak()
 
-#appendix-module[Value proposition canvas (template)][
-  This canvas is left empty for now and will be filled in once the value proposition has been finalised
+#appendix-module[Value proposition canvas][
+  The canvas below maps ComplAI's value map (products & services, gain creators, pain relievers) against the customer profile of our early-stage FinTech target segment (customer jobs, gains, pains).
 
   #block(breakable: false)[
     #grid(
@@ -334,14 +350,59 @@ Interview transcripts were obtained by recording each conversation and transcrib
     #v(3pt)
     #grid(
       columns: (1fr, 1fr),
-      rows: (2.4cm, 2.4cm, 2.4cm),
+      rows: (3cm, 3cm, 3cm),
       gutter: 3pt,
-      [#bmc-cell[Products & services]],
-      [#bmc-cell[Customer jobs]],
-      [#bmc-cell[Gain creators]],
-      [#bmc-cell[Gains]],
-      [#bmc-cell[Pain relievers]],
-      [#bmc-cell[Pains]],
+      bmc-cell-filled(
+        "Products & services",
+        (
+          "Chatbot assessment paired with ready-to-review document generation",
+          "Continuous monitoring of official EU regulatory sources",
+        ),
+        fill: accent.lighten(90%),
+      ),
+      bmc-cell-filled(
+        "Customer jobs",
+        (
+          "Assess and prepare compliance documentation for EU regulatory requirements",
+          "Stay compliant as regulation evolves across member states and as the product evolves",
+        ),
+        fill: sky-reflection.lighten(85%),
+      ),
+      bmc-cell-filled(
+        "Gain creators",
+        (
+          "Lawyer involvement reduced to final validation only",
+          "Early alignment with upcoming rules before they take effect",
+        ),
+        fill: accent.lighten(90%),
+      ),
+      bmc-cell-filled(
+        "Gains",
+        (
+          "Minimised legal costs",
+          "Anticipation of upcoming regulation",
+          "Peace of mind throughout the process",
+        ),
+        fill: sky-reflection.lighten(85%),
+      ),
+      bmc-cell-filled(
+        "Pain relievers",
+        (
+          "Plain-language translation of legal requirements",
+          "Automated research, cutting hours of manual consultation",
+          "Up to 60% lower cost than traditional legal consulting",
+        ),
+        fill: accent.lighten(90%),
+      ),
+      bmc-cell-filled(
+        "Pains",
+        (
+          "Regulatory fragmentation is hard to understand",
+          "Compliance work is time-consuming",
+          "High cost relative to lawyer consultancy",
+        ),
+        fill: sky-reflection.lighten(85%),
+      ),
     )
   ]
 ] <appx-value-proposition-canvas>
